@@ -1,0 +1,41 @@
+const { chromium } = require('playwright-core');
+const EDGE = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
+(async () => {
+  const b = await chromium.launch({ executablePath: EDGE, headless: true });
+  const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+  const errs = [];
+  p.on('pageerror', e => errs.push(String(e)));
+  await p.goto('http://localhost:8766/index.html');
+  await p.evaluate(() => localStorage.clear());
+  await p.reload();
+  await p.waitForTimeout(400);
+  await p.evaluate(() => { enabledTypes.length = 0; enabledTypes.push('e2c'); startSession('today', 1, 8); });
+  await p.waitForTimeout(300);
+  console.log('start counter:', await p.textContent('#qCounter'));
+  await p.click('#qBody .opt');
+  await p.waitForTimeout(300);
+  console.log('answered:', await p.evaluate(() => ({ i: Q.i, right: Q.right, wrong: Q.wrong })));
+  console.log('saved:', await p.evaluate(() => { const s = JSON.parse(localStorage.getItem('cet6vocab_2026_quiz_v1')); return s && { i: s.i, len: s.len, course: s.course, answered: Object.keys(s.perWord).length }; }));
+  await p.reload();
+  await p.waitForTimeout(400);
+  await p.click('[data-v=test]');
+  await p.waitForTimeout(500);
+  console.log('after reload counter:', await p.textContent('#qCounter'));
+  console.log('quiz visible:', await p.$eval('#quiz', e => e.style.display), 'setup:', await p.$eval('#testSetup', e => e.style.display));
+  console.log('resume Q:', await p.evaluate(() => ({ i: Q.i, len: Q.len, right: Q.right, seen: Object.keys(S.w).filter(k => S.w[k].seen).length })));
+  console.log('toast:', await p.evaluate(() => document.getElementById('toast').textContent));
+
+  // 过期会话显示卡片
+  await p.evaluate(() => { const s = JSON.parse(localStorage.getItem('cet6vocab_2026_quiz_v1')); s.savedAt = Date.now() - 40 * 60 * 1000; localStorage.setItem('cet6vocab_2026_quiz_v1', JSON.stringify(s)); Q = null; });
+  await p.reload();
+  await p.waitForTimeout(300);
+  await p.click('[data-v=test]');
+  await p.waitForTimeout(300);
+  console.log('resume card:', await p.$('#resumeCard') !== null, (await p.textContent('#resumeCard')).replace(/\s+/g, ' ').slice(0, 80));
+  await p.click('#resumeCard .btn.primary');
+  await p.waitForTimeout(300);
+  console.log('resumed from card:', await p.textContent('#qCounter'));
+  console.log('errors:', errs);
+  await p.screenshot({ path: 'v_resume.png' });
+  await b.close();
+})();

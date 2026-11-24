@@ -1,0 +1,3354 @@
+[
+ {
+  "id": 1,
+  "word": "underestimate",
+  "pos": "v.",
+  "mean": "低估；看轻；轻视n.低估",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 2,
+  "word": "inevitable",
+  "pos": "adj.",
+  "mean": "不可避免的；必然发生的；惯常的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 3,
+  "word": "eliminate",
+  "pos": "v.",
+  "mean": "排除；消除；淘汰",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 4,
+  "word": "embrace",
+  "pos": "v.",
+  "mean": "拥抱；欣然接受；包含",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 5,
+  "word": "priority",
+  "pos": "n.",
+  "mean": "优先事项；优先权；首要任务",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 6,
+  "word": "ecosystem",
+  "pos": "n.",
+  "mean": "生态系统",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 7,
+  "word": "revenue",
+  "pos": "n.",
+  "mean": "收入；收益；税收；财政收入",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 8,
+  "word": "cognitive",
+  "pos": "adj.",
+  "mean": "认知的；认识的；感知的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 9,
+  "word": "conducive",
+  "pos": "adj.",
+  "mean": "有益于…的；有助于…的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 10,
+  "word": "detrimental",
+  "pos": "adj.",
+  "mean": "有害的；不利的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 11,
+  "word": "trigger",
+  "pos": "v.",
+  "mean": "触发；引起；引发n.诱因；扳机",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 12,
+  "word": "commodity",
+  "pos": "n.",
+  "mean": "商品；货物；日用品",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 13,
+  "word": "prevalent",
+  "pos": "adj.",
+  "mean": "普遍的；盛行的；流行的；普遍存在的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 14,
+  "word": "digital",
+  "pos": "adj.",
+  "mean": "数字的；数码的；数字化的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 15,
+  "word": "vulnerable",
+  "pos": "adj.",
+  "mean": "脆弱的；易受伤害的；易受伤的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 16,
+  "word": "academic",
+  "pos": "adj.",
+  "mean": "学术的；学业的n.学者；大学生",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 17,
+  "word": "instruction",
+  "pos": "n.",
+  "mean": "指导；指示；教学；指令；教导",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 18,
+  "word": "inequality",
+  "pos": "n.",
+  "mean": "不平等；不均衡；不平衡",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 19,
+  "word": "initiative",
+  "pos": "n.",
+  "mean": "倡议；主动权；首创精神；主动性adj.主动的；初步的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 20,
+  "word": "intervention",
+  "pos": "n.",
+  "mean": "干预；介入",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 21,
+  "word": "recommendation",
+  "pos": "n.",
+  "mean": "建议；推荐；推荐信；提议",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 22,
+  "word": "guideline",
+  "pos": "n.",
+  "mean": "指导方针；准则；指南",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 23,
+  "word": "aggravate",
+  "pos": "v.",
+  "mean": "加重；使恶化；使严重；激怒",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 24,
+  "word": "incentive",
+  "pos": "n.",
+  "mean": "激励；刺激；鼓励；诱因；动机",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 25,
+  "word": "compensation",
+  "pos": "n.",
+  "mean": "补偿；赔偿；报酬",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 26,
+  "word": "outweigh",
+  "pos": "v.",
+  "mean": "重于；大于；超过；比…重要",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 27,
+  "word": "counterpart",
+  "pos": "n.",
+  "mean": "对应的人（或事物）；职位相当的人；对等方",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 28,
+  "word": "emission",
+  "pos": "n.",
+  "mean": "排放；排放物；散发；发行",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 29,
+  "word": "alleviate",
+  "pos": "v.",
+  "mean": "减轻；缓和；减弱",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 30,
+  "word": "catastrophic",
+  "pos": "adj.",
+  "mean": "灾难性的；毁灭性的；悲惨的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 31,
+  "word": "accessible",
+  "pos": "adj.",
+  "mean": "易得到的；可得到的；易使用的；可进入的；可接近的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 32,
+  "word": "automation",
+  "pos": "n.",
+  "mean": "自动化；自动操作",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 33,
+  "word": "complicated",
+  "pos": "adj.",
+  "mean": "复杂的；难懂的；难解的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 34,
+  "word": "laborious",
+  "pos": "adj.",
+  "mean": "费力的；辛苦的；繁重的；耗时费力的；费劲的；繁琐的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 35,
+  "word": "innovate",
+  "pos": "v.",
+  "mean": "创新；革新",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 36,
+  "word": "originate",
+  "pos": "v.",
+  "mean": "起源；发源；产生；开创",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 37,
+  "word": "consistent",
+  "pos": "adj.",
+  "mean": "一致的；始终如一的；连续的",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 38,
+  "word": "identify",
+  "pos": "v.",
+  "mean": "识别；辨认；确认；鉴定；确定",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 39,
+  "word": "ideology",
+  "pos": "n.",
+  "mean": "意识形态；思想体系",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 40,
+  "word": "emerging",
+  "pos": "adj.",
+  "mean": "新兴的；出现的",
+  "page": 1,
+  "hl": 1
+ },
+ {
+  "id": 41,
+  "word": "cultivate",
+  "pos": "v.",
+  "mean": "培养；培育；种植",
+  "page": 1,
+  "hl": 0
+ },
+ {
+  "id": 42,
+  "word": "nurture",
+  "pos": "v.",
+  "mean": "养育；培育；培养；教养",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 43,
+  "word": "indicate",
+  "pos": "v.",
+  "mean": "表明；指示；暗示",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 44,
+  "word": "pursuit",
+  "pos": "n.",
+  "mean": "追求；寻找；追赶",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 45,
+  "word": "discrimination",
+  "pos": "n.",
+  "mean": "歧视；区别；辨别；识别",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 46,
+  "word": "bias",
+  "pos": "n.",
+  "mean": "偏见；偏向；偏心v.使有偏见；偏袒",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 47,
+  "word": "randomly",
+  "pos": "adv.",
+  "mean": "随机地；随意地",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 48,
+  "word": "metaphor",
+  "pos": "n.",
+  "mean": "隐喻；比喻；象征",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 49,
+  "word": "proportion",
+  "pos": "n.",
+  "mean": "比例；部分",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 50,
+  "word": "autonomy",
+  "pos": "n.",
+  "mean": "自治；自主；自我管理",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 51,
+  "word": "crave",
+  "pos": "v.",
+  "mean": "渴望；渴求",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 52,
+  "word": "attribute",
+  "pos": "v.",
+  "mean": "把…归因于n.属性；特质",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 53,
+  "word": "signal",
+  "pos": "n.",
+  "mean": "信号；标志；暗号v.发信号；表明",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 54,
+  "word": "confront",
+  "pos": "v.",
+  "mean": "面对；对抗；遭遇；使…无法回避；降临于；处理",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 55,
+  "word": "assume",
+  "pos": "v.",
+  "mean": "假定；假设；承担；认为",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 56,
+  "word": "consequence",
+  "pos": "n.",
+  "mean": "结果；后果",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 57,
+  "word": "occupation",
+  "pos": "n.",
+  "mean": "职业；工作；占据；占用",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 58,
+  "word": "deem",
+  "pos": "v.",
+  "mean": "认为；视为；相信",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 59,
+  "word": "trait",
+  "pos": "n.",
+  "mean": "特征；特性；特点",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 60,
+  "word": "reverse",
+  "pos": "v.",
+  "mean": "颠倒；逆转；撤销n.相反；逆转adj.反向的",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 61,
+  "word": "indicator",
+  "pos": "n.",
+  "mean": "指标；指示器；标志；迹象",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 62,
+  "word": "critic",
+  "pos": "n.",
+  "mean": "批评者；批评家；评论家",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 63,
+  "word": "appeal",
+  "pos": "v.",
+  "mean": "呼吁；恳求；吸引n.吸引力；感染力；魅力",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 64,
+  "word": "infrastructure",
+  "pos": "n.",
+  "mean": "基础设施；基础建设",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 65,
+  "word": "conservation",
+  "pos": "n.",
+  "mean": "保护；保护区",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 66,
+  "word": "biodiversity",
+  "pos": "n.",
+  "mean": "生物多样性",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 67,
+  "word": "incidence",
+  "pos": "n.",
+  "mean": "发生率",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 68,
+  "word": "profitable",
+  "pos": "adj.",
+  "mean": "有利可图的；有利润的；赢利的",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 69,
+  "word": "explicitly",
+  "pos": "adv.",
+  "mean": "明确地；明白地；清楚明确地",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 70,
+  "word": "dictate",
+  "pos": "v.",
+  "mean": "命令；口述；听写；强行规定n.指令；规定；命令；支配",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 71,
+  "word": "release",
+  "pos": "v.",
+  "mean": "释放；发布；发行；准予发表；发射",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 72,
+  "word": "implement",
+  "pos": "v.",
+  "mean": "实施；执行",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 73,
+  "word": "sequence",
+  "pos": "n.",
+  "mean": "顺序；次序；连续；一系列",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 74,
+  "word": "estimate",
+  "pos": "v.",
+  "mean": "估计；估价；评价n.估价；判断",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 75,
+  "word": "dominate",
+  "pos": "v.",
+  "mean": "支配；控制；主导；占优势",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 76,
+  "word": "purchase",
+  "pos": "v.",
+  "mean": "购买；获得；赢得",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 77,
+  "word": "manipulation",
+  "pos": "n.",
+  "mean": "操纵；操控；控制",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 78,
+  "word": "surveillance",
+  "pos": "n.",
+  "mean": "监视；监督",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 79,
+  "word": "proposal",
+  "pos": "n.",
+  "mean": "提议；建议",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 80,
+  "word": "devastating",
+  "pos": "adj.",
+  "mean": "毁灭性的；破坏性的",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 81,
+  "word": "confine",
+  "pos": "v.",
+  "mean": "限制；局限；限定；禁闭n.界限；范围；边界",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 82,
+  "word": "prioritize",
+  "pos": "v.",
+  "mean": "优先考虑；优先处理；把…区分优先次序",
+  "page": 2,
+  "hl": 1
+ },
+ {
+  "id": 83,
+  "word": "property",
+  "pos": "n.",
+  "mean": "财产；所有物；性质；特性；性能",
+  "page": 2,
+  "hl": 0
+ },
+ {
+  "id": 84,
+  "word": "rigorous",
+  "pos": "adj.",
+  "mean": "严格的；严苛的；严格缜密的",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 85,
+  "word": "motivate",
+  "pos": "v.",
+  "mean": "激励；激发；激发（兴趣或欲望）；给予动机",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 86,
+  "word": "inherently",
+  "pos": "adv.",
+  "mean": "内在地；固有地；与生俱来地",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 87,
+  "word": "exaggerate",
+  "pos": "v.",
+  "mean": "夸大；夸张",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 88,
+  "word": "highlight",
+  "pos": "v.",
+  "mean": "突出；强调",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 89,
+  "word": "revolutionary",
+  "pos": "adj.",
+  "mean": "革命性的；创新的",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 90,
+  "word": "diverse",
+  "pos": "adj.",
+  "mean": "多种多样的；不同的；多元的",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 91,
+  "word": "remedy",
+  "pos": "n.",
+  "mean": "补救措施；治疗方法；解决办法v.改正；改善；治疗",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 92,
+  "word": "alternative",
+  "pos": "n.",
+  "mean": "替代方案；可供选择的事物adj.可替代的；供选择的",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 93,
+  "word": "constraint",
+  "pos": "n.",
+  "mean": "限制；约束；局限；限定",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 94,
+  "word": "elementary",
+  "pos": "adj.",
+  "mean": "基本的；基础的；初级的",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 95,
+  "word": "susceptible",
+  "pos": "adj.",
+  "mean": "易受影响的；易受…伤害的；感情丰富的",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 96,
+  "word": "negotiate",
+  "pos": "v.",
+  "mean": "谈判；协商；商议",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 97,
+  "word": "convince",
+  "pos": "v.",
+  "mean": "说服；使信服；使确信",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 98,
+  "word": "stimulate",
+  "pos": "v.",
+  "mean": "刺激；激励；鼓舞",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 99,
+  "word": "degradation",
+  "pos": "n.",
+  "mean": "退化；恶化；衰退；降级；降格",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 100,
+  "word": "candidate",
+  "pos": "n.",
+  "mean": "候选人；申请者；候选事物；申请求职者；候选方案",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 101,
+  "word": "boost",
+  "pos": "v.",
+  "mean": "提高；促进；增加n.增强；推动",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 102,
+  "word": "marine",
+  "pos": "adj.",
+  "mean": "海洋的；海产的；海生的",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 103,
+  "word": "emulate",
+  "pos": "v.",
+  "mean": "模仿；效仿；效法；尽力赶上",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 104,
+  "word": "domestic",
+  "pos": "adj.",
+  "mean": "国内的；家庭的",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 105,
+  "word": "interaction",
+  "pos": "n.",
+  "mean": "互动；相互作用；相互影响",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 106,
+  "word": "contradict",
+  "pos": "v.",
+  "mean": "反驳；否定；与…矛盾",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 107,
+  "word": "expertise",
+  "pos": "n.",
+  "mean": "专门知识；专门技能；专业知识",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 108,
+  "word": "vanish",
+  "pos": "v.",
+  "mean": "消失；突然不见",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 109,
+  "word": "resentment",
+  "pos": "n.",
+  "mean": "怨恨；愤恨；憎恨",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 110,
+  "word": "discipline",
+  "pos": "n.",
+  "mean": "自制力；遵守纪律；学科v.训练；训导",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 111,
+  "word": "competition",
+  "pos": "n.",
+  "mean": "竞争；比赛",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 112,
+  "word": "consensus",
+  "pos": "n.",
+  "mean": "共识；一致意见",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 113,
+  "word": "assert",
+  "pos": "v.",
+  "mean": "断言；主张；坚称",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 114,
+  "word": "slash",
+  "pos": "v.",
+  "mean": "削减；大幅减少；猛砍n.削减",
+  "page": 3,
+  "hl": 1
+ },
+ {
+  "id": 115,
+  "word": "yield",
+  "pos": "v.",
+  "mean": "产出；生产；屈服；让步n.产量；收益",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 116,
+  "word": "variation",
+  "pos": "n.",
+  "mean": "变化；变异",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 117,
+  "word": "expansion",
+  "pos": "n.",
+  "mean": "扩张；膨胀；扩展",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 118,
+  "word": "essential",
+  "pos": "adj.",
+  "mean": "极其重要的；基本的；必要的；本质的n.要素；必需品",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 119,
+  "word": "advocate",
+  "pos": "v.",
+  "mean": "拥护；提倡；支持n.拥护者；倡导者",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 120,
+  "word": "access",
+  "pos": "n.",
+  "mean": "通道；机会；使用权v.进入；获取",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 121,
+  "word": "adolescent",
+  "pos": "n.",
+  "mean": "青少年adj.青春期的；青少年的",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 122,
+  "word": "livestock",
+  "pos": "n.",
+  "mean": "牲畜；家畜",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 123,
+  "word": "lag",
+  "pos": "v.",
+  "mean": "落后；滞后n.滞后；延迟",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 124,
+  "word": "consumption",
+  "pos": "n.",
+  "mean": "消费；消耗；消耗量",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 125,
+  "word": "assertion",
+  "pos": "n.",
+  "mean": "断言；主张",
+  "page": 3,
+  "hl": 0
+ },
+ {
+  "id": 126,
+  "word": "demonstrate",
+  "pos": "v.",
+  "mean": "证明；证实；展示",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 127,
+  "word": "isolate",
+  "pos": "v.",
+  "mean": "使隔离；使孤立adj.孤立的；单独的",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 128,
+  "word": "radical",
+  "pos": "adj.",
+  "mean": "激进的；彻底的；根本的n.激进分子",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 129,
+  "word": "chaos",
+  "pos": "n.",
+  "mean": "混乱；无序",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 130,
+  "word": "turmoil",
+  "pos": "n.",
+  "mean": "动荡；动乱；混乱；骚动",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 131,
+  "word": "struggle",
+  "pos": "v.",
+  "mean": "奋斗；挣扎；斗争；努力",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 132,
+  "word": "cause",
+  "pos": "n.",
+  "mean": "原因；事业；诉讼案由v.引起；使发生",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 133,
+  "word": "compel",
+  "pos": "v.",
+  "mean": "强迫；迫使",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 134,
+  "word": "tackle",
+  "pos": "v.",
+  "mean": "处理；应付；解决",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 135,
+  "word": "judgment",
+  "pos": "n.",
+  "mean": "判断；判决",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 136,
+  "word": "transform",
+  "pos": "v.",
+  "mean": "改变；转换；使转化",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 137,
+  "word": "endorse",
+  "pos": "v.",
+  "mean": "认可；支持",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 138,
+  "word": "refrain",
+  "pos": "v.",
+  "mean": "克制；抑制；避免n.副歌；叠句",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 139,
+  "word": "grid",
+  "pos": "n.",
+  "mean": "网格；电网；格子",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 140,
+  "word": "conceive",
+  "pos": "v.",
+  "mean": "构想；设想；构思",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 141,
+  "word": "collective",
+  "pos": "adj.",
+  "mean": "集体的；共同的n.集体；团体",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 142,
+  "word": "thrive",
+  "pos": "v.",
+  "mean": "兴旺；繁荣；茁壮成长",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 143,
+  "word": "independent",
+  "pos": "adj.",
+  "mean": "独立的；自主的",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 144,
+  "word": "sacrifice",
+  "pos": "v.",
+  "mean": "牺牲；献出n.牺牲；祭品",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 145,
+  "word": "factor",
+  "pos": "n.",
+  "mean": "因素；要素",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 146,
+  "word": "tendency",
+  "pos": "n.",
+  "mean": "倾向；趋势",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 147,
+  "word": "perceive",
+  "pos": "v.",
+  "mean": "感知；察觉；认为",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 148,
+  "word": "intervene",
+  "pos": "v.",
+  "mean": "干预；介入；干涉",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 149,
+  "word": "attendance",
+  "pos": "n.",
+  "mean": "出席；参加；到场",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 150,
+  "word": "principle",
+  "pos": "n.",
+  "mean": "原则；原理",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 151,
+  "word": "exploit",
+  "pos": "v.",
+  "mean": "利用；运用；剥削",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 152,
+  "word": "disguise",
+  "pos": "v.",
+  "mean": "伪装；掩饰；假扮",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 153,
+  "word": "substantial",
+  "pos": "adj.",
+  "mean": "大量的；可观的；实质的n.重要部分；本质",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 154,
+  "word": "noticeable",
+  "pos": "adj.",
+  "mean": "明显的；显著的；显而易见的；值得注意的",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 155,
+  "word": "account",
+  "pos": "v.",
+  "mean": "解释；说明n.账户；描述；报道",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 156,
+  "word": "arouse",
+  "pos": "v.",
+  "mean": "引起；唤起；唤醒",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 157,
+  "word": "forge",
+  "pos": "v.",
+  "mean": "锻造；伪造；形成n.锻炉",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 158,
+  "word": "sustainable",
+  "pos": "adj.",
+  "mean": "可持续的；持续性的；合理利用的",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 159,
+  "word": "collaborative",
+  "pos": "adj.",
+  "mean": "合作的；协作的",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 160,
+  "word": "endeavor",
+  "pos": "v.",
+  "mean": "努力；尽力n.努力；事业",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 161,
+  "word": "prosperity",
+  "pos": "n.",
+  "mean": "繁荣；兴旺；成功",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 162,
+  "word": "prevalence",
+  "pos": "n.",
+  "mean": "流行；盛行；普遍",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 163,
+  "word": "privilege",
+  "pos": "n.",
+  "mean": "特权；优待；特许",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 164,
+  "word": "responsibly",
+  "pos": "adv.",
+  "mean": "负责任地；负责地；有责任感地",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 165,
+  "word": "restore",
+  "pos": "v.",
+  "mean": "恢复；修复",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 166,
+  "word": "timber",
+  "pos": "n.",
+  "mean": "木材；林木",
+  "page": 4,
+  "hl": 1
+ },
+ {
+  "id": 167,
+  "word": "platform",
+  "pos": "n.",
+  "mean": "平台；站台",
+  "page": 4,
+  "hl": 0
+ },
+ {
+  "id": 168,
+  "word": "depression",
+  "pos": "n.",
+  "mean": "抑郁；抑郁症；萧条",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 169,
+  "word": "harassment",
+  "pos": "n.",
+  "mean": "骚扰；困扰",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 170,
+  "word": "curb",
+  "pos": "v.",
+  "mean": "遏制；抑制；限制",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 171,
+  "word": "artificial",
+  "pos": "adj.",
+  "mean": "人工的；人为的；虚假的",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 172,
+  "word": "relentless",
+  "pos": "adj.",
+  "mean": "无情的；持续强烈的；坚持不懈的",
+  "page": 5,
+  "hl": 1
+ },
+ {
+  "id": 173,
+  "word": "investment",
+  "pos": "n.",
+  "mean": "投资；投入",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 174,
+  "word": "willpower",
+  "pos": "n.",
+  "mean": "意志力；毅力",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 175,
+  "word": "exert",
+  "pos": "v.",
+  "mean": "施加；努力；运用",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 176,
+  "word": "route",
+  "pos": "n.",
+  "mean": "路线；线路",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 177,
+  "word": "track",
+  "pos": "v.",
+  "mean": "追踪；跟踪n.轨道；踪迹",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 178,
+  "word": "validate",
+  "pos": "v.",
+  "mean": "证实；确认；证明",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 179,
+  "word": "deliberate",
+  "pos": "adj.",
+  "mean": "故意的；蓄意的v.仔细考虑；研讨",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 180,
+  "word": "justification",
+  "pos": "n.",
+  "mean": "正当的理由；辩护",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 181,
+  "word": "retire",
+  "pos": "v.",
+  "mean": "退休；离去",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 182,
+  "word": "portray",
+  "pos": "v.",
+  "mean": "描绘；描写；描述",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 183,
+  "word": "exposure",
+  "pos": "n.",
+  "mean": "暴露；接触；揭露",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 184,
+  "word": "accelerate",
+  "pos": "v.",
+  "mean": "加速；提前",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 185,
+  "word": "assign",
+  "pos": "v.",
+  "mean": "分配；分派；指定",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 186,
+  "word": "barrier",
+  "pos": "n.",
+  "mean": "障碍；屏障",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 187,
+  "word": "sensor",
+  "pos": "n.",
+  "mean": "传感器",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 188,
+  "word": "efficiency",
+  "pos": "n.",
+  "mean": "效率；效能；功效",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 189,
+  "word": "leverage",
+  "pos": "n.",
+  "mean": "影响力；手段；杠杆作用v.利用",
+  "page": 5,
+  "hl": 1
+ },
+ {
+  "id": 190,
+  "word": "choke",
+  "pos": "v.",
+  "mean": "窒息；呛；使窒息",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 191,
+  "word": "scenario",
+  "pos": "n.",
+  "mean": "设想；方案；情节",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 192,
+  "word": "leisure",
+  "pos": "n.",
+  "mean": "闲暇；空闲；安逸",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 193,
+  "word": "illustrate",
+  "pos": "v.",
+  "mean": "阐明；举例说明",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 194,
+  "word": "predator",
+  "pos": "n.",
+  "mean": "捕食者；食肉动物；掠夺者",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 195,
+  "word": "ditch",
+  "pos": "n.",
+  "mean": "沟渠v.抛弃",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 196,
+  "word": "metropolitan",
+  "pos": "adj.",
+  "mean": "大都市的；大城市的",
+  "page": 5,
+  "hl": 1
+ },
+ {
+  "id": 197,
+  "word": "demographic",
+  "pos": "adj.",
+  "mean": "人口统计学的n.人口统计数据",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 198,
+  "word": "proximity",
+  "pos": "n.",
+  "mean": "接近；临近；亲近",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 199,
+  "word": "extract",
+  "pos": "v.",
+  "mean": "提取；拔出；摘录n.摘录；引文；榨出物",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 200,
+  "word": "prohibit",
+  "pos": "v.",
+  "mean": "禁止；阻止",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 201,
+  "word": "ingredient",
+  "pos": "n.",
+  "mean": "成分；原料；要素；组成部分",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 202,
+  "word": "delicate",
+  "pos": "adj.",
+  "mean": "微妙的；精美的；易碎的；易损的",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 203,
+  "word": "ironically",
+  "pos": "adv.",
+  "mean": "讽刺地",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 204,
+  "word": "interval",
+  "pos": "n.",
+  "mean": "间隔；间距",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 205,
+  "word": "scrutiny",
+  "pos": "n.",
+  "mean": "仔细检查；审查；详细审查；监视",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 206,
+  "word": "hostile",
+  "pos": "adj.",
+  "mean": "敌对的；不友善的；怀敌意的",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 207,
+  "word": "predictable",
+  "pos": "adj.",
+  "mean": "可预测的；可预言的",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 208,
+  "word": "transparent",
+  "pos": "adj.",
+  "mean": "透明的；显然的",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 209,
+  "word": "collaboration",
+  "pos": "n.",
+  "mean": "合作；协作",
+  "page": 5,
+  "hl": 0
+ },
+ {
+  "id": 210,
+  "word": "hectic",
+  "pos": "adj.",
+  "mean": "忙乱的；兴奋的；狂热的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 211,
+  "word": "extracurricular",
+  "pos": "adj.",
+  "mean": "课外的；业余的；学校课程以外的",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 212,
+  "word": "innovation",
+  "pos": "n.",
+  "mean": "创新；革新；改革",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 213,
+  "word": "adjustment",
+  "pos": "n.",
+  "mean": "调整；调节",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 214,
+  "word": "substitute",
+  "pos": "n.",
+  "mean": "替代品；代替者v.用…代替",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 215,
+  "word": "decline",
+  "pos": "v.",
+  "mean": "下降；衰退；减少；拒绝",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 216,
+  "word": "diversify",
+  "pos": "v.",
+  "mean": "使多样化；使变化",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 217,
+  "word": "precisely",
+  "pos": "adv.",
+  "mean": "精确地；准确地；恰好",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 218,
+  "word": "executive",
+  "pos": "n.",
+  "mean": "管理人员；主管adj.经营管理的",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 219,
+  "word": "constant",
+  "pos": "adj.",
+  "mean": "不变的；恒定的；持续不断的；经常发生的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 220,
+  "word": "misconception",
+  "pos": "n.",
+  "mean": "误解；错误观念",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 221,
+  "word": "arousal",
+  "pos": "n.",
+  "mean": "兴奋；觉醒",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 222,
+  "word": "prompt",
+  "pos": "v.",
+  "mean": "激起；促进；提示；鼓励adj.立即的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 223,
+  "word": "turnover",
+  "pos": "n.",
+  "mean": "营业额；人员流动率；离职率",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 224,
+  "word": "moody",
+  "pos": "adj.",
+  "mean": "喜怒无常的；情绪多变的；忧郁的",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 225,
+  "word": "deplete",
+  "pos": "v.",
+  "mean": "耗尽；用尽；使枯竭；大量减少",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 226,
+  "word": "dismiss",
+  "pos": "v.",
+  "mean": "摒弃；不予考虑；解散；解雇",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 227,
+  "word": "composition",
+  "pos": "n.",
+  "mean": "构成；成分",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 228,
+  "word": "setback",
+  "pos": "n.",
+  "mean": "挫折；阻碍；退步",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 229,
+  "word": "unconventional",
+  "pos": "adj.",
+  "mean": "非传统的；不因循守旧的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 230,
+  "word": "humanity",
+  "pos": "n.",
+  "mean": "人类；人性",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 231,
+  "word": "irrigation",
+  "pos": "n.",
+  "mean": "灌溉",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 232,
+  "word": "diligent",
+  "pos": "adj.",
+  "mean": "勤奋的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 233,
+  "word": "reflection",
+  "pos": "n.",
+  "mean": "影像；反映；映像",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 234,
+  "word": "inferior",
+  "pos": "adj.",
+  "mean": "较差的；低等的；比不上…的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 235,
+  "word": "suspicion",
+  "pos": "n.",
+  "mean": "怀疑；嫌疑",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 236,
+  "word": "reckless",
+  "pos": "adj.",
+  "mean": "鲁莽的；不计后果的",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 237,
+  "word": "untapped",
+  "pos": "adj.",
+  "mean": "未开发的；未利用的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 238,
+  "word": "advent",
+  "pos": "n.",
+  "mean": "到来；出现",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 239,
+  "word": "contemporary",
+  "pos": "adj.",
+  "mean": "当代的；同时代的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 240,
+  "word": "implication",
+  "pos": "n.",
+  "mean": "可能的影响；含义；暗示；言外之意",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 241,
+  "word": "opposition",
+  "pos": "n.",
+  "mean": "反对；对立",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 242,
+  "word": "retrieve",
+  "pos": "v.",
+  "mean": "找回；取回；恢复；重新得到",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 243,
+  "word": "intermediary",
+  "pos": "n.",
+  "mean": "媒介；中间人adj.中间的",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 244,
+  "word": "notoriously",
+  "pos": "adv.",
+  "mean": "臭名昭著地；众所周知地；声名狼藉地",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 245,
+  "word": "precision",
+  "pos": "n.",
+  "mean": "精确；准确",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 246,
+  "word": "faculty",
+  "pos": "n.",
+  "mean": "全体教师；教职员工；能力；才能",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 247,
+  "word": "fatigue",
+  "pos": "n.",
+  "mean": "疲劳；疲乏",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 248,
+  "word": "strategy",
+  "pos": "n.",
+  "mean": "策略；计谋",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 249,
+  "word": "climate",
+  "pos": "n.",
+  "mean": "气候",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 250,
+  "word": "ordeal",
+  "pos": "n.",
+  "mean": "磨难；折磨",
+  "page": 6,
+  "hl": 1
+ },
+ {
+  "id": 251,
+  "word": "excessive",
+  "pos": "adj.",
+  "mean": "过度的；过分的",
+  "page": 6,
+  "hl": 0
+ },
+ {
+  "id": 252,
+  "word": "correlate",
+  "pos": "v.",
+  "mean": "和…相关；相互影响；彼此依赖",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 253,
+  "word": "regulate",
+  "pos": "v.",
+  "mean": "调节；规定；管理；控制",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 254,
+  "word": "constrain",
+  "pos": "v.",
+  "mean": "限制；约束；强迫",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 255,
+  "word": "emerge",
+  "pos": "v.",
+  "mean": "出现；浮现；显露",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 256,
+  "word": "novel",
+  "pos": "adj.",
+  "mean": "新奇的；新颖的n.小说",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 257,
+  "word": "conventional",
+  "pos": "adj.",
+  "mean": "传统的；常规的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 258,
+  "word": "preserve",
+  "pos": "v.",
+  "mean": "保护；保存；保持；维持",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 259,
+  "word": "manufacture",
+  "pos": "v.",
+  "mean": "制造；生产n.制造；制造业",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 260,
+  "word": "manipulate",
+  "pos": "v.",
+  "mean": "操纵；操作；使用",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 261,
+  "word": "sophisticated",
+  "pos": "adj.",
+  "mean": "复杂的；精密的",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 262,
+  "word": "catastrophe",
+  "pos": "n.",
+  "mean": "灾难；大祸；横祸",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 263,
+  "word": "complex",
+  "pos": "adj.",
+  "mean": "复杂的n.综合体",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 264,
+  "word": "psychological",
+  "pos": "adj.",
+  "mean": "心理的；心灵的；心理学的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 265,
+  "word": "halt",
+  "pos": "v.",
+  "mean": "停止；使中断n.停止",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 266,
+  "word": "routine",
+  "pos": "n.",
+  "mean": "常规；惯例adj.例行公事的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 267,
+  "word": "combination",
+  "pos": "n.",
+  "mean": "结合；混合；联合",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 268,
+  "word": "profoundly",
+  "pos": "adv.",
+  "mean": "深刻地；极大地；深深地",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 269,
+  "word": "disposable",
+  "pos": "adj.",
+  "mean": "一次性的；可自由支配的；可任意处理的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 270,
+  "word": "irrational",
+  "pos": "adj.",
+  "mean": "不理性的；无理性的；不合理的",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 271,
+  "word": "mould",
+  "pos": "v.",
+  "mean": "塑造；模压；施加影响n.模具",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 272,
+  "word": "perspective",
+  "pos": "n.",
+  "mean": "观点；看法；远景",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 273,
+  "word": "entrepreneur",
+  "pos": "n.",
+  "mean": "企业家；创业者",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 274,
+  "word": "resident",
+  "pos": "n.",
+  "mean": "居民；住户",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 275,
+  "word": "community",
+  "pos": "n.",
+  "mean": "社区；群体；社会",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 276,
+  "word": "passive",
+  "pos": "adj.",
+  "mean": "消极的；被动的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 277,
+  "word": "approach",
+  "pos": "n.",
+  "mean": "方法；方式v.靠近；接近",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 278,
+  "word": "entity",
+  "pos": "n.",
+  "mean": "实体；存在；本质",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 279,
+  "word": "accurate",
+  "pos": "adj.",
+  "mean": "精确的；准确的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 280,
+  "word": "classical",
+  "pos": "adj.",
+  "mean": "古典的；经典的；传统的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 281,
+  "word": "diffusion",
+  "pos": "n.",
+  "mean": "扩散；传播",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 282,
+  "word": "dynamic",
+  "pos": "adj.",
+  "mean": "动态的；充满活力的n.动态",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 283,
+  "word": "bilingual",
+  "pos": "adj.",
+  "mean": "双语的；会说两种语言的n.说两种语言的人",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 284,
+  "word": "virtual",
+  "pos": "adj.",
+  "mean": "虚拟的；事实上的；实质上的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 285,
+  "word": "outperform",
+  "pos": "v.",
+  "mean": "胜过；做得比…好",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 286,
+  "word": "dominant",
+  "pos": "adj.",
+  "mean": "占优势的；主导的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 287,
+  "word": "advocacy",
+  "pos": "n.",
+  "mean": "拥护；倡议；主张",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 288,
+  "word": "extinction",
+  "pos": "n.",
+  "mean": "灭绝；消亡",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 289,
+  "word": "authentic",
+  "pos": "adj.",
+  "mean": "真正的；真实的",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 290,
+  "word": "evaluate",
+  "pos": "v.",
+  "mean": "评价；评估；估价",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 291,
+  "word": "prescribe",
+  "pos": "v.",
+  "mean": "规定；开处方",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 292,
+  "word": "hamper",
+  "pos": "v.",
+  "mean": "妨碍；阻碍；束缚",
+  "page": 7,
+  "hl": 1
+ },
+ {
+  "id": 293,
+  "word": "compile",
+  "pos": "v.",
+  "mean": "汇编；编写；汇集",
+  "page": 7,
+  "hl": 0
+ },
+ {
+  "id": 294,
+  "word": "presumably",
+  "pos": "adv.",
+  "mean": "大概；可能；很可能",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 295,
+  "word": "flourish",
+  "pos": "v.",
+  "mean": "繁荣；茂盛；茁壮成长",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 296,
+  "word": "irritating",
+  "pos": "adj.",
+  "mean": "恼人的；令人恼火的；惹人生气的",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 297,
+  "word": "dispute",
+  "pos": "n.",
+  "mean": "争论；辩论v.对…提出质疑",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 298,
+  "word": "structural",
+  "pos": "adj.",
+  "mean": "结构上的；结构性的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 299,
+  "word": "devise",
+  "pos": "v.",
+  "mean": "设计；发明；想出",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 300,
+  "word": "restriction",
+  "pos": "n.",
+  "mean": "限制；约束",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 301,
+  "word": "ecological",
+  "pos": "adj.",
+  "mean": "生态的；生态学的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 302,
+  "word": "inspiration",
+  "pos": "n.",
+  "mean": "灵感；鼓舞",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 303,
+  "word": "innovative",
+  "pos": "adj.",
+  "mean": "创新的；革新的；新发明的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 304,
+  "word": "evolutionary",
+  "pos": "adj.",
+  "mean": "进化的；演变的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 305,
+  "word": "integrate",
+  "pos": "v.",
+  "mean": "使合并；使融入；合并；融入",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 306,
+  "word": "spectrum",
+  "pos": "n.",
+  "mean": "范围；幅度；光谱",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 307,
+  "word": "abstract",
+  "pos": "adj.",
+  "mean": "抽象的n.摘要",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 308,
+  "word": "conviction",
+  "pos": "n.",
+  "mean": "信念；坚定的看法；坚信；定罪",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 309,
+  "word": "debate",
+  "pos": "v.",
+  "mean": "辩论；争论",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 310,
+  "word": "restoration",
+  "pos": "n.",
+  "mean": "修复；恢复",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 311,
+  "word": "concrete",
+  "pos": "adj.",
+  "mean": "具体的；混凝土的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 312,
+  "word": "consumer",
+  "pos": "n.",
+  "mean": "消费者；用户；顾客",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 313,
+  "word": "impact",
+  "pos": "n.",
+  "mean": "影响；冲击v.产生影响；撞击",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 314,
+  "word": "manufacturer",
+  "pos": "n.",
+  "mean": "制造商；制造厂",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 315,
+  "word": "prominent",
+  "pos": "adj.",
+  "mean": "重要的；突出的；著名的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 316,
+  "word": "sufficient",
+  "pos": "adj.",
+  "mean": "足够的；充足的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 317,
+  "word": "selective",
+  "pos": "adj.",
+  "mean": "选择性的；严格筛选的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 318,
+  "word": "external",
+  "pos": "adj.",
+  "mean": "外部的；外来的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 319,
+  "word": "interpretation",
+  "pos": "n.",
+  "mean": "解释；说明；翻译",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 320,
+  "word": "subtle",
+  "pos": "adj.",
+  "mean": "微妙的；细微的",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 321,
+  "word": "habitat",
+  "pos": "n.",
+  "mean": "栖息地；生活环境",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 322,
+  "word": "erosion",
+  "pos": "n.",
+  "mean": "侵蚀；腐蚀；逐步削弱",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 323,
+  "word": "statistic",
+  "pos": "n.",
+  "mean": "统计数据；统计学",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 324,
+  "word": "self-esteem",
+  "pos": "n.",
+  "mean": "自尊（心）",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 325,
+  "word": "crisis",
+  "pos": "n.",
+  "mean": "危机",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 326,
+  "word": "evolve",
+  "pos": "v.",
+  "mean": "进化；逐步发展",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 327,
+  "word": "reveal",
+  "pos": "v.",
+  "mean": "揭示；透露",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 328,
+  "word": "assessment",
+  "pos": "n.",
+  "mean": "评估；评价",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 329,
+  "word": "underprivileged",
+  "pos": "adj.",
+  "mean": "贫困的；底层的",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 330,
+  "word": "evidence",
+  "pos": "n.",
+  "mean": "证据；根据；证明",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 331,
+  "word": "argument",
+  "pos": "n.",
+  "mean": "观点；论据；理由；争论",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 332,
+  "word": "analogy",
+  "pos": "n.",
+  "mean": "类比；相似",
+  "page": 8,
+  "hl": 1
+ },
+ {
+  "id": 333,
+  "word": "witness",
+  "pos": "v.",
+  "mean": "目睹；见证；目击",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 334,
+  "word": "gratitude",
+  "pos": "n.",
+  "mean": "感激之情；感谢",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 335,
+  "word": "generate",
+  "pos": "v.",
+  "mean": "产生；引起",
+  "page": 8,
+  "hl": 0
+ },
+ {
+  "id": 336,
+  "word": "entertainment",
+  "pos": "n.",
+  "mean": "娱乐；招待",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 337,
+  "word": "productivity",
+  "pos": "n.",
+  "mean": "生产率；生产力",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 338,
+  "word": "opt",
+  "pos": "v.",
+  "mean": "选择；决定",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 339,
+  "word": "object",
+  "pos": "n.",
+  "mean": "物体；实物",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 340,
+  "word": "advance",
+  "pos": "v.",
+  "mean": "推进；前进n.进步；发展",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 341,
+  "word": "recruit",
+  "pos": "v.",
+  "mean": "招募；招聘",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 342,
+  "word": "possession",
+  "pos": "n.",
+  "mean": "拥有；持有；财产",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 343,
+  "word": "robotic",
+  "pos": "adj.",
+  "mean": "机器人的；机械的",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 344,
+  "word": "minimal",
+  "pos": "adj.",
+  "mean": "极小的；最少的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 345,
+  "word": "supervision",
+  "pos": "n.",
+  "mean": "监督；管理",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 346,
+  "word": "oversight",
+  "pos": "n.",
+  "mean": "监督；疏忽",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 347,
+  "word": "eager",
+  "pos": "adj.",
+  "mean": "渴望的；热切的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 348,
+  "word": "keen",
+  "pos": "adj.",
+  "mean": "渴望的；敏锐的；热衷的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 349,
+  "word": "headline",
+  "pos": "n.",
+  "mean": "标题；头条新闻",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 350,
+  "word": "version",
+  "pos": "n.",
+  "mean": "版本；说法",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 351,
+  "word": "attachment",
+  "pos": "n.",
+  "mean": "依恋；附件",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 352,
+  "word": "acute",
+  "pos": "adj.",
+  "mean": "严重的；急性的",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 353,
+  "word": "master",
+  "pos": "n.",
+  "mean": "大师；硕士v.精通adj.精通的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 354,
+  "word": "catering",
+  "pos": "n.",
+  "mean": "（会议或社交活动的）饮食服务；酒席承办",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 355,
+  "word": "traffic",
+  "pos": "n.",
+  "mean": "交通；流量",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 356,
+  "word": "automatic",
+  "pos": "adj.",
+  "mean": "自动的；无意识的n.自动装置",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 357,
+  "word": "upgrade",
+  "pos": "v.",
+  "mean": "升级；提升；改进",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 358,
+  "word": "synchronize",
+  "pos": "v.",
+  "mean": "同步；使一致",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 359,
+  "word": "deviation",
+  "pos": "n.",
+  "mean": "偏离；偏差",
+  "page": 9,
+  "hl": 1
+ },
+ {
+  "id": 360,
+  "word": "pedestrian",
+  "pos": "n.",
+  "mean": "行人；步行者",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 361,
+  "word": "cautionary",
+  "pos": "adj.",
+  "mean": "警告的；告诫的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 362,
+  "word": "quit",
+  "pos": "v.",
+  "mean": "放弃；退出",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 363,
+  "word": "committed",
+  "pos": "adj.",
+  "mean": "坚定的；尽忠的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 364,
+  "word": "trap",
+  "pos": "n.",
+  "mean": "陷阱；困境v.困住；诱捕",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 365,
+  "word": "stuck",
+  "pos": "adj.",
+  "mean": "卡住的；被困的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 366,
+  "word": "ideally",
+  "pos": "adv.",
+  "mean": "理想地；完美地",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 367,
+  "word": "stake",
+  "pos": "n.",
+  "mean": "股份；重大利益；桩v.拿…冒险；以…打赌",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 368,
+  "word": "withdraw",
+  "pos": "v.",
+  "mean": "撤回；退出",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 369,
+  "word": "intelligent",
+  "pos": "adj.",
+  "mean": "聪明的；有才智的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 370,
+  "word": "discern",
+  "pos": "v.",
+  "mean": "察觉；辨别",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 371,
+  "word": "contemplate",
+  "pos": "v.",
+  "mean": "沉思；考虑",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 372,
+  "word": "vital",
+  "pos": "adj.",
+  "mean": "至关重要的；生命的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 373,
+  "word": "numerous",
+  "pos": "adj.",
+  "mean": "众多的；许多的",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 374,
+  "word": "undervalue",
+  "pos": "v.",
+  "mean": "低估；看轻",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 375,
+  "word": "narrow",
+  "pos": "adj.",
+  "mean": "狭窄的；狭隘的v.缩小",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 376,
+  "word": "bridge",
+  "pos": "n.",
+  "mean": "桥；桥梁v.架桥；弥合",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 377,
+  "word": "gap",
+  "pos": "n.",
+  "mean": "差距；缺口",
+  "page": 9,
+  "hl": 0
+ },
+ {
+  "id": 378,
+  "word": "divide",
+  "pos": "v.",
+  "mean": "分开；划分；除n.分歧；差异",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 379,
+  "word": "ancestry",
+  "pos": "n.",
+  "mean": "祖先；血统",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 380,
+  "word": "immigration",
+  "pos": "n.",
+  "mean": "移民；移居",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 381,
+  "word": "patron",
+  "pos": "n.",
+  "mean": "赞助人；资助人",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 382,
+  "word": "champion",
+  "pos": "n.",
+  "mean": "冠军；拥护者v.拥护；支持",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 383,
+  "word": "startling",
+  "pos": "adj.",
+  "mean": "令人吃惊的；惊人的",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 384,
+  "word": "praise",
+  "pos": "n.",
+  "mean": "赞美；称赞v.表扬；赞扬",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 385,
+  "word": "credit",
+  "pos": "n.",
+  "mean": "信用；赞誉；学分v.相信；把…归于",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 386,
+  "word": "urge",
+  "pos": "v.",
+  "mean": "敦促；强烈要求n.冲动",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 387,
+  "word": "utilize",
+  "pos": "v.",
+  "mean": "利用；使用",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 388,
+  "word": "graze",
+  "pos": "v.",
+  "mean": "放牧；吃草；擦伤n.擦伤",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 389,
+  "word": "allegation",
+  "pos": "n.",
+  "mean": "声称；指控；说法",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 390,
+  "word": "portion",
+  "pos": "n.",
+  "mean": "部分；份额",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 391,
+  "word": "nutritional",
+  "pos": "adj.",
+  "mean": "营养的；滋养的",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 392,
+  "word": "cure-all",
+  "pos": "n.",
+  "mean": "万灵丹；万能药",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 393,
+  "word": "solitude",
+  "pos": "n.",
+  "mean": "独处；孤独",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 394,
+  "word": "abundant",
+  "pos": "adj.",
+  "mean": "大量的；充裕的",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 395,
+  "word": "penalty",
+  "pos": "n.",
+  "mean": "处罚；惩罚",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 396,
+  "word": "withdrawal",
+  "pos": "n.",
+  "mean": "撤退；退出",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 397,
+  "word": "plot",
+  "pos": "n.",
+  "mean": "情节v.绘制；策划",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 398,
+  "word": "chart",
+  "pos": "n.",
+  "mean": "图表v.绘制；规划",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 399,
+  "word": "ultimately",
+  "pos": "adv.",
+  "mean": "最终；最后",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 400,
+  "word": "wander",
+  "pos": "v.",
+  "mean": "漫步；徘徊；走神",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 401,
+  "word": "individualism",
+  "pos": "n.",
+  "mean": "个人主义；利己主义",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 402,
+  "word": "collectivism",
+  "pos": "n.",
+  "mean": "集体主义",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 403,
+  "word": "tie",
+  "pos": "n.",
+  "mean": "领带；联系；平局v.系；连接",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 404,
+  "word": "confide",
+  "pos": "v.",
+  "mean": "吐露；信赖",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 405,
+  "word": "reevaluate",
+  "pos": "v.",
+  "mean": "重新评价；重新评估",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 406,
+  "word": "exceptional",
+  "pos": "adj.",
+  "mean": "杰出的；例外的",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 407,
+  "word": "preach",
+  "pos": "v.",
+  "mean": "宣扬；布道",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 408,
+  "word": "invest",
+  "pos": "v.",
+  "mean": "投资；投入",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 409,
+  "word": "complacent",
+  "pos": "adj.",
+  "mean": "自满的；沾沾自喜的",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 410,
+  "word": "pursue",
+  "pos": "v.",
+  "mean": "追求；从事",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 411,
+  "word": "celebrate",
+  "pos": "v.",
+  "mean": "颂扬；歌颂",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 412,
+  "word": "equity",
+  "pos": "n.",
+  "mean": "公平；股本",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 413,
+  "word": "fiction",
+  "pos": "n.",
+  "mean": "小说；虚构",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 414,
+  "word": "honor",
+  "pos": "n.",
+  "mean": "荣誉；尊敬v.尊敬；给予荣誉",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 415,
+  "word": "legacy",
+  "pos": "n.",
+  "mean": "遗产；遗留问题",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 416,
+  "word": "split",
+  "pos": "v.",
+  "mean": "分裂；分开",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 417,
+  "word": "polarization",
+  "pos": "n.",
+  "mean": "极化；两极分化",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 418,
+  "word": "commit",
+  "pos": "v.",
+  "mean": "承诺；犯（罪）",
+  "page": 10,
+  "hl": 0
+ },
+ {
+  "id": 419,
+  "word": "inclusive",
+  "pos": "adj.",
+  "mean": "包容的；包含的",
+  "page": 10,
+  "hl": 0
+ }
+]

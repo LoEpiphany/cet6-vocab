@@ -1,0 +1,21 @@
+const { chromium } = require('playwright-core');
+const EDGE = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
+(async () => {
+  const b = await chromium.launch({ executablePath: EDGE, headless: true });
+  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
+  const errs = [];
+  p.on('pageerror', e => errs.push(String(e)));
+  await p.goto('file:///C:/Users/Lenovo/Desktop/%E5%85%B3%E4%BA%8E%E5%85%AD%E7%BA%A7/2026-11-23/cet6-vocab/outputs/index.html');
+  await p.waitForTimeout(300);
+  console.log('index file pre:', await p.evaluate(() => ({ loaded: !!window.__DICT_DATA__, err: document.body.innerText.slice(0, 30) })));
+  await p.evaluate(() => dictOpen('study'));
+  await p.waitForTimeout(2000);
+  console.log('index file lookup:', await p.evaluate(() => ({ loaded: !!window.__DICT_DATA__, sheet: document.getElementById('sheet').classList.contains('on'), text: document.getElementById('sheetBox').innerText.replace(/\n+/g, ' | ').slice(0, 140) })));
+  await p.goto('file:///C:/Users/Lenovo/Desktop/%E5%85%B3%E4%BA%8E%E5%85%AD%E7%BA%A7/2026-11-23/cet6-vocab/outputs/%E5%AD%A6%E4%B9%A0%E6%89%8B%E5%86%8C.html');
+  await p.waitForTimeout(300);
+  await p.evaluate(() => dictOpen('study'));
+  await p.waitForTimeout(2000);
+  console.log('manual file lookup:', await p.evaluate(() => ({ loaded: !!window.__DICT_DATA__, on: document.getElementById('dictMask').classList.contains('on'), text: document.getElementById('dictBody').innerText.replace(/\n+/g, ' | ').slice(0, 140) })));
+  console.log('errors:', errs);
+  await b.close();
+})();

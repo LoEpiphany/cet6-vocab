@@ -1,0 +1,33 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+
+# ---- Node ----
+node_modules/
+package-lock.json
+
+# ---- OCR / 运行库（pip 解包的第三方依赖，非项目代码，体积 600MB+）----
+work/ocrlibs/
+work/ocrlibs310/
+
+# ---- 中间构建产物（从 PDF 裁切/渲染/OCR 出来的图与文本，可重新生成）----
+work/c2/
+work/crops/
+work/pages/
+work/raw/
+work/enrich/
+work/essay_raw/
+work/trans/
+work/edgeprof_a/
+
+# ---- 渲染缓存与大体积数据 ----
+work/ecdict.csv
+work/*.db
+
+# ---- 截图、日志、临时验证数据 ----
+work/*.png
+work/*.log
+work/check.js
+work/export_test.json
+work/import_test.json

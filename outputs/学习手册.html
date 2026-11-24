@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>六级阅读词汇 · 学习手册</title>
+<style>
+:root{
+  --bg:#f6f7f6; --card:#fff; --ink:#1e2422; --sub:#6d766f; --line:#e4e8e3;
+  --accent:#2f6b58; --accent-soft:#eaf1ed; --sand:#f7f2e8; --sand-line:#e8ddc8;
+  --warn:#8a6a2f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.75;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 18px 80px}
+header{padding:34px 0 16px;border-bottom:1px solid var(--line);margin-bottom:22px}
+h1{font-size:25px;margin:0;letter-spacing:.5px;font-weight:680}
+.sub{color:var(--sub);font-size:13.5px;margin-top:8px}
+.meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--sub)}
+.meta b{color:var(--accent);font-size:17px;font-weight:650;display:block;line-height:1.3}
+h2{font-size:19px;margin:38px 0 6px;font-weight:650;letter-spacing:.3px}
+h2 .num{color:var(--accent);font-weight:600;margin-right:8px;font-variant-numeric:tabular-nums}
+h3{font-size:15.5px;margin:22px 0 6px;font-weight:620}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:5px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+.tip{background:var(--accent-soft);border:1px solid #cfe0d6;border-radius:12px;padding:12px 15px;margin:12px 0;font-size:14px}
+.warn{background:var(--sand);border:1px solid var(--sand-line);border-radius:12px;padding:12px 15px;margin:12px 0;font-size:14px;color:#5d4a24}
+.quote{background:#fafbfa;border-left:3px solid #d5ded7;border-radius:0 10px 10px 0;padding:12px 15px;margin:12px 0;font-size:14px;color:#4a544d}
+.toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:14px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted #cfd6d0}
+.toc ol{columns:2;column-gap:26px;padding-left:18px;margin:6px 0}
+.toc li{margin:4px 0;break-inside:avoid}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid #eef0ed;vertical-align:top}
+th{font-weight:550;color:var(--sub);font-size:12.5px;background:#fafbfa}
+tr.today td{background:#f3f8f4}
+.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:6px;background:var(--accent-soft);color:var(--accent);margin-right:4px;vertical-align:1px}
+.tag.sand{background:var(--sand);color:var(--warn)}
+.story{font-size:16px;line-height:2;letter-spacing:.15px;margin:10px 0 4px}
+.story b{font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:0 2px}
+.words{font-size:13px;color:#4a544d;line-height:2}
+.words b{color:var(--ink)}
+.recall{font-size:13.5px;color:var(--sub);background:#fafbfa;border-radius:9px;padding:10px 12px;margin-top:8px;line-height:1.8}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}.toc ol{columns:1}}
+.small{font-size:12.5px;color:var(--sub)}
+.k{font-weight:600}
+.divider{height:1px;background:var(--line);margin:26px 0}
+.top{position:fixed;right:16px;bottom:20px;background:#fff;border:1px solid var(--line);border-radius:50%;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--sub);font-size:16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.btnlink{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;
+  text-decoration:none;padding:11px 18px;border-radius:11px;font-size:14px;font-weight:550;min-height:44px}
+.btnlink.line{background:#fff;color:var(--accent);border:1px solid #cfe0d6}
+.linkbox{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+footer{margin-top:40px;font-size:12px;color:var(--sub);line-height:1.8;border-top:1px solid var(--line);padding-top:14px}
+.dict-mask{position:fixed;inset:0;background:rgba(20,26,23,.35);display:none;align-items:flex-end;z-index:100}
+.dict-mask.on{display:flex}
+.dict-pop{background:#fff;width:100%;max-width:800px;margin:0 auto;border-radius:18px 18px 0 0;padding:16px 20px 26px;max-height:82vh;overflow:auto;box-shadow:0 -8px 30px rgba(0,0,0,.12)}
+.dict-head{display:flex;align-items:center;gap:8px}
+.dict-x{margin-left:auto;border:0;background:#f2f4f1;border-radius:50%;width:34px;height:34px;font-size:20px;color:#6d766f;cursor:pointer;line-height:1}
+.dict-word{font-size:30px;font-weight:650;margin-top:8px;line-height:1.2;word-break:break-word}
+.dict-phon{color:#6d766f;font-size:13px;margin-top:2px}
+.dict-mean{font-size:15px;line-height:1.75;margin-top:10px}
+.dict-mean div{padding:2px 0}
+.dict-meta{font-size:12.5px;color:#6d766f;line-height:1.7;margin-top:8px}
+.dict-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.dict-actions button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 14px;font-family:inherit;font-size:13.5px;color:var(--ink);min-height:42px;cursor:pointer}
+.dict-actions button.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>六级阅读词汇 · 学习手册</h1>
+  <div class="sub">两册 2089 个词（去重），19 天。手册讲怎么记，工具（index.html）负责练。</div>
+  <div class="meta">
+    <div><b>2089</b>词，两册真题词汇（419 + 1945，重合 275）</div>
+    <div><b>157</b>L1 高频词（两册合计）</div>
+    <div><b>12</b>组情景故事</div>
+    <div><b>55–70</b>每天分钟（分三段）</div>
+  </div>
+  <div class="linkbox">
+    <a class="btnlink" href="index.html">打开背诵工具 index.html</a>
+    <a class="btnlink line" href="#s7">直接看每日计划</a>
+  </div>
+</header>
+
+<div class="toc">
+  <b>目录</b>
+  <ol>
+    <li><a href="#s1">先搞清楚：手册和工具各干什么</a></li>
+    <li><a href="#s2">记忆研究里真正管用的 9 条</a></li>
+    <li><a href="#s3">情景故事：把 10 个词串成一条线</a></li>
+    <li><a href="#s4">联想助记：难词的钩子</a></li>
+    <li><a href="#s5">吃、喝、睡：有依据的那部分</a></li>
+    <li><a href="#s6">休息节点与脑力微活动</a></li>
+    <li><a href="#s7">到考试的每日计划</a></li>
+    <li><a href="#s8">最后 48 小时与考场用法</a></li>
+    <li><a href="#s9">参考文献</a></li>
+    <li><a href="#s10">查词词典：来源与边界</a></li>
+    <li><a href="#s11">写作专项：骨架、语料、手感</a></li>
+  </ol>
+</div>
+
+<h2 id="s1"><span class="num">01</span>先搞清楚：手册和工具各干什么</h2>
+<p>背单词失败，通常不是因为不努力，而是把时间花在了"看"上。看懂一个词，和能在阅读里三秒认出它，是两种能力。前者靠读，后者只能靠"回忆"和"重复"。</p>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">手册负责：怎么记</h3>
+    <ul>
+      <li>每个词该抓什么（常考义项、搭配、例句语境）</li>
+      <li>一组 10 个词怎么用故事串起来</li>
+      <li>难词的词根、谐音、画面钩子</li>
+      <li>每天三段怎么分、什么时候休息</li>
+      <li>吃什么、睡多久、怎么用咖啡因</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">工具负责：怎么练</h3>
+    <ul>
+      <li>卡片速记 + 发音跟读</li>
+      <li>7 种题型轮换自测，答错当场重刷</li>
+      <li>按 1/2/4/8/16 天排复习</li>
+      <li>错题本、加强队列（眼熟想不起）</li>
+      <li>12 组故事阅读，读完直接测这一组</li>
+    </ul>
+  </div>
+</div>
+<div class="tip"><b>最短路径：</b>打开 <a href="index.html">index.html</a> → 今日页点「开始今日学习」→ 做完一轮看小结 → 错的词去「错题本」再刷一遍。手册在你觉得"记不住、烦、困"的时候翻开看对应章节。</div>
+
+<h2 id="s2"><span class="num">02</span>记忆研究里真正管用的 9 条</h2>
+<p>这一节只写能落到今天晚上的动作。每条都回答三件事：怎么做、什么时候用、别做什么。</p>
+
+<div class="card">
+  <h3 style="margin-top:0">① 主动回忆：先想，再看（最重要的一条）</h3>
+  <p><b>怎么做：</b>卡片只显示英文，逼自己先把中文说出来，再翻面。说不出也没关系——"想不起来"的那几秒，正是记忆被加固的时刻。每天至少一轮「自测」，不要只翻卡片。</p>
+  <p><b>什么时候用：</b>学完当天、第二天早上、考前。任何"我好像会了"的时刻，都该用回忆验证一次。</p>
+  <p><b>别做：</b>反复读释义、反复划线、抄写单词表。这些让人"感觉熟悉"，但回忆时仍然空白（Dunlosky 等 2013 年的综述把自测和分散练习列为仅有的两个"高效"方法，其余如划重点、重读都评为低效）。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">② 间隔重复：1 / 2 / 4 / 8 / 16 天</h3>
+  <p><b>怎么做：</b>工具里每个词有 0–5 阶，答对升一阶，下次复习间隔依次是 1、2、4、8、16 天；答错降阶并当天重来。你不需要自己算，按「今日安排」走就行。</p>
+  <p><b>什么时候用：</b>每天都用。同一天内也分三段（早、午、晚），间隔 4–6 小时，这叫"分散练习"，比一口气背一小时记得久得多（Cepeda 等 2006 年的元分析）。</p>
+  <p><b>别做：</b>为了"刷完"而连点"记住了"。升阶太快，间隔会拉长，反而更容易忘。诚实一点，答不上就让它降阶。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">③ 交错练习：题型换着来，别一个姿势刷到底</h3>
+  <p><b>怎么做：</b>工具的题型默认全开（英→中、中→英、挖空、语境、搭配、辨析、听写），系统会尽量不连着出同一种。同一批词换五六种问法，脑子里建立的是多条提取路径。</p>
+  <p><b>什么时候用：</b>词的"第一遍"用集中学习（一次看 20 个同层词）更省力；从第二天起改成交错测试。这就是"先集中、后交错"。</p>
+  <p><b>别做：</b>只练一种题型（比如只看英选中）。考场上阅读是"英文→意义"，但写作要用"中文→英文"，两边都得通。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">④ 精细加工：给每个词挂三个问题</h3>
+  <p><b>怎么做：</b>看到新词，问自己三句：它常和哪个词搭配？它和哪个学过的词长得像、意思差在哪？我会在什么场景用它？工具里每个词都配了搭配、例句和易混辨析，就是给这三个问题准备的。</p>
+  <p><b>什么时候用：</b>第一次见新词时花 20 秒做一次；之后复习只用回忆，不必重复。</p>
+  <p><b>别做：</b>只记一个中文词。"eliminate = 消除"这种单点连接很脆；记成"eliminate the risk / be eliminated from"就结实得多。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">⑤ 关键词法 / 谐音：只给难词用，24 小时内回到真句子</h3>
+  <p><b>怎么做：</b>挑一个发音接近的中文词，配一个夸张的画面。例：curb（遏制）→"克吧，克制住"；slash（大幅削减）→想象刀"唰"一下，价格落地。画面越荒诞越好记。</p>
+  <p><b>什么时候用：</b>只用于反复错 3 次以上的词、或拼写特别难记的词。手册第 4 节给了 35 条现成的词根/谐音/画面钩子。</p>
+  <p><b>别做：</b>给所有词都编谐音。谐音记多了会只记得故事、记不得词义；而且必须在当天回到例句里用一次，否则钩子悬空（Atkinson 1975 年的关键词法研究也是这个结论：关键词要配"提取练习"才有效）。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">⑥ 故事链 / 记忆宫殿：一组 10 个词装进一条路线</h3>
+  <p><b>怎么做：</b>把 10 个词按顺序放进一个你熟悉的场景（宿舍→食堂→教学楼），每个位置放一个画面。第 3 节有 12 组现成故事，读的时候就在脑内"走一遍"。</p>
+  <p><b>什么时候用：</b>一组新词第一次学、或者某组词总是记不全的时候。合上故事，用中文提示按顺序复述，卡住的位置就是没记住的词。</p>
+  <p><b>别做：</b>把 100 个词塞进一条路线。一次 10–12 个足够，多了场景会互相污染。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">⑦ 双编码：声音 + 画面 + 拼写，三条线绑一个词</h3>
+  <p><b>怎么做：</b>点工具里的「发音」，跟读两遍（注意重音位置）；同时想一个画面；再在「例句挖空」里手写一遍拼写。听到、看到、写到，三条通道同时留下痕迹。</p>
+  <p><b>什么时候用：</b>每个新词第一次学；拼写总错的词（如 colleague 类长词）重点用。</p>
+  <p><b>别做：</b>只默读。默读没有声音反馈，阅读时认得出、听力里反应不过来。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">⑧ 睡眠与运动：巩固发生在你不学的时候</h3>
+  <p><b>怎么做：</b>睡前 10 分钟只做一件事——把当天错的词过一遍（工具「错题本」）。睡够 7–8 小时；学后 4 小时内安排 20 分钟快走、跳绳或跑步。睡眠期间海马体把当天的记忆"重播"到皮层，这一步没法用熬夜补回来（Rasch & Born 2013 的综述）。</p>
+  <p><b>什么时候用：</b>每天。尤其考前一天，宁可少背 20 个词，也不要睡 5 小时。</p>
+  <p><b>别做：</b>熬到凌晨两点"再刷一轮"。睡眠不足时，新记的东西第二天提取成功率明显下降。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">⑨ 合意困难：让自己有点吃力，但别崩</h3>
+  <p><b>怎么做：</b>三个小动作——答案延迟 3 秒再看；隔天再测而不是当场连刷；把顺序打乱。吃力感是学习正在发生的信号，但正确率长期低于 50% 就说明新词量太大，把每日新词量调小。</p>
+  <p><b>什么时候用：</b>复习阶段。第一次接触新词时不要故意制造困难。</p>
+  <p><b>别做：</b>把"顺畅地看完 100 个词"当成学习成果。</p>
+</div>
+
+<h2 id="s3"><span class="num">03</span>情景故事：把 10 个词串成一条线</h2>
+<p>每组 10 个词，编成一个能读下去的小场景，词都用常见搭配出现。<b>用法固定三步：</b></p>
+<ol>
+  <li><b>读：</b>先读英文，不查词，遇到高亮的词靠上下文猜。</li>
+  <li><b>复述：</b>合上故事，看下面的中文串记提示，按顺序把 10 个词说出来。卡住的词圈出来。</li>
+  <li><b>测：</b>打开工具「故事」页，点这一组的「读完了，测这一组」，10 题过一遍。</li>
+</ol>
+<p class="small">手册里放 4 组示范；12 组全文都在工具的「故事」页里，那里的词可以直接点开看释义、听发音。</p>
+<div class="card"><div><span class="tag">环境与气候</span><span class="tag sand">第 1 组 · 10 词</span></div><h3>一个湖的二十年</h3><p class="small">一篇关于湖泊治理的短文：从健康生态到崩塌，再到修复。</p><div class="story">Twenty years ago, the lake was a healthy <b>ecosystem</b>. Then a factory opened upstream, and its <b>emission</b> of chemicals went unchecked. Within a decade, <b>biodiversity</b> had collapsed: fish that once filled the shallows disappeared, and the wetland <b>habitat</b> shrank year by year. Heavy rain washed the bare hillsides, and <b>erosion</b> choked the channels with mud. Local teachers started a <b>conservation</b> campaign, arguing that the <b>degradation</b> of the lake was not a minor problem but a potentially <b>catastrophic</b> one. Their proposal was simple — close the factory and restore the wetland. Farmers resisted at first, then accepted a <b>sustainable</b> plan that shared the tourist income. Last spring, the first young fish returned. Nobody talks about <b>extinction</b> any more.</div><div class="words"><b>ecosystem</b> n. 生态系统<br><b>emission</b> n. 排放<br><b>biodiversity</b> n. 生物多样性<br><b>habitat</b> n. 栖息地<br><b>erosion</b> n. 侵蚀<br><b>conservation</b> n. 保护<br><b>degradation</b> n. 退化<br><b>catastrophic</b> adj. 灾难性的<br><b>sustainable</b> adj. 可持续的<br><b>extinction</b> n. 灭绝</div><div class="recall"><b>中文串记（合上英文再看）：</b>先说湖本来是个健康的 ecosystem，然后工厂的 emission 失控；biodiversity 崩塌、habitat 逐年缩小；暴雨冲走表土造成 erosion；老师发起 conservation 运动，说这种 degradation 可能是 catastrophic 的；最后靠 sustainable 的方案救回来，extinction 不再被提起。</div></div>
+<div class="card"><div><span class="tag">教育与学习</span><span class="tag sand">第 3 组 · 10 词</span></div><h3>林老师的课堂</h3><p class="small">一位老师相信：成绩靠的不是天赋，而是习惯。</p><div class="story">Ms. Lin teaches at a school where half the students are <b>bilingual</b>. She believes <b>academic</b> success depends less on talent than on <b>discipline</b>, and that her job is to <b>cultivate</b> curiosity and <b>nurture</b> independent thinking rather than fill notebooks. Her <b>instruction</b> is unusual: every lesson opens with a question, and students discuss it in pairs before writing. <b>Extracurricular</b> clubs — robotics, drama, gardening — are part of the timetable, not extras. <b>Adolescent</b> brains, she says, need sleep, exercise and a reason to care. To <b>motivate</b> a class that had given up on reading, she let them choose the books. <b>Cognitive</b> tests later showed clear gains in memory.</div><div class="words"><b>academic</b> adj. 学术的<br><b>cognitive</b> adj. 认知的<br><b>extracurricular</b> adj. 课外的<br><b>motivate</b> v. 激励<br><b>cultivate</b> v. 培养<br><b>nurture</b> v. 养育<br><b>discipline</b> n. 自制力<br><b>adolescent</b> n. 青少年adj.青春期的<br><b>bilingual</b> adj. 双语的<br><b>instruction</b> n. 指导</div><div class="recall"><b>中文串记（合上英文再看）：</b>林老师的学生一半是 bilingual；她认为 academic 成绩靠 discipline 而不是天赋，工作是 cultivate 好奇心；她的 instruction 每节课从问题开始；extracurricular 社团排进课表；adolescent 的大脑需要睡眠和理由；为了 motivate 放弃阅读的班级，她让学生自己选书，cognitive 测试显示记忆提升。</div></div>
+<div class="card"><div><span class="tag">经济与商业</span><span class="tag sand">第 6 组 · 10 词</span></div><h3>梅的咖啡生意</h3><p class="small">把大宗商品做成品牌，需要的不只是好豆子。</p><div class="story">When Mei started her company, coffee was just a <b>commodity</b>. She bought beans directly from farmers, roasted them herself, and sold online. <b>Revenue</b> grew slowly until a large <b>manufacturer</b> offered to supply her with equipment. The <b>investment</b> paid off: the business became <b>profitable</b> in its third year. Her <b>incentive</b> for staff was unusual — everyone shared a fixed share of profits, and <b>compensation</b> was published openly. Today she advises young <b>entrepreneurs</b> to watch one number above all: how often a <b>consumer</b> makes a second <b>purchase</b>.</div><div class="words"><b>commodity</b> n. 商品<br><b>revenue</b> n. 收入<br><b>manufacturer</b> n. 制造商<br><b>investment</b> n. 投资<br><b>profitable</b> adj. 有利可图的<br><b>incentive</b> n. 激励<br><b>compensation</b> n. 补偿<br><b>entrepreneur</b> n. 企业家<br><b>consumer</b> n. 消费者<br><b>purchase</b> v. 购买</div><div class="recall"><b>中文串记（合上英文再看）：</b>梅创业时咖啡只是 commodity；她从农户直接买豆、自己烘焙、线上卖；revenue 增长缓慢，直到一家 manufacturer 提供设备；investment 见效，第三年 profitable；她给员工的 incentive 是利润分成，compensation 公开；她建议年轻 entrepreneur 只盯一个数：consumer 第二次 purchase 的比例。</div></div>
+<div class="card"><div><span class="tag">媒体与信息</span><span class="tag sand">第 8 组 · 10 词</span></div><h3>一条头条的代价</h3><p class="small">转发一百万次的指控，证据可能只有一张截图。</p><div class="story">The story ran under a dramatic <b>headline</b>, and within hours the <b>allegation</b> had been shared a million times. There was little <b>evidence</b>. Under <b>scrutiny</b>, the screenshots turned out to be edited. The editor admitted a <b>bias</b> towards speed over accuracy, and promised a more <b>transparent</b> process: every claim checked, every correction printed in full. Media teachers now use the case to explain <b>manipulation</b> — how a striking image or an emotional <b>appeal</b> can <b>signal</b> authority while hiding the absence of facts. <b>Exposure</b> to many sources, they argue, protects readers only if they keep asking who benefits.</div><div class="words"><b>headline</b> n. 标题<br><b>allegation</b> n. 声称<br><b>evidence</b> n. 证据<br><b>scrutiny</b> n. 仔细检查<br><b>bias</b> n. 偏见<br><b>transparent</b> adj. 透明的<br><b>manipulation</b> n. 操纵<br><b>appeal</b> v. 呼吁<br><b>signal</b> n. 信号<br><b>exposure</b> n. 暴露</div><div class="recall"><b>中文串记（合上英文再看）：</b>一条 dramatic headline 让 allegation 几小时内被转发百万次，但 evidence 很少；在 scrutiny 下截图被证明改过；编辑承认 bias：重速度轻准确，承诺更 transparent 的流程；媒体老师用这个案例讲 manipulation：醒目的图片或情绪化的 appeal 会 signal 权威，却掩盖没有事实；exposure 多源只有配上一句“谁获益”才有保护作用。</div></div>
+
+<h2 id="s4"><span class="num">04</span>联想助记：难词的钩子</h2>
+<p>下面 35 条只给"高频但容易混、容易忘"的词。词根解释遵循常见词源；谐音只是辅助钩子，不是词义本身——用完必须回到例句里用一次。</p>
+<div class="card">
+<table>
+<tr><th style="width:26%">词</th><th style="width:12%">类型</th><th>钩子</th></tr>
+<tr><td><b>conducive</b><br><span class="small">adj. 有益于…的</span></td><td>词根</td><td>con-（共同）+ duc（引导）+ -ive：把人和目标“引到一处”→ 有助于…的。固定搭配 be conducive to。</td></tr>
+<tr><td><b>detrimental</b><br><span class="small">adj. 有害的</span></td><td>词根</td><td>de-（向下）+ trim（磨损）：越磨越少 → 有害的、不利的。搭配 be detrimental to。</td></tr>
+<tr><td><b>alleviate</b><br><span class="small">v. 减轻</span></td><td>词根</td><td>ad-（去）+ levis（轻）：把重量变轻 → 减轻、缓和。同源词 lever（杠杆）。</td></tr>
+<tr><td><b>inevitable</b><br><span class="small">adj. 不可避免的</span></td><td>词根</td><td>in-（不）+ evit（避开）+ -able：躲不开的 → 不可避免的。</td></tr>
+<tr><td><b>prevalent</b><br><span class="small">adj. 普遍的</span></td><td>词根</td><td>prae-（在前）+ val（强）：力量占上风 → 盛行的、普遍的。</td></tr>
+<tr><td><b>vulnerable</b><br><span class="small">adj. 脆弱的</span></td><td>词根</td><td>vulnus（伤口）：带着伤口暴露在外 → 脆弱的、易受伤的。搭配 be vulnerable to。</td></tr>
+<tr><td><b>incentive</b><br><span class="small">n. 激励</span></td><td>词根</td><td>in-（向内）+ canere（定调、唱）：给你定个调子推着走 → 激励、诱因。</td></tr>
+<tr><td><b>compensation</b><br><span class="small">n. 补偿</span></td><td>词根</td><td>com-（一起）+ pens（称重）：把损失和回报放天平上称平 → 补偿、赔偿。</td></tr>
+<tr><td><b>counterpart</b><br><span class="small">n. 对应的人（或事物）</span></td><td>词根</td><td>counter-（相对）+ part（部分）：对面那一半 → 对应的人或物。</td></tr>
+<tr><td><b>catastrophic</b><br><span class="small">adj. 灾难性的</span></td><td>词根</td><td>cata-（向下）+ strophe（转）：剧情急转直下 → 灾难性的。</td></tr>
+<tr><td><b>laborious</b><br><span class="small">adj. 费力的</span></td><td>词根</td><td>labor（劳动）+ -ious：全是活儿的 → 费力的、繁琐的。</td></tr>
+<tr><td><b>ideology</b><br><span class="small">n. 意识形态</span></td><td>词根</td><td>idea（观念）+ -logy（体系）：一整套观念 → 意识形态。</td></tr>
+<tr><td><b>susceptible</b><br><span class="small">adj. 易受影响的</span></td><td>词根</td><td>sus-（在下）+ cept（拿）：站在下面容易被拿走 → 易受影响的、易感的。</td></tr>
+<tr><td><b>consensus</b><br><span class="small">n. 共识</span></td><td>词根</td><td>con-（共同）+ sens（感觉）：大家感觉一致 → 共识。</td></tr>
+<tr><td><b>constraint</b><br><span class="small">n. 限制</span></td><td>词根</td><td>con-（一起）+ string（拉紧）：被绳子拉紧 → 约束、限制。</td></tr>
+<tr><td><b>degradation</b><br><span class="small">n. 退化</span></td><td>词根</td><td>de-（向下）+ grad（等级）：等级往下走 → 退化、降级。</td></tr>
+<tr><td><b>emulate</b><br><span class="small">v. 模仿</span></td><td>词根</td><td>aemulus（竞争者）：盯着对手学 → 效仿、努力赶上。</td></tr>
+<tr><td><b>notoriously</b><br><span class="small">adv. 臭名昭著地</span></td><td>词根</td><td>notus（已知）：出了名，多半是坏名声 → 臭名昭著地。</td></tr>
+<tr><td><b>scrutiny</b><br><span class="small">n. 仔细检查</span></td><td>词根</td><td>scrutari（翻检杂物）：一件件翻着看 → 仔细审查、细查。</td></tr>
+<tr><td><b>transparent</b><br><span class="small">adj. 透明的</span></td><td>词根</td><td>trans-（穿过）+ par（显现）：光能穿过去 → 透明的；引申“显然的”。</td></tr>
+<tr><td><b>sophisticated</b><br><span class="small">adj. 复杂的</span></td><td>词根</td><td>soph（智慧）：经过复杂加工而显得老练 → 精密的、复杂的、世故的。</td></tr>
+<tr><td><b>entrepreneur</b><br><span class="small">n. 企业家</span></td><td>词根</td><td>entreprendre（着手去做）：敢接手的人 → 企业家、创业者。</td></tr>
+<tr><td><b>entity</b><br><span class="small">n. 实体</span></td><td>词根</td><td>ens（存在）：独立存在的东西 → 实体。</td></tr>
+<tr><td><b>endorse</b><br><span class="small">v. 认可</span></td><td>词根</td><td>en-（在…上）+ dors（背）：在文件背面签字 → 背书、公开支持。</td></tr>
+<tr><td><b>endeavor</b><br><span class="small">v. 努力</span></td><td>词根</td><td>en-（使）+ devoir（义务）：把事当义务去做 → 努力、尽力。</td></tr>
+<tr><td><b>conviction</b><br><span class="small">n. 信念</span></td><td>词根</td><td>con-（完全）+ vict（征服）：被说服到底 → 坚定信念；法律义“定罪”。</td></tr>
+<tr><td><b>erosion</b><br><span class="small">n. 侵蚀</span></td><td>词根</td><td>e-（出）+ rod（啃）：一点点啃掉 → 侵蚀。</td></tr>
+<tr><td><b>vital</b><br><span class="small">adj. 至关重要的</span></td><td>词根</td><td>vit（生命）：与生命相关 → 至关重要的、生命的。</td></tr>
+<tr><td><b>metropolitan</b><br><span class="small">adj. 大都市的</span></td><td>词根</td><td>metro（母城）+ polis（城）：母城带着周边 → 大都市的。</td></tr>
+<tr><td><b>privilege</b><br><span class="small">n. 特权</span></td><td>词根</td><td>priv（个人）+ leg（法律）：法律给个人的特殊待遇 → 特权。</td></tr>
+<tr><td><b>slash</b><br><span class="small">v. 削减</span></td><td>画面</td><td>想象刀“唰”地一下砍过去，价格、预算应声落地 → 大幅削减。搭配 slash prices / the budget。</td></tr>
+<tr><td><b>crave</b><br><span class="small">v. 渴望</span></td><td>谐音</td><td>“渴”→ 渴望。搭配 crave attention（渴望关注）。</td></tr>
+<tr><td><b>opt</b><br><span class="small">v. 选择</span></td><td>联想</td><td>和 option（选项）同源：在选项里挑一个 → 选择、决定。搭配 opt for。</td></tr>
+<tr><td><b>acute</b><br><span class="small">adj. 严重的</span></td><td>联想</td><td>想象一根针“尖”地扎下去 → 尖锐的痛 → 严重的、急性的（acute pain / acute shortage）。</td></tr>
+<tr><td><b>hamper</b><br><span class="small">v. 妨碍</span></td><td>谐音</td><td>“旱破”：旱灾把地晒破，人寸步难行 → 妨碍、阻碍。</td></tr>
+</table>
+</div>
+
+<h2 id="s5"><span class="num">05</span>吃、喝、睡：有依据的那部分</h2>
+<div class="warn"><b>先说明：</b>这一节是通用的学习期生活建议，不是医疗建议。有基础疾病、正在服药、怀孕或对咖啡因敏感的人，请先问医生。任何补剂都不要自行大剂量服用。</div>
+
+<div class="card">
+  <h3 style="margin-top:0">咖啡因：有用，但要卡时间和量</h3>
+  <p><b>依据：</b>欧洲食品安全局（EFSA 2015）认为健康成年人每天咖啡因摄入不超过 400 mg、单次不超过 200 mg（约每公斤体重 3 mg）通常不会带来安全问题。咖啡因主要提升警觉性和持续性注意，对"已经记住的东西"帮助有限，不能替代睡眠。</p>
+  <p><b>怎么做：</b>需要长时间专注的时段（比如晚上那轮自测）前 20–30 分钟喝一杯（约 100–150 mg）。<b>下午 2 点以后不再摄入</b>——睡前 6 小时喝一杯咖啡，睡眠时间平均减少约 1 小时（Drake 等 2013）。</p>
+  <p><b>注意：</b>心慌、手抖、入睡困难就减量；不要用咖啡"顶"熬夜，第二天记忆提取会明显变差。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Omega-3（DHA/EPA）：食物优先，别指望补剂提分</h3>
+  <p><b>依据：</b>DHA 是神经细胞膜的重要成分，但现有针对健康成年人认知功能的干预研究结果并不一致，补剂对"短期提高记忆"的证据很弱（Sydenham 等 2012 的系统综述）。</p>
+  <p><b>怎么做：</b>每周吃 2 次鱼（三文鱼、鲭鱼、沙丁鱼，或鲈鱼、带鱼），加一小把核桃。这比买胶囊更稳妥。</p>
+  <p><b>注意：</b>不要为了"补脑"吃高剂量鱼油；正在用抗凝药物的人尤其要先咨询医生。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">稳定血糖：别让上午在犯困中度过</h3>
+  <p><b>依据：</b>血糖波动会影响注意力和短时记忆表现（Benton & Parker 1998；Hoyland 等 2009 关于青少年早餐与认知的研究）。高糖早餐后的血糖回落，是上午"脑子发木"的常见原因。</p>
+  <p><b>怎么做：</b>早餐有蛋白质（鸡蛋、牛奶、豆浆）+ 复合碳水（燕麦、全麦、杂粮粥），少喝含糖饮料。学习段的加餐选坚果、酸奶、水果，别选奶茶和蛋糕。</p>
+  <p><b>注意：</b>不用刻意断碳。背单词烧的是脑，碳水太少同样会注意力涣散。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">水：轻度脱水就会拖慢反应</h3>
+  <p><b>依据：</b>轻度脱水（体重 1–2% 的水分流失）即可影响注意力与反应速度（Riebl & Davy 2013 的综述）。</p>
+  <p><b>怎么做：</b>桌上放一瓶水，每完成一轮自测喝几口；全天 1.5–2 L。咖啡和茶算一部分，但别用它们完全替代水。</p>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">睡眠：这是唯一不能省的一项</h3>
+  <p><b>依据：</b>睡眠中记忆会被重新激活并整合（Rasch & Born 2013）。睡眠不足直接影响次日的编码与提取。</p>
+  <p><b>怎么做：</b>固定起床时间（比固定睡觉时间更有效）；睡前 40 分钟不看短视频；睡前那 10 分钟只过错词，不做新题。7–8 小时是目标，考前一周不要低于 7 小时。</p>
+</div>
+
+<h2 id="s6"><span class="num">06</span>休息节点与脑力微活动</h2>
+<p>注意力大约 25–30 分钟一个周期。硬撑到 60 分钟，后半小时基本是无效重复。把学习切成"25 分钟 + 3 分钟"的块，效果比连坐一小时好得多。</p>
+<div class="card">
+  <h3 style="margin-top:0">每 25–30 分钟，插入一个 1–3 分钟的小活动（任选其一）</h3>
+  <ul>
+    <li><b>闭眼清点：</b>闭眼，把这 25 分钟里新学的词按顺序默数一遍，说不出的先记下，不立刻查。</li>
+    <li><b>快问快答：</b>随机翻 5 张卡片，只答"中文"，答完立刻看答案。</li>
+    <li><b>换题型：</b>刚做完"英→中"，就换成"中→英"或"听写"，给大脑换个提取路径。</li>
+    <li><b>起身走动：</b>走到窗边，远眺 20 秒，做 10 个深蹲或原地踏步。</li>
+    <li><b>呼吸 4-6：</b>吸气 4 秒、呼气 6 秒，做 6 轮。能快速降低紧绷感，回到桌前不烦躁。</li>
+    <li><b>喝水 + 看远：</b>顺便解决眼睛干涩和轻度脱水。</li>
+  </ul>
+  <p class="small">每完成 2 个 25 分钟块（约 1 小时），休息 8–10 分钟，离开桌子，不要刷手机（短视频会让注意力更难收回）。</p>
+</div>
+<div class="tip"><b>把休息写进计划里：</b>工具每轮 20 题大约 6–8 分钟，做完一轮就起身 2 分钟，再开下一轮。一轮一休息，比"刷到累为止"更容易坚持 19 天。</div>
+
+<h2 id="s7"><span class="num">07</span>到考试的每日计划</h2>
+<p>从 11 月 23 日到 12 月 12 日，共 19 个学习日。下面是<b>第一册主线</b>：419 词按每天 25 个推进，17 天推完，留 2 天补漏。第二册不硬塞进这 19 天，单独按下面的节奏加练。</p>
+<div class="card">
+  <h3 style="margin-top:0">两门课怎么排</h3>
+  <p>工具里每份词表是一门课：<b>第一册</b>（419 词，2017–2026 阅读汇总）、<b>第二册</b>（1945 词，2021–2026 仔细阅读）。两门课进度分开记，也可以切到<b>两册合并</b>一起刷；重合的 275 个词在合并模式里只出现一次，词库会标“两册重合”。</p>
+  <p>建议：<b>第一册当主线</b>，照下面的 19 天计划走；<b>第二册当加练</b>，主线完成后每天再用「认词 / 拼写」过 20–30 个。第二册优先 L1 136 词、L2 348 词，共 484 词，性价比最高；L3 1461 词以“眼熟能认”为目标，不要求拼写。</p>
+  <p class="small">第二册多数词只有释义和搭配、没有例句，工具会自动少出“例句填空 / 连读”这类题，不会出现空题；想练句子，用第一册的重合词即可。</p>
+</div>
+<div class="card"><table><tr><th style="width:26%">阶段</th><th style="width:22%">日期</th><th style="width:14%">词量</th><th>重点</th></tr><tr><td><b>一 · 拿必得分</b></td><td>11/23 – 11/26</td><td>L1 93</td><td>第一册原文标注重点词，每天约 24 个，优先吃透</td></tr><tr><td><b>二 · 扩核心</b></td><td>11/27 – 12/04</td><td>L2 196</td><td>每天约 25 个，同时回刷 L1 错词</td></tr><tr><td><b>三 · 扫扩展</b></td><td>12/05 – 12/09</td><td>L3 130</td><td>每天约 26 个，重心转向错题与加强队列</td></tr><tr><td><b>四 · 收口</b></td><td>12/10 – 12/11</td><td>0</td><td>不学新词：错词、加强队列、限时真题</td></tr></table><p class="small">以上是第一册主线：L1 用 4 天、L2 用 8 天、L3 用 5 天，共 17 天推完 419 词，剩下 2 天专门补漏。第二册另开一门课推进：先过 L1+L2 共 484 词，每天 20–30 个；L3 只求认得。每天新词量可在工具「计划」页调整。</p></div>
+<div class="card">
+  <h3 style="margin-top:0">每天的三段（合计 55–70 分钟）</h3>
+  <table>
+    <tr><th style="width:16%">时段</th><th style="width:14%">时长</th><th>做什么</th><th style="width:22%">休息节点</th></tr>
+    <tr><td>早</td><td>15–20 分</td><td>卡片速记今天的新词（英→中），每个词读一遍、跟读发音、读一句例句</td><td>每 25 分钟闭眼清点一次</td></tr>
+    <tr><td>午</td><td>10–12 分</td><td>自测 20 题，范围「今日安排」；错词当场重刷，"眼熟想不起"的点点标记</td><td>做完一轮起身 2 分钟</td></tr>
+    <tr><td>晚</td><td>20–25 分</td><td>再测一轮，范围「错题本」或「加强队列」；看小结里"再砸一遍"的清单</td><td>两轮之间走动 3 分钟</td></tr>
+    <tr><td>睡前</td><td>5–8 分</td><td>卡片切到「中→英」，只过今天错的词，不做新题</td><td>—</td></tr>
+  </table>
+  <p class="small">时间不够时，砍"早"这一段，保留"午 + 晚 + 睡前"——复习比学新词更值钱。</p>
+</div>
+<div class="card">
+  <h3 style="margin-top:0">逐日表</h3>
+  <table>
+    <tr><th style="width:19%">日期</th><th style="width:13%">新词</th><th style="width:15%">复习量</th><th>重点</th></tr>
+<tr><td>11-23</td><td>23</td><td>0</td><td>L1 高频必拿</td></tr>
+<tr><td>11-24</td><td>23</td><td>23</td><td>L1 高频必拿</td></tr>
+<tr><td>11-25</td><td>23</td><td>23</td><td>L1 高频必拿</td></tr>
+<tr><td>11-26</td><td>24</td><td>43</td><td>L1 高频必拿</td></tr>
+<tr><td>11-27</td><td>24</td><td>44</td><td>L2 核心进阶</td></tr>
+<tr><td>11-28</td><td>25</td><td>44</td><td>L2 核心进阶</td></tr>
+<tr><td>11-29</td><td>24</td><td>45</td><td>L2 核心进阶</td></tr>
+<tr><td>11-30</td><td>25</td><td>60</td><td>L2 核心进阶</td></tr>
+<tr><td>12-01</td><td>24</td><td>62</td><td>L2 核心进阶</td></tr>
+<tr><td>12-02</td><td>25</td><td>60</td><td>L2 核心进阶</td></tr>
+<tr><td>12-03</td><td>24</td><td>63</td><td>L2 核心进阶</td></tr>
+<tr><td>12-04</td><td>25</td><td>61</td><td>L2 核心进阶</td></tr>
+<tr><td>12-05</td><td>26</td><td>64</td><td>L3 扩展巩固</td></tr>
+<tr><td>12-06</td><td>26</td><td>63</td><td>L3 扩展巩固</td></tr>
+<tr><td>12-07</td><td>26</td><td>65</td><td>L3 扩展巩固</td></tr>
+<tr><td>12-08</td><td>26</td><td>79</td><td>L3 扩展巩固</td></tr>
+<tr><td>12-09</td><td>26</td><td>79</td><td>L3 扩展巩固</td></tr>
+<tr><td>12-10</td><td>0</td><td>79</td><td>补漏 + 真题</td></tr>
+<tr><td>12-11</td><td>0</td><td>54</td><td>只复习，不学新词</td></tr>
+<tr class="today"><td>12-12（周六）</td><td>0</td><td>0</td><td>考试日：早上只过错词卡，进考场</td></tr>
+  </table>
+  <p class="small">表中"复习量"是估算：新词越多，后面几天到期复习越快堆积。实际以工具「今日安排」显示的待复习数为准。</p>
+</div>
+
+<h2 id="s8"><span class="num">08</span>最后 48 小时与考场用法</h2>
+<div class="card">
+  <h3 style="margin-top:0">12 月 11 日（考前一天）</h3>
+  <ul>
+    <li>不碰新词。只刷「错题本」和「加强队列」，两轮即可，共 30 分钟。</li>
+    <li>下午做一套真题阅读，严格限时（40 分钟），练的是节奏不是分数。</li>
+    <li>晚上把最难的 20 个词写在纸上，读一遍就睡，不熬夜。</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 style="margin-top:0">考场上怎么用这些词</h3>
+  <ul>
+    <li><b>阅读：</b>遇到眼熟的词，先判断词性和褒贬（-ive 形容词、-tion 名词、-ment 名词；de-/detrimental 多为负面），再回原文找它修饰的对象。不必逐词翻译。</li>
+    <li><b>态度题：</b>重点词里多为评价性词汇（detrimental / conducive / promising / skeptical），先抓形容词和副词的感情色彩。</li>
+    <li><b>写作：</b>从 L1 里挑 8–10 个自己最有把握的（如 conducive、detrimental、alleviate、incentive），固定成自己的句型，考场上只换主题词。</li>
+    <li><b>时间：</b>选词填空不超过 8 分钟，读不懂的空先跳过，靠搭配和词性回填。</li>
+  </ul>
+</div>
+
+<h2 id="s9"><span class="num">09</span>参考文献</h2>
+<div class="small">
+<p>Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <i>Psychological Science</i>, 17(3), 249–255.</p>
+<p>Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. <i>Psychological Bulletin</i>, 132(3), 354–380.</p>
+<p>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving students' learning with effective learning techniques. <i>Psychological Science in the Public Interest</i>, 14(1), 4–58.</p>
+<p>Rohrer, D., &amp; Taylor, K. (2007). The shuffling of mathematics problems improves learning. <i>Instructional Science</i>, 35, 481–498.</p>
+<p>Atkinson, R. C. (1975). Mnemotechnics in second-language learning. <i>American Psychologist</i>, 30(8), 821–828.</p>
+<p>Paivio, A. (1991). <i>Images in mind: The evolution of a theory</i>. Harvester Wheatsheaf.</p>
+<p>Rasch, B., &amp; Born, J. (2013). About sleep's role in memory. <i>Physiological Reviews</i>, 93(2), 681–766.</p>
+<p>Drake, C., Roehrs, T., Shambroom, J., &amp; Roth, T. (2013). Caffeine effects on sleep taken 0, 3, or 6 hours before going to bed. <i>Journal of Clinical Sleep Medicine</i>, 9(11), 1195–1200.</p>
+<p>EFSA NDA Panel (2015). Scientific opinion on the safety of caffeine. <i>EFSA Journal</i>, 13(5), 4102.</p>
+<p>Sydenham, E., Dangour, A. D., &amp; Lim, W.-S. (2012). Omega 3 fatty acid for the prevention of cognitive decline and dementia. <i>Cochrane Database of Systematic Reviews</i>, (6), CD005379.</p>
+<p>Benton, D., &amp; Parker, P. Y. (1998). Breakfast, blood glucose, and cognition. <i>American Journal of Clinical Nutrition</i>, 67(4), 772S–778S.</p>
+<p>Hoyland, A., Dye, L., &amp; Lawton, C. L. (2009). A systematic review of the effect of breakfast on the cognitive performance of children and adolescents. <i>Nutrition Research Reviews</i>, 22(2), 220–243.</p>
+<p>Riebl, S. K., &amp; Davy, B. M. (2013). The hydration equation: Update on water balance and cognitive performance. <i>ACSMS Health &amp; Fitness Journal</i>, 17(6), 21–28.</p>
+</div>
+
+<h2 id="s10"><span class="num">10</span>查词词典：来源与边界</h2>
+<div class="card">
+<p>本手册和背诵工具正文里的英文单词，都可以直接点按查词。查词用的是单独加载的 <code>dict.js</code>，与 2089 词的背诵库分开：<b>只供查阅，不进背诵队列，不计入今日新词、已学、进度，也不出任何题。</b></p>
+<ul><li>收录 <b>16,389</b> 个词条、20,002 个词形、236 条短语。</li><li>覆盖全站正文 4,903 个英文词形中的 4,857 个（99.1%）；未覆盖的 46 个主要是人名、缩写、专名和少量新词。</li><li>来源：<a href="https://github.com/skywind3000/ECDICT" target="_blank" rel="noopener">ECDICT</a>（作者 Linwei (skywind3000)），<b>MIT License</b>；释义、音标均取自该开源词典，未自行编写。</li><li>许可证全文：<a href="ECDICT-LICENSE.txt">ECDICT-LICENSE.txt</a>（MIT，Copyright (c) 2025 Linwei）。</li><li>文件：<code>dict.js</code>，1.5 MB；首次点词才加载，不参与首屏。</li></ul>
+<p class="small">词形还原：复数、过去式/过去分词、现在分词、比较级/最高级会尽量还原到原形（shallows→shallow、triggered→trigger、studies→study、went→go）；连字符词会拆成组成部分查；选中多个词会先按整条短语查。查不到时会明确显示“没查到”，通常是人名、缩写、专有名词或词典未收词，不影响背诵数据。</p>
+</div>
+
+<h2 id="s11"><span class="num">11</span>写作专项：骨架、语料、手感</h2>
+<div class="card">
+<p>写作和背单词不是一回事。背词是“见词知义”，写作是“从中文意图生成英文句子”。所以工具里写作是独立板块，进度单独存，不跟阅读、翻译混。</p>
+<h3>四步脚手架，逐步撤掉</h3>
+<ul>
+  <li><b>骨架</b>：先看 6 个段落模板和 3 类文章结构（问题解决 / 谚语评论 / 观点论述），知道每段该干什么。</li>
+  <li><b>语料</b>：句型卡先做到“看中文能想起英文”；搭配速配练快速对应；语料归类练“这条素材放哪个层面”。</li>
+  <li><b>造句</b>：中译英拼句，把词块从“认识”推到“能产出”。这一步最难，也最值钱。</li>
+  <li><b>成文</b>：15 道预测题限时写，交卷后对照范文，只挑 3 句可复用句块，不整段背。</li>
+</ul>
+<h3>每天 15 分钟怎么排</h3>
+<p>5 张句型卡（约 3 分钟）→ 1 轮搭配速配（约 2 分钟）→ 1 次拼句或 1 道审题（约 5 分钟）→ 有余力写一段（约 5 分钟）。隔天回炉错题，比一直学新更划算。</p>
+<h3>写的时候只盯 5 件事</h3>
+<ol>
+  <li>题干首句原样抄写，一个词都不改。</li>
+  <li>每段第一句是主题句，段间用 Admittedly / Nevertheless / Therefore 这类连接词。</li>
+  <li>主体段两个分论点，每个后面跟一个“因为”或一个例子。</li>
+  <li>至少用 3 个高级替换词或加分句型，但不硬塞。</li>
+  <li>结尾回扣主题，不引入新观点。</li>
+</ol>
+<p class="small">语料来源：套句总结（图片 PDF，已 OCR 后人工清洗）、六级作文模板和分论点、写作万能素材库、100 组高频搭配、议论文万能加分句式、十页纸语料补充、15 道写作预测及范文。英文原句不改写，只做分类、纠错和标注；中文释义与审题提纲为资料内容的忠实转写。</p>
+</div>
+
+<footer>
+  <p>词汇来源：《英语六级阅读单词汇总（2017—2026）》，419 条；《六级仔细阅读词汇整理 2021—2026》，1945 条；两册去重后 2089 词，重合 275 词。释义、搭配、例句按考试常考义项整理，例句为按真题阅读语域编写的语境句。</p>
+  <p>本手册是学习方法的操作说明，不是医疗建议。身体不适请就医。</p>
+  <p style="margin-top:10px"><a href="index.html">← 返回背诵工具</a></p>
+</footer>
+</div>
+<a href="#" class="top" title="回到顶部">↑</a>
+<div class="dict-mask" id="dictMask" onclick="if(event.target===this)dictClose()">
+  <div class="dict-pop" id="dictPop">
+    <div class="dict-head"><span class="tag">查词</span><button class="dict-x" onclick="dictClose()" aria-label="关闭">×</button></div>
+    <div id="dictBody"></div>
+  </div>
+</div>
+<script>
+const VK = new Set(["underestimate","inevitable","eliminate","embrace","priority","ecosystem","revenue","cognitive","conducive","detrimental","trigger","commodity","prevalent","digital","vulnerable","academic","instruction","inequality","initiative","intervention","recommendation","guideline","aggravate","incentive","compensation","outweigh","counterpart","emission","alleviate","catastrophic","accessible","automation","complicated","laborious","innovate","originate","consistent","identify","ideology","emerging","cultivate","nurture","indicate","pursuit","discrimination","bias","randomly","metaphor","proportion","autonomy","crave","attribute","signal","confront","assume","consequence","occupation","deem","trait","reverse","indicator","critic","appeal","infrastructure","conservation","biodiversity","incidence","profitable","explicitly","dictate","release","implement","sequence","estimate","dominate","purchase","manipulation","surveillance","proposal","devastating","confine","prioritize","property","rigorous","motivate","inherently","exaggerate","highlight","revolutionary","diverse","remedy","alternative","constraint","elementary","susceptible","negotiate","convince","stimulate","degradation","candidate","boost","marine","emulate","domestic","interaction","contradict","expertise","vanish","resentment","discipline","competition","consensus","assert","slash","yield","variation","expansion","essential","advocate","access","adolescent","livestock","lag","consumption","assertion","demonstrate","isolate","radical","chaos","turmoil","struggle","cause","compel","tackle","judgment","transform","endorse","refrain","grid","conceive","collective","thrive","independent","sacrifice","factor","tendency","perceive","intervene","attendance","principle","exploit","disguise","substantial","noticeable","account","arouse","forge","sustainable","collaborative","endeavor","prosperity","prevalence","privilege","responsibly","restore","timber","platform","depression","harassment","curb","artificial","relentless","investment","willpower","exert","route","track","validate","deliberate","justification","retire","portray","exposure","accelerate","assign","barrier","sensor","efficiency","leverage","choke","scenario","leisure","illustrate","predator","ditch","metropolitan","demographic","proximity","extract","prohibit","ingredient","delicate","ironically","interval","scrutiny","hostile","predictable","transparent","collaboration","hectic","extracurricular","innovation","adjustment","substitute","decline","diversify","precisely","executive","constant","misconception","arousal","prompt","turnover","moody","deplete","dismiss","composition","setback","unconventional","humanity","irrigation","diligent","reflection","inferior","suspicion","reckless","untapped","advent","contemporary","implication","opposition","retrieve","intermediary","notoriously","precision","faculty","fatigue","strategy","climate","ordeal","excessive","correlate","regulate","constrain","emerge","novel","conventional","preserve","manufacture","manipulate","sophisticated","catastrophe","complex","psychological","halt","routine","combination","profoundly","disposable","irrational","mould","perspective","entrepreneur","resident","community","passive","approach","entity","accurate","classical","diffusion","dynamic","bilingual","virtual","outperform","dominant","advocacy","extinction","authentic","evaluate","prescribe","hamper","compile","presumably","flourish","irritating","dispute","structural","devise","restriction","ecological","inspiration","innovative","evolutionary","integrate","spectrum","abstract","conviction","debate","restoration","concrete","consumer","impact","manufacturer","prominent","sufficient","selective","external","interpretation","subtle","habitat","erosion","statistic","self-esteem","crisis","evolve","reveal","assessment","underprivileged","evidence","argument","analogy","witness","gratitude","generate","entertainment","productivity","opt","object","advance","recruit","possession","robotic","minimal","supervision","oversight","eager","keen","headline","version","attachment","acute","master","catering","traffic","automatic","upgrade","synchronize","deviation","pedestrian","cautionary","quit","committed","trap","stuck","ideally","stake","withdraw","intelligent","discern","contemplate","vital","numerous","undervalue","narrow","bridge","gap","divide","ancestry","immigration","patron","champion","startling","praise","credit","urge","utilize","graze","allegation","portion","nutritional","cure-all","solitude","abundant","penalty","withdrawal","plot","chart","ultimately","wander","individualism","collectivism","tie","confide","reevaluate","exceptional","preach","invest","complacent","pursue","celebrate","equity","fiction","honor","legacy","split","polarization","commit","inclusive","practical","desirable","stimulation","blind","alarmingly","concerning","engage","disrupted","abuse","virtue","differentiation","commissioner","statutory","overdue","harvesting","targeted","ills","divert","inadequately resourced","cite","anxiety","tip","safeguarding","inadvisable","simplistic","design code","disrupt","regulation","harvest","politician","pressure","safeguard","pose","implementation","contribute","interact","regarding","differentiate","catch-up","advertising","inadequate","forum","multinational","abusive","tax haven","shield","chunk","striking","avoidance","policymaker","scrap","gradual","effective","generous","lenient","largely","cease","mechanism","notably","legislation","fluctuating","alignment","imposition","severity","non-cooperation","reform","toll","fluctuate","impose","levy","outcome","awareness","practice","profit-shifting","high-tax","paper","root","taxable","self-discipline","temptation","distraction","persist","motivation","bolster","self-control","mindset","expendable","fuel","resist","appealing","reflect","accomplish","diminish","recharge","depletable","role model","reinforce","cumulative","akin","resistance","conception","feasibility","urgency","outdated","exercise","afford","regardless","mentally","abandon","exhausting","encounter","enforce","dependent","persistence","accomplishment","resourceful","experience-based","reinforcement","exhaust","replenish","threatening","expose","explicit","valid","monitor","alarming","inhibit","associate","interfere","ample","isolation","faceless","loneliness","bullying","susceptibility","criminal","ban","convenience","ride","addiction","overuse","navigate","mirror","frightening","sneak","deep-seated","instinctive","sphere","filter out","obscene","low-spirited","alert","associated","express","indecent","strive","render","uncertainty","responsibility","filter","convey","lawsuit","allege","infringe","copyrighted","consent","foreseeable","compete","infringement","viable","career path","wrongful","massive","intellectual property","vocalise","distorted","signature","permission","furious","sidestep","rally","detailed","clause","doctrine","usage","generative","dataset","applicable","subsistence","verdict","blanket","creator","copyright","violation","process","lawmaker","flood","bypass","claim","talent","considerable","aspiring","unreliable","diesel generator","municipal","frustrated","dependable","inequitable","livelihood","at risk","unleash","wire","electrification","survey","reliable","toxic","polluting","deploy","scale","affordable","private","streamline","licensing","enlist","deliver","funding","structure","electrify","depend on","deprive","restructure","software","shortage","cooperate","distribution","disappointing","long-term","sub-saharan","world-class","economies of scale","aggressive","obstacle","shrug","elevate","individualistic","commend","assumption","idolise","sentiment","embed","whirlwind","tangibly","normalise","anchor","self-proclaimed","foster","endeavour","prestigious","neglect","superior","loved one","universal","infer","unarmed","unconditional","fantasy","slavery","crossroads","inequity","appalling","adequately","adherence","commitment","dialogue","recruiting","retention","rooted","advancement","polarisation","persuade","intolerance","injustice","haunt","conscience","realise","thorny","restrain","appreciate","interdependent","like-minded","consciousness","interdependence","affirmative","solidarity","unifying","multifaceted","bond","facet","communitarianism","cohesiveness","exclusiveness","restrict","individuality","unrestricted","hindrance","theorist","genuine","shallow","strategic","calculation","exclusive","cooperative","well-being","dignity","prosper","complexity","entail","indispensable","liberal","well-meaning","self-worth","guise","vulnerability","discomfort","recipient","harshly","accuse","manipulative","outright","rejection","activate","double down","boundary","over-identify","narrative","consideration","tactfully","prioritise","self-regulate","compassion","defuse","unsolicited","offended","underlying","inclined","concede","motive","mindfulness","chronic","insight","craving","amplify","spiral","indifferent","profound","transformation","corporation","perpetual","diversion","relish","reactivity","precious","incapable","arbitrary","interpersonal","attentive","benefit","price","tempt","regain","comply","machine-learning","automated","autonomous","irony","enable","unparalleled","under-discussed","subtly","condition","govern","thoughtful","technophobic","status","treadmill","submissively","object identification","potential","repetitive","imply","sensible","upper hand","professor","readily","deplore","chronically","excused","unexcused","primary","eject","neighbourhood","investigate","absence","peer","hardship","problematic","accountable","disproportionately","punish","channel","promptly","worrisome","comparatively","formulate","reframe","needy","bachelor","fascinate","counsel","employment","sociologist","professional","instability","compelling","fulfilment","perpetuate","overwork","resource","passion-seeker","wealthy","situated","internship","first-generation","unskilled","level","socioeconomic","applicant","zealous","astonished","preparedness","backing","credibility","aspiration","ruthlessly","snob","rigid","royal","context","desperate","greed","vanity","materialism","hunger","esteem","acquisition","condemn","intensity","snobbery","confidence","brutally","slavish","acclaimed","worthy","timid","regimented","overlook","veil","outlet","distinction","ultimate","curious","fault-finding","recognition","distinctive","snobbish","yawning","stagnation","counterintuitively","introduction","federal","wage","convergence","outstanding","parity","shorthand","childbearing","unpaid","promotion","voluntarily","stall","uncontrollable","biological","breastfeed","mandate","noticeably","insufficient","attain","final analysis","labour","simulator","aviation","surgery","simulation","participant","organisation","aspire","vision","workforce","wither","widespread","paradigm","simulated","behavioural","intellectual","stimulus","compress","experiment","productive","intuitive","reap","enthusiastic","fruitful","capability","maximise","unlimited","fleeting","subjective","satisfaction","obligation","discoverable","wealth","asset","epidemic","plague","poverty","vastly","provision","therapeutic","preventative","facilitate","participation","justify","people-oriented","prosperity-driven","mammal","inhabit","stumble","elevated","emit","high-pitched","rectangular","paradox","prey","howl","potentially","pleasurable","adaptive","cope","imaginative","mastery","life-threatening","gratifying","awakening","arena","parallel","conform","unrealistic","correspond","exclude","legitimate","influencer","supposed","flaw","reshape","the masses","bizarre","cyborg","internalisation","norm","gamified","internalise","suit","conduct","obsessive","amiable","perfection","cherish","obsession","unprecedented","cosmetic","meticulously","absurd","urbanisation","sustainability","scarce","rural","closely-knit","tranquil","conservatism","economics","dweller","densely","populated","desolation","residence","intermittent","automobile","irresponsible","supposedly","side-effect","unaffordable","deplorable","idealised","industrialisation","affordability","longing","renaissance","preservation","deserted","affluent","mar","adversely","hinder","revitalisation","diversified","resemble","static","envisage","beholder","question","embedded","aesthetically","aesthetic","cognition","artifact","human-made","architecture","hypothesis","commonly","pleasing","symmetry","preference","habitability","openness","philosophical","conclusion","ground","radiance","warrant","fittingness","embodiment","involve","construct","mislead","interpret","surpass","ascertain","logical","spatial","reasoning","enthusiast","woven","enduring","hemisphere","vertebrate","injury","neuroscientist","misinterpretation","categorically","fascinated","meaningful","irresistible","distinguish","linguist","alternate","reject","scrutinise","originality","popularity","reliability","declining","enrollment","pilot","dissolve","rotate","one-on-one","orchestrate","personalised","collaborate","administrator","staffing","morale","gamble","profession","overhaul","frustration","appraisal","lecture","dogma","biology","bewilder","confusion","scheduling","nightmare","assess","coordinate","irrefutable","exhibit","at-risk","workplace","unfold","effectively","bystander","victim","psychology","crowd","mentality","evade","instance","supervisor","address","precedent","defer","competent","appoint","equipment","critical","hazard","oblige","designated","venture","idly","slack","unfavourable","unforeseeable","execute","environmentalist","wildlife","capture","combat","strand","purist","renewable","crucial","hydroelectric","capacity","carbon","neutrality","achievability","contentious","disposal","extraordinary","industrialised","transition","phase","overwhelm","utility","lagging","transport","overabundance","protest","suspend","alternately","exclusively","ambition","upward","mobility","unfavourably","influence","overwhelming","majority","rags-to-riches","storyline","feature","regularly","realistic","viewership","ubiquitous","attainable","clip","significantly","belief","affiliation","implicit","extent","mistakenly","policy","era","envy","overtake","contrast","plight","aspect","identity","utter","provoke","spouse","religious","assertive","stage","adapt","volatile","ever-shifting","central","enforced","examine","grounded","experimentation","conscious","progression","explore","overrule","self-perception","sarcasm","tone","literal","irritation","hostility","outwardly","sarcastic","contemptible","origin","derive","tear","strip","flesh","cutting","consistently","heighten","insecurity","bully","cowardly","self-confident","hurtful","sparingly","spice","occasional","dash","bitter","untangle","clarify","emphasise","undisguised","belittle","retaliate","variability","crucially","generalisation","speech","perception","infant","investigator","input","stimuli","pattern","linguistics","categorisation","formal","relevant","seemingly","unrelated","represent","memory","training","actively","reconstruct","literally","motor","diminished","curiosity","immune","confirm","reorganise","linguistic","categorise","republican","propagation","cult","rival","campaign","quarterly","paycheck","mainstream","insist","unerring","counterproductive","unemployment","complicate","widening","antidote","simplicity","dishearten","corresponding","establish","editorial","disheartening","seniority","stark","disparity","overrepresented","male-dominated","childcare","grant","consciously","integrity","underrepresented","representation","distinguished","neuroscience","bid","extensively","recall","addict","prospect","digitisation","multi-millionaire","troll","profile","promote","dedicated","threat","fundamentally","publicise","detox","connectivity","disconnect","worsen","broadband","exclusion","societal","equality","metaverse","frontier","infinitely","desperately","illusory","genetic","component","initially","thereafter","indulgence","anthropology","philosopher","characterisation","inherent","determine","summarise","dependence","cooperation","world-renowned","prize","culture-bound","characteristic","misrepresent","adverse","disagreement","confines","communicate","content","conference","incomprehensible","average","outreach","controversial","propagate","discrepancy","healthcare","provider","agency","stakeholder","overstate","institution","partnership","ethics","mandatory","resolve","officer","translate","collaborator","intimidate","acceptable","presence","dazzling","fixture","nursery","decoration","sufferer","rational","competitor","association","wickedness","conservationist","classification","windscreen","reduction","landmark","pesticide","destruction","creature","threatened","fragmentation","migrate","wasteland","determined","reintroduce","rewilding","enthusiasm","spinner","aggression","deadly","corridor","emergence","routinely","algorithmic","prescription","minimise","optimise","unanticipated","utterly","unpredictability","anticipate","predecessor","syllable","proficient","literacy","immersive","sprinkle","systematic","notorious","legislature","remarkable","nationwide","synthesise","fluency","comprehension","statistics","disprove","misapply","arbitrarily","methodology","inadequacy","frustrate","deter","sustain","obsessively","unconstrained","advertiser","marketer","validation","commercial","psychologist","cradle-to-grave","consumerism","socialise","adulthood","objection","brainwash","all-pervasive","violate","comparable","infectious","commercialization","dehumanizing","non-traditional","analytics","identification","microphone","intrusive","exponent","undetected","implant","electronically","biometrics","voluntary","convenience-oriented","anonymised","sceptical","empower","oppression","intrusion","anti-human","pandemic","investigative","processed","engineer","substance","cue","nostalgia","joyous","capitalize","chemistry","troublesome","impulsively","notion","grocery","manufacturing","packaging","outline","convenient","addictive","nutrition","chimpanzee","colonise","dwarf","weakness","intelligence","anthropologist","mechanical","opaque","irrelevant","irrationally","slavishly","imitate","over-imitate","impractical","rationally","passionately","nonconformity","knowledgeable","arguable","inference","cornerstone","unintelligent","newborn","duckling","co-author","mismatched","imprinting","sensory","pigeon","dolphin","honeybee","primate","untrained","intricacy","biased","adequate","discover","suggestion","dietary","calorie","obesity","nutritionist","correlation","intake","lifestyle","anecdotal","optimal","consume","fullness","consist","poultry","simultaneously","unprocessed","beneficial","well-balanced","overweight","vigour","triumph","swell","self-respect","recur","fulfilling","pressing","ego-driven","shame","worthlessness","subsequent","culminate","disproportionate","mount","heightened","dissatisfied","neutralise","outpace","absorb","scarcity","curse","replenishment","concerted","stock","strain","fertiliser","glacier","shrink","pathway","dilemma","uninhabitable","drastic","deteriorate","modernise","depletion","forgive","debt","proposition","distressed","borrower","disadvantaged","owe","undergraduate","fundamental","tuition","idealistic","practically","below-average","outrageous","subsidise","commendable","repay","enrol","blue-collar","forgiveness","free rein","cling","pediatrics","revise","shift","intriguing","notable","observational","emotionally","engaged","peekaboo","toddler","limited","alongside","solo","viewing","delay","replace","preschooler","transfer","caregiver","upbringing","verbal","acquire","parental","guidance","discard","gene","cell","telomere","segment","noncoding","chromosome","cap","division","lengthen","cynical","deliberately","rightful","agitated","metabolic","premature","cellular","renewal","confrontational","lifespan","temper","ageing","dna","enzyme","breakthrough","recycling","spur","bacterium","dump","adjust","accidentally","molecule","shock","large-scale","resistant","fibre","carpet","properly","life-cycle","additional","persistent","reproduce","intensify","head-on","antitrust","crackdown","unveil","anti-monopoly","draft","suspension","stock offering","billionaire","coincide","rein","parliament","resolution","monopoly","trillion-dollar","alarm","vacuum","police","homegrown","accumulation","citizenry","breed","privacy","sector","monopolise","doomed","competitiveness","at odds","offering","rein in","dominance","vacuum up","holiday-making","comparative","advantage","port of call","disturbance","uncontrolled","driver","disruption","documentation","antagonism","overstay","foreign exchange","allocate","equitably","widen","have-nots","custom","market-based","reward","uninformed","enrich","deserving","net","incur","elite","engagement","civic","lifelong","scepticism","assault","waiver","deduction","misguided","refute","scholarly","analysis","endowment","donation","alumnus","mission","drain","diversity","enhance","excel","competitive","liberal arts","alumni","commonwealth","rationality","frame","accord","compatibility","application","psychologically","equip","weight","inconsistency","verification","shared","integrated","inquiry","methodological","unbound","tightly","wisdom","worldview","compose","distinctly","contrary","hugely","artistic","integral","folk","expression","impart","random","painstakingly","sacrilegious","preoccupied","bleak","optimism","bound","stubborn","old-school","infancy","freshness","writer's block","shy away","physiological","erroneous","bubble","augment","well-informed","acknowledge","consult","fact-check","specialty","unintentional","misinformation","incorporate","foundation","discourse","baffling","imperative","qualified","nonscientific","credential","biologist","intricate","vaccine","jargon","scholar","phenomenon","abreast","wide-reaching","glimpse","screening","tempting","hiring","uncommon","inappropriately","unethical","essentially","protected","nationality","disability","lawfully","stain","reputation","stipulate","document","beforehand","invasive","drawback","sensational","magnify","ruinous","transparency","articulate","canned","dairy","temporary","aisle","inject","erode","stigma","supposition","tread","processing","costly","eye-catching","carbohydrate","competing","enlightenment","endanger","typographic","photographic","exposition","image-centered","pleasure-driven","uncover","overgeneralization","overturn","sensationalism","informative","grip","refocus","quest","zest","approval","unconsciously","motto","supremacy","superficial","entitlement","dysfunction","legitimately","irrespective","inflated","overindulge","spoilt","nonetheless","respondent","ethical","indulge","deviate","entitled","disinclined","accommodate","constructively","deservingness","objective","criteria","trustworthy","warehouse","cashierless","checkout","staggering","transformative","insistent","peril","futile","pave","slip","alleged","unavoidable","working-age","force","companionship","inevitably","characterise","values-based","distinct","homeland","prior","dimension","masculinity","validity","singular","alike","prediction","generalise","mask","dwell","stereotype","preoccupation","genetics","hard-wired","questionable","hereditarian","inborn","blindingly","hereditary","unintentionally","aptness","heritability","unsound","statistical","causal","intimidating","fixation","destiny","predictability","intellect","aptitude","legislative","longstanding","overnight","thermal","authority","prominence","aggressively","pro-market","ruling","lobby","bold","hotspot","exempt","taxation","maintenance","contribution","overcrowding","litter","one-size-fits-all","uncompetitive","over-tourism","misclassification","miscategorise","shabby","misfile","recreation","illusion","recategorise","symbolic","dense","nerve","doodle","default","circuit","baseline","misjudge","gifted","absent-minded","endow","stimulant","concentration","sensitivity","subtlety","categorization","detachment","mass-produced","choked","fuss","cornering","acceleration","gadget","navigation","congestion","unforeseen","unintended","liberation","self-organisation","miraculously","foresee","self-driving","intoxicating","overestimate","coordination","spiritually","wield","stamp","playful","childlike","conjunction","teachable","commission","curriculum","infuse","humanities","uninspiring","fact-based","creep","vessel","sole","coaching","hub","crush","fraction","privileged","looming","analytical","cultivation","permeate","compulsory","test-oriented","mirroring","subconsciously","gesture","conversationalist","sympathetic","idol","lyric","accusation","ghostwriting","autobiography","copycat","authorship","accuracy","craft","plagiarism","sequel","paradoxical","invention","compliment","liable","mutual","acquaint"]);
+let DICT_STATE = 0, DICT_WAIT = [], DICTCUR = '';
+function dictEsc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function dictLoad(cb) {
+  if (window.__DICT_DATA__) { cb(true); return; }
+  DICT_WAIT.push(cb);
+  if (DICT_STATE === 1) return;
+  DICT_STATE = 1;
+  const s = document.createElement('script');
+  s.src = 'dict.js'; s.async = true;
+  s.onload = () => { const ok = !!window.__DICT_DATA__; DICT_STATE = ok ? 2 : 0; DICT_WAIT.splice(0).forEach(f => { try { f(ok); } catch (e) {} }); };
+  s.onerror = () => { DICT_STATE = 0; DICT_WAIT.splice(0).forEach(f => { try { f(false); } catch (e) {} }); };
+  document.head.appendChild(s);
+}
+function dictNorm(t) { return String(t || '').toLowerCase().replace(/’/g, "'").replace(/^[^a-z]+|[^a-z]+$/g, ''); }
+function dictCands(t) {
+  const out = [], add = x => { x = (x || '').trim(); if (x && out.indexOf(x) < 0) out.push(x); };
+  add(t); add(t.replace(/'s$/, ''));
+  if (t.indexOf('-') >= 0) { add(t.replace(/-/g, ' ')); add(t.replace(/-/g, '')); t.split('-').forEach(add); }
+  const b = t.replace(/'s$/, '');
+  [b, b.replace(/ies$/, 'y'), b.replace(/ied$/, 'y'), b.replace(/es$/, ''), b.replace(/s$/, ''),
+    b.replace(/ed$/, ''), b.replace(/ed$/, 'e'), b.replace(/ing$/, ''), b.replace(/ing$/, 'e'),
+    b.replace(/ly$/, ''), b.replace(/er$/, ''), b.replace(/est$/, ''), b.replace(/ally$/, 'al')].forEach(add);
+  out.slice().forEach(x => {
+    add(x.replace(/isation$/, 'ization').replace(/ised$/, 'ized').replace(/ising$/, 'izing').replace(/ise$/, 'ize'));
+    if (/^non[a-z]{4,}$/.test(x)) add(x.slice(3));
+  });
+  return out;
+}
+function dictFind(t) {
+  const D = window.__DICT_DATA__; if (!D) return null;
+  const raw = dictNorm(t); if (!raw) return null;
+  const cs = dictCands(raw);
+  let key = '', e = null;
+  for (const c of cs) if (D.w[c]) { key = c; e = D.w[c]; break; }
+  let lemma = '', lemmaE = null;
+  for (const c of cs) { const l = D.f[c]; if (l && l !== raw && D.w[l]) { lemma = l; lemmaE = D.w[l]; break; } }
+  if (!key) { for (const c of cs) { if (c !== raw && D.w[c]) { key = c; e = D.w[c]; lemma = c; break; } } }
+  if (!key && lemma) { key = lemma; e = lemmaE; }
+  if (!e) return null;
+  if (!lemma && key !== raw) lemma = key;
+  if (lemma === key) { lemma = ''; lemmaE = null; }
+  return { surface: raw, key: key, e: e, lemma: lemma, lemmaE: lemmaE };
+}
+function dictPhrase(text) {
+  const D = window.__DICT_DATA__; if (!D) return null;
+  const p = String(text || '').toLowerCase().replace(/’/g, "'").replace(/[^a-z' \-]+/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!p || !D.p[p]) return null;
+  return { surface: p, key: p, e: ['', D.p[p]], lemma: '', lemmaE: null };
+}
+function dictFirstLine(t) { return String(t || '').split('\n')[0] || ''; }
+function dictRender(tok, res, state) {
+  const D = window.__DICT_DATA__, box = document.getElementById('dictBody');
+  if (state === 'loading') {
+    DICTCUR = tok;
+    box.innerHTML = '<div class="dict-word" style="font-size:26px">' + dictEsc(tok) + '</div><div class="small" style="padding:18px 0">正在加载词典…</div><div class="small">首次查词才加载 dict.js，之后秒开。</div>';
+    document.getElementById('dictMask').classList.add('on'); return;
+  }
+  if (state === 'error') {
+    DICTCUR = tok;
+    box.innerHTML = '<div class="dict-word" style="font-size:26px">' + dictEsc(tok) + '</div><div class="small" style="padding:16px 0">没查到 “' + dictEsc(tok) + '”</div><div class="small">词典文件没有加载成功，确认 dict.js 与本页在同一目录。</div><div class="tag sand" style="margin-top:10px">仅供查阅，不在背诵范围</div>';
+    document.getElementById('dictMask').classList.add('on'); return;
+  }
+  const raw = tok.toLowerCase();
+  if (!res) {
+    const inV = VK.has(raw);
+    DICTCUR = tok;
+    box.innerHTML = '<div class="dict-word" style="font-size:26px">' + dictEsc(tok) + '</div><div class="small" style="padding:16px 0">没查到 “' + dictEsc(tok) + '”</div><div class="small">可能是人名、缩写、专有名词，或这部词典没来得及收。</div>' +
+      (inV ? '<div class="small" style="margin-top:8px">背诵词库：<b>在</b>；可回 index.html 的词库查看。</div>' : '<div class="small" style="margin-top:8px">背诵词库：<b>不在</b>。</div>') +
+      '<div class="tag sand" style="margin-top:10px">仅供查阅，不在背诵范围</div><div class="dict-meta">词典：ECDICT · MIT</div>';
+    document.getElementById('dictMask').classList.add('on'); return;
+  }
+  DICTCUR = res.key || tok;
+  const inV = VK.has(res.key) || (res.lemma && VK.has(res.lemma));
+  const ph = res.e[0] || (res.lemmaE && res.lemmaE[0]) || '';
+  const lines = String(res.e[1] || '').split('\n').map(x => '<div>' + dictEsc(x) + '</div>').join('');
+  const lemmaLine = res.lemma ? '<div class="dict-meta">原形 <b>' + dictEsc(res.lemma) + '</b>' + (res.lemmaE && res.lemmaE !== res.e ? '：' + dictEsc(dictFirstLine(res.lemmaE[1])) : '') + '</div>' : '';
+  box.innerHTML = '<div class="dict-word">' + dictEsc(res.surface) + '</div>' +
+    (ph ? '<div class="dict-phon">/' + dictEsc(ph) + '/</div>' : '<div class="dict-phon">音标暂缺</div>') +
+    '<div class="tag sand" style="margin-top:6px">' + (inV ? '仅供查阅，不参与背诵' : '仅供查阅，不在背诵范围') + '</div>' +
+    '<div class="dict-mean">' + lines + '</div>' + lemmaLine +
+    '<div class="dict-meta">背诵词库：<b>' + (inV ? '在' : '不在') + '</b>' + (inV ? '（' + dictEsc(res.key) + '）' : '；这层只用于查阅') + '</div>' +
+    '<div class="dict-actions"><button onclick="dictSpeak()">发音</button><button class="pri" onclick="dictClose()">关闭</button></div>' +
+    '<div class="dict-meta">词典：ECDICT（MIT）' + (D && D.meta ? ' · ' + D.meta.count + ' 条' : '') + '；释义未改写。</div>';
+  document.getElementById('dictMask').classList.add('on');
+}
+function dictShow(tok) { dictRender(tok, dictFind(tok)); }
+function dictOpen(tok) {
+  const t = String(tok || '').replace(/^[^A-Za-z]+|[^A-Za-z]+$/g, '');
+  if (!t) return;
+  if (window.__DICT_DATA__) { dictShow(t); return; }
+  dictRender(t, null, 'loading');
+  dictLoad(ok => { if (!ok) dictRender(t, null, 'error'); else dictShow(t); });
+}
+function dictOpenSel(sel, tok) {
+  const p = String(sel || '').toLowerCase().replace(/’/g, "'").replace(/[^a-z' \-]+/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!p) { dictOpen(tok); return; }
+  const go = () => { const r = dictPhrase(p); if (r) { DICTCUR = p; dictRender(p, r); } else dictOpen(tok); };
+  if (window.__DICT_DATA__) { go(); return; }
+  dictRender(tok, null, 'loading');
+  dictLoad(ok => { if (ok) go(); else dictOpen(tok); });
+}
+function dictClose() { document.getElementById('dictMask').classList.remove('on'); }
+function dictSpeak() {
+  try {
+    if (!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(DICTCUR);
+    u.lang = 'en-US'; u.rate = .9;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+function dictWordAt(e) {
+  let node = null, off = 0;
+  if (document.caretRangeFromPoint) { const r = document.caretRangeFromPoint(e.clientX, e.clientY); if (r) { node = r.startContainer; off = r.startOffset; } }
+  else if (document.caretPositionFromPoint) { const p = document.caretPositionFromPoint(e.clientX, e.clientY); if (p) { node = p.offsetNode; off = p.offset; } }
+  if (!node || node.nodeType !== 3) return '';
+  const t = node.textContent || '';
+  const left = t.slice(0, off).match(/[A-Za-z][A-Za-z'’\-]*$/);
+  const right = t.slice(off).match(/^[A-Za-z'’\-]*/);
+  return ((left ? left[0] : '') + (right ? right[0] : '')).replace(/^[’'-]+|[’'-]+$/g, '');
+}
+document.addEventListener('click', e => {
+  if (e.target.closest('a,button,code,.dict-pop')) return;
+  if (!e.target.closest('.wrap')) return;
+  const tok = dictWordAt(e);
+  if (!tok || tok.length < 2) return;
+  let sel = '';
+  try { sel = String(window.getSelection ? window.getSelection() : '').trim(); } catch (err) {}
+  if (sel && sel.length >= 3 && sel.length <= 60 && /\s/.test(sel) && /^[A-Za-z][A-Za-z'’\- ]+$/.test(sel)) dictOpenSel(sel, tok);
+  else dictOpen(tok);
+});
+</script>
+</body>
+</html>

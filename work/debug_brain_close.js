@@ -1,0 +1,23 @@
+const { chromium } = require('playwright-core');
+(async () => {
+  const b = await chromium.launch({ executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', headless: true });
+  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
+  await p.goto('http://localhost:8766/index.html');
+  await p.evaluate(() => localStorage.clear());
+  await p.reload();
+  await p.waitForTimeout(400);
+  await p.evaluate(() => openBrain(true));
+  await p.waitForTimeout(300);
+  console.log('before:', await p.$eval('#brainModal', e => e.className));
+  console.log('btn:', await p.$eval('#brainModal .x', e => ({ html: e.outerHTML, box: e.getBoundingClientRect().toJSON(), fn: typeof e.onclick })));
+  await p.click('#brainModal .x');
+  await p.waitForTimeout(300);
+  console.log('after click:', await p.$eval('#brainModal', e => e.className));
+  console.log('brainAt gap:', await p.evaluate(() => Math.round((Date.now() - brainAt) / 1000)));
+  await p.evaluate(() => openBrain(true));
+  await p.waitForTimeout(200);
+  await p.evaluate(() => document.querySelector('#brainModal .x').click());
+  await p.waitForTimeout(200);
+  console.log('after js click:', await p.$eval('#brainModal', e => e.className));
+  await b.close();
+})();

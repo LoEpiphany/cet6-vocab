@@ -1,0 +1,92 @@
+underestimate/undervalue :: 都含"低估"：underestimate 偏数量、程度、难度（underestimate the cost）；undervalue 偏价值、作用（feel undervalued）。
+eliminate/alleviate/curb :: 力度递减：eliminate 彻底消除；alleviate 缓解（痛苦、压力）；curb 遏制住（不让它继续扩大）。
+inevitable/essential :: inevitable 不可避免的（常带消极后果）；essential 必不可少的（正面必需）。
+conducive/detrimental :: 一对反义：be conducive to（有助于）；be detrimental to（有害于）。都接 to。
+prevalent/prevalence :: 同源不同性：prevalent 形容词"普遍的"；prevalence 名词"普遍程度、流行率"。
+vulnerable/susceptible :: vulnerable 强调"易受伤害、脆弱"（be vulnerable to attack）；susceptible 强调"易受影响、易感"（be susceptible to advertising）。
+incentive/initiative :: incentive 外部给的"激励、诱因"；initiative 内在的"主动性"或"倡议"（take the initiative）。
+compensation/penalty :: compensation 补偿、赔偿（受损后得到）；penalty 处罚（违规后付出）。
+emission/consumption :: emission 排放（气体、光、声音）；consumption 消耗、消费。
+accessible/excessive :: 形近：accessible 可获得的、可进入的；excessive 过度的。注意 access 是名词/动词。
+automation/automatic/autonomy :: automation 自动化（名词）；automatic 自动的（形容词）；autonomy 自主权。
+complicated/complex/sophisticated :: complicated 因环节多而"繁琐难懂"；complex 结构上"复杂"（中性）；sophisticated 褒义"精密、老练"。
+consistent/constant/constraint :: consistent 前后"一致"；constant 持续不断、恒定；constraint 限制（名词）。
+identify/discern :: identify 认出、确认身份或原因；discern 费力"辨别出"细微差别。
+attribute/assign :: attribute 把…归因于（attribute A to B）；assign 分派任务、分配。
+deem/assume/assert :: deem 正式"认为、视为"；assume 未经证实地"假定"；assert 坚定"断言、主张"。
+trait/track :: trait 性格或遗传"特征"；track 追踪、轨迹。拼写只差一字母。
+appeal/compel :: appeal 吸引、呼吁（appeal to）；compel 迫使（compel sb to do）。
+infrastructure/structural :: infrastructure 基础设施（路、网、水电）；structural 结构性的（structural reform）。
+conservation/consumption :: conservation 保护、节约；consumption 消耗、消费。
+profitable/prominent :: profitable 有利可图的；prominent 突出的、著名的。
+explicitly/precisely :: explicitly 明确地（不含糊）；precisely 精确地、恰好。
+dictate/contradict :: dictate 命令、决定（dictate the pace）；contradict 与…矛盾、反驳。
+implement/compile :: implement 实施（政策）；compile 汇编（资料）。
+dominate/dominant/domestic :: dominate 动词"主导"；dominant 形容词"占优势的"；domestic 国内的、家庭的。
+manipulate/manufacture/manufacturer :: manipulate 操控（数据、舆论）；manufacture 制造（动词/名词）；manufacturer 制造商。
+surveillance/supervision/oversight :: surveillance 秘密或技术性"监视"；supervision 上级"监督管理"；oversight 也有"疏忽"义（an oversight）。
+confine/constrain/restriction :: confine 限定在某个范围（be confined to）；constrain 受条件制约（be constrained by）；restriction 名词"限制规定"。
+rigorous/relentless :: rigorous 严格的、严谨的（标准、研究）；relentless 不间断的、毫不留情的（压力、追求）。
+exaggerate/aggravate :: exaggerate 夸大（说大）；aggravate 加重、使恶化。拼写相近，意思不同。
+highlight/illustrate :: highlight 强调、凸显；illustrate 举例或图示说明。
+revolutionary/evolutionary :: revolutionary 革命性的（剧变）；evolutionary 渐进的、进化的。
+diverse/diversify/diffusion :: diverse 多样的；diversify 使多元化；diffusion 扩散、传播。
+remedy/alternative/substitute :: remedy 补救办法；alternative 可供选择的另一方案（an alternative to）；substitute 替代品、代替者。
+susceptible/suspicion :: susceptible 易受影响的（形容词）；suspicion 怀疑（名词）。
+degradation/depression/decline :: degradation 退化、恶化（环境、品质）；depression 抑郁、萧条；decline 下降、衰退。
+boost/slash :: 一对动作：boost 提升、促进；slash 大幅削减。
+expertise/exposure/expansion :: expertise 专业知识技能；exposure 暴露、接触；expansion 扩张。
+assertion/allegation :: assertion 断言、主张（不一定负面）；allegation 未经证实的"指控、声称"。
+essential/substantial :: essential 必不可少的；substantial 大量的、实质性的。
+advocate/advocacy :: advocate 动词"提倡"或名词"倡导者"；advocacy 名词"倡导活动"。
+access/accessible :: access 名词/动词"通道、使用权、获取"；accessible 形容词"可获得的、易使用的"。
+consumption/assumption :: 形近：consumption 消费、消耗；assumption 假定、假设（来自 assume）。
+conceive/perceive/preserve/perspective :: conceive 构想出（想法）；perceive 感知、认为；preserve 保存；perspective 视角。
+principle/privilege/prevalence :: principle 原则；privilege 特权；prevalence 普遍程度。三者拼写都像但无关。
+refrain/constrain :: refrain from doing 克制不做；constrain 限制、制约。
+arouse/urge :: arouse 引起（兴趣、怀疑）；urge 敦促（urge sb to do）。
+forge/endorse :: forge 建立（关系）、伪造；endorse 公开支持、背书。
+sustainable/substantial :: sustainable 可持续的；substantial 大量的。常在同一篇环保文里出现。
+endeavor/endorse :: endeavor 努力（endeavor to do）；endorse 支持、认可。
+prosperity/proximity :: prosperity 繁荣；proximity 接近、邻近（in close proximity to）。
+restore/retrieve :: restore 恢复、修复（秩序、信心）；retrieve 取回、检索（数据、信息）。
+tackle/track :: tackle 着手解决（问题）；track 追踪、记录。拼写相近。
+validate/evaluate :: validate 证实有效、验证；evaluate 评估、评价。
+justification/judgment :: justification 正当理由；judgment 判断力、判决。
+accelerate/accessible :: accelerate 加速；accessible 可及的。形近，词性不同。
+efficiency/sufficient :: efficiency 效率；sufficient 充足的。拼写相近，含义无关。
+abstract/extract :: abstract 抽象的、摘要；extract 提取、摘录（动词）。
+delicate/deplete :: delicate 微妙、易碎的；deplete 耗尽（资源）。
+collaboration/collaborative/collective :: collaboration 合作（名词）；collaborative 合作的（形容词）；collective 集体的。
+innovation/innovative :: innovation 创新（名词）；innovative 创新的（形容词）。
+decline/deplete :: decline 数量下降、拒绝；deplete 把资源耗尽。
+misconception/conceive :: misconception 误解（conceive 的否定名词）；conceive 构想、设想。
+dismiss/discern :: dismiss 否定、不予考虑、解雇；discern 辨别出。
+unconventional/conventional :: 一对反义：unconventional 非传统的；conventional 传统的、常规的。
+reckless/relentless :: reckless 鲁莽、不计后果；relentless 不懈的、持续强烈的。
+advent/advance :: advent 到来、出现（the advent of AI）；advance 进步、前进。
+correlate/regulate :: correlate 与…相关（correlate with）；regulate 监管、调节。
+emerge/emulate :: emerge 出现、浮现；emulate 效仿、努力赶上。
+novel/innovate :: novel 形容词"新颖的"（也可作名词"小说"）；innovate 动词"创新"。
+catastrophe/catastrophic :: catastrophe 灾难（名词）；catastrophic 灾难性的（形容词）。
+routine/route :: routine 常规、惯例；route 路线。拼写几乎相同。
+irritating/irrigation :: irritating 恼人的；irrigation 灌溉。形近义远。
+devise/divide :: devise 设计、想出（方案）；divide 分开、划分。
+conviction/convince :: conviction 坚定信念、定罪（名词）；convince 使信服（动词）。
+concrete/abstract :: 一对反义：concrete 具体的；abstract 抽象的。
+impact/implement :: impact 影响、冲击；implement 实施。前缀相同，含义不同。
+selective/collective :: selective 有选择的、挑剔的；collective 集体的。
+interpretation/intervention :: interpretation 解释、解读；intervention 干预。
+crisis/critic :: crisis 危机；critic 批评者。拼写相近。
+underprivileged/privilege :: underprivileged 贫困弱势的（形容词）；privilege 特权（名词）。
+eager/keen :: 近义：be eager to do 急于做；be keen on 热衷于。keen 还有"敏锐的"义。
+acute/accurate :: acute 严重的、急性的；accurate 准确的。形近。
+automatic/automation :: automatic 自动的（形容词）；automation 自动化（名词）。
+withdraw/withdrawal :: withdraw 撤回、退出（动词）；withdrawal 撤退、退出（名词）。
+discern/concern :: discern 辨别出；concern 担忧、涉及。拼写相近。
+wander/wonder :: wander 漫步、走神；wonder 想知道、惊叹。只差一个字母。
+portion/proportion :: portion 一份、一部分；proportion 比例（the proportion of）。
+individualism/collectivism :: 一对反义：individualism 个人主义；collectivism 集体主义。
+confide/confident :: confide 吐露（confide in sb）；confident 自信的。
+invest/invent :: invest 投资；invent 发明。只差一个字母。
+pursue/pursuit :: pursue 追求（动词）；pursuit 追求（名词，in pursuit of）。

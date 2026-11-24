@@ -1,0 +1,22 @@
+const { chromium } = require('playwright-core');
+const EDGE = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
+(async () => {
+  const b = await chromium.launch({ executablePath: EDGE, headless: true });
+  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
+  const errs = [];
+  p.on('pageerror', e => errs.push(String(e)));
+  await p.goto('http://localhost:8766/index.html');
+  await p.waitForTimeout(400);
+  await p.click('[data-v=essay]');
+  await p.waitForTimeout(300);
+  await p.evaluate(() => eGo('topic', { id: 'tp2_5' }));
+  await p.waitForTimeout(300);
+  console.log('topic title:', (await p.textContent('#essayBody h2')).trim());
+  console.log('btns:', await p.$$eval('#essayBody button.btn', e => e.map(x => x.textContent.trim())));
+  await p.$$eval('#essayBody button.btn', e => e.find(x => /先背相关句/.test(x.textContent)).click());
+  await p.waitForTimeout(300);
+  console.log('cards ids:', await p.evaluate(() => eCtx.ids), 'i=', await p.evaluate(() => eCtx.i));
+  console.log('flash:', !!(await p.$('#essayBody .eflash')));
+  console.log('errs:', errs.length ? errs : 'none');
+  await b.close();
+})();

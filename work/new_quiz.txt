@@ -1,0 +1,554 @@
+/* ---------- 出题 ---------- */
+function charOverlap(a, b) {
+  const set = new Set(String(b).replace(/[^\u4e00-\u9fa5]/g, ''));
+  let n = 0;
+  for (const ch of new Set(String(a).replace(/[^\u4e00-\u9fa5]/g, ''))) if (set.has(ch)) n++;
+  return n;
+}
+function distractors(w, n, avoidSyn) {
+  let same = WORDS.filter(x => x.id !== w.id && x.pos === w.pos);
+  if (avoidSyn !== false) {
+    const strict = same.filter(x => charOverlap(x.cn, w.cn) < 2 && x.cn !== w.cn);
+    if (strict.length >= n) same = strict;
+  }
+  const byLen = same.slice().sort((a, b) => Math.abs(a.w.length - w.w.length) - Math.abs(b.w.length - w.w.length));
+  const out = [];
+  const used = new Set([w.id]);
+  const add = arr => { for (const x of arr) { if (out.length >= n) return; if (used.has(x.id)) continue; out.push(x); used.add(x.id); } };
+  add(shuffle(byLen.slice(0, 14)));
+  add(shuffle(same));
+  if (out.length < n) {
+    let rest = WORDS.filter(x => x.id !== w.id && !used.has(x.id) && charOverlap(x.cn, w.cn) < 2);
+    if (rest.length < n) rest = WORDS.filter(x => x.id !== w.id && !used.has(x.id));
+    add(shuffle(rest));
+  }
+  return out.slice(0, n);
+}
+function uniqOpts(arr) {
+  const out = [];
+  arr.forEach(x => { if (x != null && !out.includes(x)) out.push(x); });
+  return out;
+}
+function confGroup(w) {
+  return CONF.find(g => g.w.some(x => x.toLowerCase() === w.w.toLowerCase())) || null;
+}
+const TYPES = ['e2c', 'spell', 'cloze', 'build', 'use', 'read', 'confusable', 'context', 'listen'];
+const TYPE_NAME = {
+  e2c: '认词', spell: '拼出来', cloze: '例句填空', build: '连词成句',
+  use: '自己造句', read: '出声读', confusable: '辨析', context: '语境选词', listen: '听写'
+};
+let enabledTypes = ['e2c', 'spell', 'cloze', 'build', 'use', 'confusable'];
+
+/* 在句子里挖空，同时记录实际词形（triggers / triggered） */
+function blankForm(text, word, keep) {
+  const escw = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  let re = new RegExp('\\b' + escw + '[a-z]*\\b', 'i');
+  let m = text.match(re);
+  if (!m) {
+    const stem = word.slice(0, Math.max(4, word.length - 3)).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    re = new RegExp('\\b' + stem + '[a-z]*\\b', 'i');
+    m = text.match(re);
+  }
+  if (!m) return { html: esc(text), surface: word };
+  const surface = m[0];
+  const shown = keep ? '<span class="blank">' + esc(surface) + '</span>' : '<span class="blank">______</span>';
+  return {
+    html: esc(text.slice(0, m.index)) + shown + esc(text.slice(m.index + surface.length)),
+    surface: surface
+  };
+}
+function blank(text, word, keep) { return blankForm(text, word, keep).html; }
+
+/* 连词成句：把例句切成词块（最多 11 块） */
+function sentenceChunks(w) {
+  let toks = w.ex.replace(/\s+/g, ' ').trim().split(' ');
+  let cut = false;
+  if (toks.length > 11) { toks = toks.slice(0, 11); cut = true; }
+  const ans = toks.map(t => t.replace(/[.,;:!?"]+$/g, ''));
+  return { ans: ans, cut: cut };
+}
+function normTokens(arr) {
+  return arr.map(x => String(x).toLowerCase().replace(/[^a-z\-']/g, '')).filter(Boolean).join(' ');
+}
+function renderQ(w, type) {
+  let html = '', opts = [], answer = w.w, prompt = '', sub = '', lang = 'en', alt = null, mode = 'choice', light = false;
+  if (type === 'e2c') {
+    prompt = '<div class="wordbig">' + esc(w.w) + '</div><div class="phon">' + esc(w.pos) + ' 先认一眼，选出最贴近的释义</div>';
+    answer = w.cn; lang = 'cn';
+    opts = uniqOpts([w.cn].concat(distractors(w, 3).map(x => x.cn)));
+  } else if (type === 'spell') {
+    prompt = '<div class="mean">' + esc(w.cn) + '</div><div class="phon">别选，直接把它拼出来（' + w.pos + '，' + w.w[0].toUpperCase() + '… ' + w.w.replace(/[^a-zA-Z]/g, '').length + ' 个字母）</div>';
+    mode = 'type';
+  } else if (type === 'cloze') {
+    const bf = blankForm(w.ex, w.w);
+    alt = [bf.surface];
+    prompt = '<div class="qtext">' + bf.html + '</div><div class="phon" style="margin-top:8px">' + esc(w.excn) + '</div>';
+    sub = '填出句子里这个词（首字母 ' + bf.surface[0].toUpperCase() + '，' + bf.surface.replace(/[^a-zA-Z]/g, '').length + ' 个字母）';
+    mode = 'type';
+  } else if (type === 'build') {
+    const c = sentenceChunks(w);
+    Q.curChunks = c.ans;
+    const pool = shuffle(c.ans.map((t, i) => ({ t: t, i: i })));
+    prompt = '<div class="phon">把词块按顺序点出来，拼成一句通顺的话（' + esc(w.cn) + '）</div>' +
+      '<div id="buildLine" class="buildline"></div>' +
+      '<div id="buildPool" class="buildpool">' +
+      pool.map((x, k) => '<button class="tok" data-k="' + k + '" data-t="' + esc(x.t) + '">' + esc(x.t) + '</button>').join('') +
+      '</div>' + (c.cut ? '<div class="mini">只取例句前 11 个词</div>' : '');
+    answer = c.ans.join(' ');
+    mode = 'build';
+  } else if (type === 'use') {
+    prompt = '<div class="phon">用 <b>' + esc(w.w) + '</b> 自己写一句英文，写你真实会遇到的场景</div>' +
+      '<div class="mini" style="margin:6px 0 8px">' + esc(w.col[0] || w.cn) + '</div>' +
+      '<textarea id="useBox" rows="2" placeholder="写一句 6 个词以上的英文…"></textarea>' +
+      '<div class="btnrow" style="margin-top:10px"><button class="btn primary" onclick="submitUse()">写好了</button></div>';
+    mode = 'use'; light = true;
+  } else if (type === 'read') {
+    prompt = '<div class="phon">先出声读这句，读完再听标准音，对照一下</div>' +
+      '<div class="qtext" style="margin-top:8px">' + blank(w.ex, w.w, w.w) + '</div>' +
+      '<div class="phon" style="margin-top:6px">' + esc(w.excn) + '</div>' +
+      '<div class="btnrow" style="margin-top:12px"><button class="btn" onclick="playQ()">听标准音</button></div>' +
+      '<div class="btnrow" style="margin-top:8px"><button class="btn" onclick="selfRead(1)">读顺了</button><button class="btn" onclick="selfRead(0)">有点打结</button></div>';
+    mode = 'read'; light = true;
+  } else if (type === 'context') {
+    const cnSent = w.excn.replace(/[，。；：、]/g, ' ');
+    prompt = '<div class="qtext">' + esc(cnSent) + '</div><div class="phon" style="margin-top:8px">这句中文在说什么？选出句中该用的英文词</div>';
+    opts = uniqOpts([w.w].concat(distractors(w, 3).map(x => x.w)));
+  } else if (type === 'confusable') {
+    const g = confGroup(w);
+    const names = g ? g.w.slice() : [w.w];
+    if (!names.some(x => x.toLowerCase() === w.w.toLowerCase())) names.unshift(w.w);
+    const others = distractors(w, 4, false).map(x => x.w);
+    let k = 0;
+    while (names.length < 4 && k < others.length) { if (!names.includes(others[k])) names.push(others[k]); k++; }
+    prompt = '<div class="qtext">' + blankForm(w.ex, w.w) + '</div><div class="phon" style="margin-top:8px">' + esc(w.excn) + '</div>';
+    opts = uniqOpts(names).slice(0, 4);
+  } else if (type === 'listen') {
+    prompt = '<div class="qtext" style="font-size:15px">听发音，写出这个词</div><div class="phon" style="margin-top:8px">' + esc(w.cn) + '</div>';
+    sub = '点“播放”再听一遍';
+    mode = 'type';
+  }
+  if (opts.length) {
+    const idx = shuffle(opts.map(o => ({ o: o })));
+    const letters = ['A', 'B', 'C', 'D'];
+    html = prompt + '<div style="margin-top:16px">' + idx.map((x, k) =>
+      '<button class="opt" data-v="' + esc(x.o) + '"><span class="k">' + letters[k] + '</span>' + esc(x.o) + '</button>').join('') + '</div>';
+  } else if (mode === 'type') {
+    html = prompt + '<div style="margin-top:16px"><input type="text" id="typed" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="输入英文单词"></div>' +
+      (sub ? '<div class="mini" style="margin-top:6px">' + sub + '</div>' : '') +
+      '<div class="btnrow" style="margin-top:12px"><button class="btn" onclick="playQ()">播放</button><button class="btn primary" onclick="submitTyped()">提交</button></div>';
+  } else {
+    html = prompt;
+  }
+  return { html: html, answer: answer, sub: sub, mode: mode, lang: lang, alt: alt, light: light };
+}
+
+/* ---------- 测试流程 ---------- */
+let Q = null;
+function startTest() {
+  const scope = document.getElementById('scScope').value;
+  const page = document.getElementById('scPage').value;
+  const len = Number(document.querySelector('#lenSeg .on').dataset.len);
+  startSession(scope, page, len);
+}
+function startScope(scope) { startSession(scope, 1, 12); }
+function startIds(ids) {
+  if (!ids.length) { toast('这组词没找到'); return; }
+  Q = { ids: ids.slice(), srcIds: ids.slice(), i: 0, len: ids.length, right: 0, wrong: 0, wrongIds: [],
+        t0: Date.now(), cur: null, locked: false, retry: {}, scope: 'story', types: enabledTypes.slice(),
+        qn: 0, perWord: {}, prod: 0, rested: false };
+  document.getElementById('testSetup').style.display = 'none';
+  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('summary').style.display = 'none';
+  go('test');
+  nextQ();
+}
+function startToday() {
+  const st = stats();
+  if (!st.due.length && !st.fuzzy.length && S.quota - (S.d[today()] ? S.d[today()].n : 0) <= 0) {
+    toast('今天的量已经过完了。要不要去错题本再来一轮？');
+  }
+  startSession('today', 1, 12);
+}
+function startSession(scope, page, len) {
+  let ids = buildQueue(scope, page);
+  if (scope === 'wrong' || scope === 'fuzzy') ids = ids.filter(id => BY[id]);
+  if (!ids.length) { toast('这个范围里暂时没有词'); return; }
+  Q = { ids: len > 0 ? ids.slice(0, len) : ids, srcIds: ids.slice(), i: 0, len: len > 0 ? len : ids.length,
+        right: 0, wrong: 0, wrongIds: [], t0: Date.now(), cur: null, locked: false, retry: {},
+        scope: scope, types: enabledTypes.slice(), qn: 0, perWord: {}, prod: 0, rested: false };
+  document.getElementById('testSetup').style.display = 'none';
+  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('summary').style.display = 'none';
+  go('test');
+  nextQ();
+}
+function pickType(w) {
+  const r = rec(w.id);
+  const fresh = !r || r.b === 0;
+  let pool = Q.types.filter(t => t !== 'confusable' || confGroup(w));
+  if (!pool.length) pool = ['e2c'];
+  // 第一次见：优先"认"，先建立形—义；已经学过：优先"产出"
+  if (fresh && pool.includes('e2c') && Math.random() < 0.75) return 'e2c';
+  if (!fresh) {
+    const prodTypes = pool.filter(t => t === 'spell' || t === 'cloze' || t === 'build' || t === 'use');
+    if (prodTypes.length && Math.random() < 0.7) {
+      let t = prodTypes[Math.floor(Math.random() * prodTypes.length)];
+      if (Q.lastType === t && prodTypes.length > 1) t = prodTypes[(prodTypes.indexOf(t) + 1) % prodTypes.length];
+      Q.lastType = t;
+      return t;
+    }
+  }
+  let t = pool[Math.floor(Math.random() * pool.length)];
+  if (Q.lastType === t && pool.length > 1) {
+    const alt = pool.filter(x => x !== t);
+    if (alt.length) t = alt[Math.floor(Math.random() * alt.length)];
+  }
+  Q.lastType = t;
+  return t;
+}
+function nextQ() {
+  if (!Q) return;
+  if (Q.i >= Q.ids.length) return finish();
+  if (!Q.rested && Date.now() - Q.t0 > 25 * 60 * 1000) {
+    Q.rested = true;
+    toast('已经专注 25 分钟了，起身 90 秒，回来继续');
+  }
+  const id = Q.ids[Q.i];
+  const w = BY[id];
+  if (!w) { Q.i++; return nextQ(); }
+  const type = pickType(w);
+  const q = renderQ(w, type);
+  Q.cur = { w: w, type: type, answer: q.answer, mode: q.mode, lang: q.lang, alt: q.alt || null,
+            light: !!q.light, retry: !!Q.retry[id], locked: false };
+  Q.qn++;
+  document.getElementById('qType').textContent = TYPE_NAME[type];
+  document.getElementById('qPos').textContent = w.tier === 1 ? 'L1 必拿' : (w.tier === 2 ? 'L2 核心' : 'L3 扩展');
+  document.getElementById('qCounter').textContent = Math.min(Q.i + 1, Q.len) + ' / ' + Q.len;
+  document.getElementById('qBar').style.width = Math.round(Q.i / Q.len * 100) + '%';
+  document.getElementById('qBody').innerHTML = q.html;
+  document.getElementById('qFeedback').innerHTML = '';
+  document.getElementById('qActions').innerHTML = '';
+  bindQ(q, w, type);
+}
+function bindQ(q, w, type) {
+  document.querySelectorAll('#qBody .opt').forEach(b => b.onclick = () => answerChoice(b));
+  if (q.mode === 'type') {
+    const el = document.getElementById('typed');
+    if (el) { el.focus(); el.onkeydown = e => { if (e.key === 'Enter') submitTyped(); }; }
+    if (type === 'listen') setTimeout(() => speak(w.w), 250);
+  }
+  if (q.mode === 'build') {
+    const line = document.getElementById('buildLine');
+    const pool = document.getElementById('buildPool');
+    let picked = [];
+    const draw = () => {
+      line.innerHTML = picked.length
+        ? picked.map((p, k) => '<button class="tok on" data-p="' + k + '">' + esc(p) + '</button>').join('')
+        : '<span class="mini">点下面的词块，按顺序排在这里</span>';
+      line.querySelectorAll('.tok').forEach(btn => btn.onclick = () => {
+        if (Q.cur.locked) return;
+        picked.splice(Number(btn.dataset.p), 1); draw();
+      });
+      pool.querySelectorAll('.tok').forEach(btn => {
+        btn.classList.toggle('used', picked.includes(btn.dataset.t));
+        btn.onclick = () => {
+          if (Q.cur.locked || btn.classList.contains('used')) return;
+          picked.push(btn.dataset.t); draw();
+          if (picked.length === Q.curChunks.length) setTimeout(() => submitBuild(picked), 120);
+        };
+      });
+    };
+    draw();
+    Q.buildPick = () => picked;
+    if (!document.getElementById('buildSubmit')) {
+      const bar = document.createElement('div');
+      bar.className = 'btnrow';
+      bar.id = 'buildSubmit';
+      bar.style.marginTop = '10px';
+      bar.innerHTML = '<button class="btn" onclick="clearBuild()">清空</button><button class="btn primary" onclick="submitBuild()">就这句</button>';
+      line.parentNode.appendChild(bar);
+    }
+  }
+  if (q.mode === 'use') {
+    const el = document.getElementById('useBox');
+    if (el) setTimeout(() => el.focus(), 60);
+  }
+}
+function playQ() { if (Q && Q.cur) speak(Q.cur.w.w); }
+function sameWord(a, b) {
+  const x = String(a).toLowerCase().replace(/[^a-z\- ]/g, '').trim();
+  const y = String(b).toLowerCase().replace(/[^a-z\- ]/g, '').trim();
+  return x !== '' && x === y;
+}
+function normCn(s) { return String(s).replace(/[\s；;，,。.、:：()（）]/g, ''); }
+function sameCn(a, b) { const x = normCn(a), y = normCn(b); return x !== '' && x === y; }
+function isRight(given, cur) {
+  if (cur.lang === 'cn') return sameCn(given, cur.answer);
+  if (sameWord(given, cur.answer)) return true;
+  return !!(cur.alt && cur.alt.some(x => sameWord(given, x)));
+}
+function editDistance(a, b) {
+  a = a.toLowerCase(); b = b.toLowerCase();
+  const m = a.length, n = b.length;
+  if (!m) return n; if (!n) return m;
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+function markSeen(r) { if (!r.seen) { r.seen = 1; dayRec(today()).n++; } }
+
+function submitTyped() {
+  if (!Q || !Q.cur || Q.cur.locked) return;
+  const el = document.getElementById('typed');
+  const v = el ? el.value.trim() : '';
+  if (!v) return;
+  const exact = isRight(v, Q.cur);
+  const target = Q.cur.answer;
+  const near = !exact && target.length > 5 && editDistance(v, target) <= 1;
+  const note = exact ? '' : (near ? '拼写差一点：' + target : '你写的是 ' + v);
+  resolveAnswer(exact || near, note, null, near ? 'near' : '');
+}
+function answerChoice(btn) {
+  if (!Q || !Q.cur || Q.cur.locked) return;
+  resolveAnswer(isRight(btn.dataset.v, Q.cur), null, btn);
+}
+function submitBuild(picked) {
+  if (!Q || !Q.cur || Q.cur.locked) return;
+  const arr = picked || (Q.buildPick ? Q.buildPick() : []);
+  if (!arr.length) { toast('先把词块排一排'); return; }
+  const got = normTokens(arr), want = normTokens(Q.curChunks);
+  resolveAnswer(got === want, got === want ? '' : '例句：' + Q.curChunks.join(' '), null, 'build');
+}
+function clearBuild() {
+  if (!Q || !Q.cur || Q.cur.locked) return;
+  const line = document.getElementById('buildLine');
+  const pool = document.getElementById('buildPool');
+  if (!line) return;
+  line.innerHTML = '<span class="mini">点下面的词块，按顺序排在这里</span>';
+  pool.querySelectorAll('.tok').forEach(b => b.classList.remove('used'));
+  Q.buildPick = () => [];
+  bindQ({ mode: 'build' }, Q.cur.w, 'build');
+}
+function submitUse() {
+  if (!Q || !Q.cur || Q.cur.locked) return;
+  const el = document.getElementById('useBox');
+  const v = el ? el.value.trim() : '';
+  if (!v) { toast('写一句再交'); return; }
+  const w = Q.cur.w;
+  const stem = w.w.slice(0, Math.max(4, w.w.length - 3)).toLowerCase();
+  const words = v.split(/\s+/).filter(Boolean);
+  const used = v.toLowerCase().includes(stem);
+  const longEnough = words.length >= 5;
+  resolveAnswer(used && longEnough, !used ? '句子里没用上 ' + w.w : (!longEnough ? '太短了，再加两个词' : ''), null, 'use');
+}
+function selfRead(ok) {
+  if (!Q || !Q.cur || Q.cur.locked) return;
+  resolveAnswer(!!ok, ok ? '' : '打结就对了——它还没变成嘴上的词', null, 'read');
+}
+
+/* 反馈文案：按情况换说法 */
+function praise(kind, streak) {
+  const P = {
+    first: ['对。这个词现在有位置了。', '干净。顺手念一遍，别让它只停在眼睛里。', '对了，稳住这个节奏。'],
+    retry: ['这回抓住了。刚才漏的那一下比顺对三遍值钱。', '第二次就对，说明刚才那个错改过来了。'],
+    streak: ['连着几次都对，它开始变成你的了。', '连续命中，这个词可以少花点力气了。', '稳。这个词先放一放。'],
+    near: ['就差一个字母，手比脑子慢了半拍。', '拼写差一点，念一遍再写一遍。'],
+    wrong: ['不对。先看它一眼，等会儿还会再问你。', '这个错留着，比看三遍解释管用。', '没中。没关系，错一次记一次。'],
+    build: ['句子拼对了，语序感也在长。', '对，词得放在句子里才算会。'],
+    use: ['写出来了，这就比"认识"高一层。', '句子成了。对照一下参考句，看哪个更自然。'],
+    read: ['读顺了，声音这条线也接上了。', '好，嘴上也过了。']
+  };
+  const arr = P[kind] || P.first;
+  if (kind === 'first' && streak >= 3) return P.streak[Math.floor(Math.random() * P.streak.length)];
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+function resolveAnswer(ok, note, btn, kind) {
+  const w = Q.cur.w;
+  Q.cur.locked = true;
+  const r = ensure(w.id);
+  const td = today();
+  const dr = dayRec(td);
+  dr.q++; dr.c += ok ? 1 : 0;
+  markSeen(r);
+  r.last = Date.now();
+
+  const pw = Q.perWord[w.id] || (Q.perWord[w.id] = { ok: 0, bad: 0, prod: 0, tries: 0 });
+  pw.tries++;
+  if (Q.cur.type !== 'e2c' && Q.cur.type !== 'context' && Q.cur.type !== 'confusable') Q.prod++;
+  if (ok) pw.ok++; else pw.bad++;
+
+  const okey = b => Q.cur.lang === 'cn' ? sameCn(b.dataset.v, Q.cur.answer) : isRight(b.dataset.v, Q.cur);
+  document.querySelectorAll('#qBody .opt').forEach(b => {
+    if (okey(b)) b.classList.add('correct');
+    else if (btn && b === btn) b.classList.add('wrong');
+    b.disabled = true;
+  });
+
+  let removed = false;
+  if (ok) {
+    r.r++; r.rc = (r.rc || 0) + 1;
+    if (r.f && r.rc >= 2) r.f = 0;
+    if (r.x > 0 && r.rc >= 2) { r.x = 0; removed = true; }
+    if (Q.cur.light) {
+      r.b = Math.max(1, r.b);
+      r.due = addDays(td, 1);
+    } else {
+      r.b = Math.min(5, r.b + 1);
+      r.due = addDays(td, INT[r.b]);
+    }
+    Q.right++;
+  } else {
+    r.x++; r.rc = 0;
+    r.b = Math.max(1, r.b - 1);
+    r.due = td;
+    Q.wrong++;
+    if (!Q.wrongIds.includes(w.id)) Q.wrongIds.push(w.id);
+    const at = Math.min(Q.ids.length, Q.i + 3);
+    if (!Q.retry[w.id]) { Q.ids.splice(at, 0, w.id); Q.retry[w.id] = 1; }
+    if (kind === 'read') { r.f = 1; }
+  }
+  save();
+
+  const g = confGroup(w);
+  const streak = (r.rc || 0);
+  let tone = kind === 'use' ? 'use' : kind === 'build' ? 'build' : kind === 'read' ? 'read' : 'first';
+  if (!ok) tone = (kind === 'near' ? 'near' : 'wrong');
+  else if (Q.cur.retry) tone = 'retry';
+  else if (kind === 'near') tone = 'near';
+  const line = ok ? (tone === 'near' ? praise('near') : praise(tone, streak)) : praise('wrong');
+
+  const fb = document.getElementById('qFeedback');
+  fb.innerHTML =
+    '<div class="fb ' + (ok ? 'ok' : 'no') + '">' + (ok ? '' : '✗ ') + esc(line) +
+      (ok ? '' : '<div style="margin-top:4px">正确答案：<b>' + esc(w.w) + '</b>' + (note ? '　' + esc(note) : '') + '</div>') +
+      (ok && note ? '<div style="margin-top:4px">' + esc(note) + '</div>' : '') +
+    '</div>' +
+    (removed ? '<div class="mini" style="margin-top:6px;color:var(--ok)">连对两次，已从错题本移出</div>' : '') +
+    '<div style="margin-top:12px"><span class="pos">' + esc(w.pos) + '</span><span class="mean">' + esc(w.cn) + '</span>' +
+      (w.hl ? ' <span class="tag warn">原文重点</span>' : '') +
+      (Q.cur.retry ? ' <span class="tag gray">回头再问</span>' : '') + '</div>' +
+    '<div class="cols">' + w.col.map(c => '<div>' + esc(c) + '</div>').join('') + '</div>' +
+    '<div class="ex"><div class="en">' + blank(w.ex, w.w, w.w) + '</div><div class="cn">' + esc(w.excn) + '</div></div>' +
+    (MN[w.id] ? '<div class="mnem">' + esc(MN[w.id].t) + '：' + esc(MN[w.id].s) + '</div>' : '') +
+    (g ? '<div class="note" style="margin-top:10px;background:#f7f7f4;padding:9px 11px;border-radius:8px">辨析：' + esc(g.note) + '</div>' : '');
+
+  // 答对且这个词有一条以上搭配时，追问一句
+  if (ok && w.col.length > 1) {
+    const second = w.col[1];
+    const en = second.split('（')[0];
+    const bf = blankForm(en, w.w);
+    if (bf.surface !== w.w || true) {
+      const optsF = uniqOpts([w.w].concat(distractors(w, 3).map(x => x.w)));
+      fb.innerHTML +=
+        '<div class="follow' + (Q.followDone ? ' done' : '') + '" id="followBox">' +
+          '<div class="mini" style="margin-bottom:6px">追问一句：这个词还能这么说 ——</div>' +
+          '<div class="qtext" style="font-size:15px">' + bf.html + '</div>' +
+          '<div class="mini" style="margin-top:4px">' + esc(second) + '</div>' +
+          '<div class="chips" style="margin-top:8px">' + shuffle(optsF).map(o =>
+            '<button class="chip" onclick="answerFollow(this,\'' + esc(o).replace(/'/g, "\\'") + '\')">' + esc(o) + '</button>').join('') +
+          '</div>' +
+        '</div>';
+      Q.followDone = false;
+    }
+  }
+
+  document.getElementById('qActions').innerHTML =
+    '<button class="btn" onclick="speak(\'' + w.w.replace(/'/g, "\\'") + '\')">发音</button>' +
+    (ok ? '' : '<button class="btn" onclick="addFuzzy(' + w.id + ')">眼熟想不起</button>') +
+    '<button class="btn primary" onclick="nextAfter()">继续 <span class="kbd">回车</span></button>';
+  document.addEventListener('keydown', keyNext);
+}
+function answerFollow(btn, val) {
+  if (Q.followDone) return;
+  Q.followDone = true;
+  const ok = isRight(val, Q.cur);
+  btn.classList.add(ok ? 'on' : '');
+  btn.parentNode.querySelectorAll('.chip').forEach(c => {
+    c.disabled = true;
+    if (isRight(c.textContent, Q.cur)) c.classList.add('on');
+  });
+  const box = document.getElementById('followBox');
+  if (box) box.insertAdjacentHTML('beforeend',
+    '<div class="mini" style="margin-top:8px;color:' + (ok ? 'var(--ok)' : 'var(--err)') + '">' +
+    (ok ? '搭配也是它。这条一起记。' : '是 ' + Q.cur.w.w + '，不是这个。搭配记一遍：' + esc(Q.cur.w.col[1])) + '</div>');
+}
+function id0(w) { return w.id; }
+function addFuzzy(id) {
+  const r = ensure(id); markSeen(r); r.f = 1; r.b = Math.max(1, r.b - 1); r.due = today(); save();
+  toast('加进加强队列了，会盯上它');
+}
+function keyNext(e) { if (e.key === 'Enter') { e.preventDefault(); nextAfter(); } }
+function nextAfter() {
+  document.removeEventListener('keydown', keyNext);
+  if (!Q) return;
+  Q.i++;
+  nextQ();
+}
+function finish() {
+  const sec = Math.round((Date.now() - Q.t0) / 1000);
+  dayRec(today()).t += sec;
+  save();
+  const total = Q.right + Q.wrong;
+  const acc = total ? Math.round(Q.right / total * 100) : 0;
+  const ids = Object.keys(Q.perWord);
+  const solid = ids.filter(id => Q.perWord[id].ok >= 2 && Q.perWord[id].bad === 0);
+  const shaky = ids.filter(id => Q.perWord[id].bad > 0)
+    .sort((a, b) => Q.perWord[b].bad - Q.perWord[a].bad || Q.perWord[a].ok - Q.perWord[b].ok)
+    .slice(0, 3).map(id => BY[id]).filter(Boolean);
+  const prodRate = total ? Math.round(Q.prod / total * 100) : 0;
+  document.getElementById('quiz').style.display = 'none';
+  const sm = document.getElementById('summary');
+  sm.style.display = 'block';
+  sm.innerHTML =
+    '<div class="card"><h2>这一轮收工</h2>' +
+    '<div class="grid3">' +
+      '<div class="stat"><div class="n">' + ids.length + '</div><div class="l">过手词数</div></div>' +
+      '<div class="stat acc"><div class="n">' + acc + '%</div><div class="l">答对率</div></div>' +
+      '<div class="stat"><div class="n">' + prodRate + '%</div><div class="l">动手产出</div></div>' +
+    '</div>' +
+    '<div class="note" style="margin-top:12px">' +
+      (solid.length ? '这轮真正攥住的：<b>' + solid.slice(0, 6).map(id => esc(BY[id].w)).join('、') + '</b>' + (solid.length > 6 ? ' 等 ' + solid.length + ' 个' : '') + '。<br>' : '') +
+      (shaky.length ? '还虚的：<b style="color:var(--err)">' + shaky.map(w => esc(w.w)).join('、') + '</b>——现在就去把它们再答一遍，别等明天。' : '没有反复出错的词，节奏不错。') +
+    '</div>' +
+    (shaky.length ? '<button class="btn block" style="margin-top:12px" onclick="startIds(' + JSON.stringify(shaky.map(w => w.id)) + ')">把这几个再问一遍</button>' : '') +
+    '<div class="hr"></div>' +
+    '<div class="btnrow">' +
+      '<button class="btn primary" onclick="againSame()">再来一轮</button>' +
+      '<button class="btn" onclick="restNow()">休息 2 分钟</button>' +
+    '</div>' +
+    '<div class="note" style="margin-top:10px">用时 ' + Math.floor(sec / 60) + ' 分 ' + (sec % 60) + ' 秒。' +
+      (sec > 25 * 60 ? ' 这一轮偏长了，下一轮拆成两段。' : '') + '</div></div>';
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  renderHome();
+}
+function restNow() {
+  let left = 120;
+  const sm = document.getElementById('summary');
+  const box = document.createElement('div');
+  box.className = 'card';
+  box.innerHTML = '<h2>休息一下</h2><div class="big" id="restLeft">2:00</div>' +
+    '<div class="note" style="margin-top:6px">站起来，走到窗边，看远处 20 秒。别刷短视频——它会把刚建立的注意力打散。</div>';
+  sm.appendChild(box);
+  const t = setInterval(() => {
+    left--;
+    const el = document.getElementById('restLeft');
+    if (!el) { clearInterval(t); return; }
+    el.textContent = Math.floor(left / 60) + ':' + String(left % 60).padStart(2, '0');
+    if (left <= 0) { clearInterval(t); el.textContent = '回来吧'; }
+  }, 1000);
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function againSame() {
+  if (Q.scope === 'story' && Q.srcIds) return startIds(Q.srcIds);
+  startSession(Q.scope, 1, Q.len);
+}
+function backToSetup() {
+  document.getElementById('summary').style.display = 'none';
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('testSetup').style.display = 'block';
+  go('test');
+}

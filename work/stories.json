@@ -1,0 +1,421 @@
+{
+ "units": [
+  {
+   "id": 1,
+   "title": "一个湖的二十年",
+   "theme": "环境与气候",
+   "words": [
+    "ecosystem",
+    "emission",
+    "biodiversity",
+    "habitat",
+    "erosion",
+    "conservation",
+    "degradation",
+    "catastrophic",
+    "sustainable",
+    "extinction"
+   ],
+   "intro": "一篇关于湖泊治理的短文：从健康生态到崩塌，再到修复。",
+   "story": "Twenty years ago, the lake was a healthy ecosystem. Then a factory opened upstream, and its emission of chemicals went unchecked. Within a decade, biodiversity had collapsed: fish that once filled the shallows disappeared, and the wetland habitat shrank year by year. Heavy rain washed the bare hillsides, and erosion choked the channels with mud. Local teachers started a conservation campaign, arguing that the degradation of the lake was not a minor problem but a potentially catastrophic one. Their proposal was simple — close the factory and restore the wetland. Farmers resisted at first, then accepted a sustainable plan that shared the tourist income. Last spring, the first young fish returned. Nobody talks about extinction any more.",
+   "recall": "先说湖本来是个健康的 ecosystem，然后工厂的 emission 失控；biodiversity 崩塌、habitat 逐年缩小；暴雨冲走表土造成 erosion；老师发起 conservation 运动，说这种 degradation 可能是 catastrophic 的；最后靠 sustainable 的方案救回来，extinction 不再被提起。"
+  },
+  {
+   "id": 2,
+   "title": "仓库里的摄像头",
+   "theme": "技术与工作",
+   "words": [
+    "automation",
+    "digital",
+    "productivity",
+    "efficiency",
+    "robotic",
+    "surveillance",
+    "manipulation",
+    "upgrade",
+    "expertise",
+    "innovation"
+   ],
+   "intro": "自动化提高了效率，也让每个动作都被记录。",
+   "story": "When the warehouse installed automation, managers promised that digital tools would raise productivity and improve efficiency. Robotic arms now lift what workers used to carry. But the upgrade came with cameras: constant surveillance, and software that timed every pause. Some employees worried about the manipulation of their performance data, and a few left. The company then hired engineers with real expertise to redesign the system, and invited staff to suggest improvements. The most successful innovation came from a forklift driver — a new layout that cut walking time by a third.",
+   "recall": "仓库上了 automation，经理说 digital 工具能提高 productivity 和 efficiency；robotic 机械臂接管搬运；但 upgrade 带来 surveillance，还有对数据的 manipulation，老员工走了；公司请来有 expertise 的工程师重做系统，最后一条 innovation 来自叉车司机。"
+  },
+  {
+   "id": 3,
+   "title": "林老师的课堂",
+   "theme": "教育与学习",
+   "words": [
+    "academic",
+    "cognitive",
+    "extracurricular",
+    "motivate",
+    "cultivate",
+    "nurture",
+    "discipline",
+    "adolescent",
+    "bilingual",
+    "instruction"
+   ],
+   "intro": "一位老师相信：成绩靠的不是天赋，而是习惯。",
+   "story": "Ms. Lin teaches at a school where half the students are bilingual. She believes academic success depends less on talent than on discipline, and that her job is to cultivate curiosity and nurture independent thinking rather than fill notebooks. Her instruction is unusual: every lesson opens with a question, and students discuss it in pairs before writing. Extracurricular clubs — robotics, drama, gardening — are part of the timetable, not extras. Adolescent brains, she says, need sleep, exercise and a reason to care. To motivate a class that had given up on reading, she let them choose the books. Cognitive tests later showed clear gains in memory.",
+   "recall": "林老师的学生一半是 bilingual；她认为 academic 成绩靠 discipline 而不是天赋，工作是 cultivate 好奇心；她的 instruction 每节课从问题开始；extracurricular 社团排进课表；adolescent 的大脑需要睡眠和理由；为了 motivate 放弃阅读的班级，她让学生自己选书，cognitive 测试显示记忆提升。"
+  },
+  {
+   "id": 4,
+   "title": "丹尼尔的三个月",
+   "theme": "健康与心理",
+   "words": [
+    "fatigue",
+    "moody",
+    "self-esteem",
+    "susceptible",
+    "depression",
+    "vulnerable",
+    "psychological",
+    "excessive",
+    "arousal",
+    "alleviate"
+   ],
+   "intro": "长期加班之后，身体先发出了信号。",
+   "story": "After months of overtime, Daniel felt constant fatigue. He was moody at home, and his self-esteem dropped with every missed deadline. A doctor explained that young men under chronic stress are especially susceptible to depression, and that lack of sleep leaves the brain vulnerable to anxiety. The psychological support he received was modest — a weekly session, a sleep plan, and a rule against excessive screen time after ten. He also learned that the arousal produced by exercise can alleviate tension. Three months later, his scores on a mood questionnaire had moved back into the normal range.",
+   "recall": "丹尼尔长期加班后持续 fatigue，在家很 moody，self-esteem 随每个逾期下降；医生说长期压力下的人对 depression 更 susceptible，缺觉让大脑 vulnerable；他得到的 psychological 支持很简单，还包括限制 excessive 屏幕时间；运动带来的 arousal 能 alleviate 紧张。"
+  },
+  {
+   "id": 5,
+   "title": "东部区的四十分钟",
+   "theme": "城市与交通",
+   "words": [
+    "metropolitan",
+    "infrastructure",
+    "resident",
+    "grid",
+    "traffic",
+    "expansion",
+    "platform",
+    "route",
+    "proximity",
+    "pedestrian"
+   ],
+   "intro": "城市长大了，路却没有。",
+   "story": "The metropolitan area has doubled in twenty years. Its infrastructure has not. Residents in the eastern district wait forty minutes for a bus, and the road grid was designed for a tenth of today's traffic. The city's expansion plan proposes a new metro line, with a platform every kilometre and a route that links the hospital to the university. Planners argue that the proximity of housing to stations matters more than the number of roads. Pedestrian streets, they add, are cheaper than car parks and better for local shops.",
+   "recall": "metropolitan 区二十年翻倍，infrastructure 没跟上；东部 resident 等车四十分钟，路网 grid 只按今天 traffic 的十分之一设计；expansion 计划修地铁，每隔一公里一个 platform，route 连接医院和大学；规划者说住房与车站的 proximity 比修路更重要，pedestrian 街道比停车场便宜。"
+  },
+  {
+   "id": 6,
+   "title": "梅的咖啡生意",
+   "theme": "经济与商业",
+   "words": [
+    "commodity",
+    "revenue",
+    "manufacturer",
+    "investment",
+    "profitable",
+    "incentive",
+    "compensation",
+    "entrepreneur",
+    "consumer",
+    "purchase"
+   ],
+   "intro": "把大宗商品做成品牌，需要的不只是好豆子。",
+   "story": "When Mei started her company, coffee was just a commodity. She bought beans directly from farmers, roasted them herself, and sold online. Revenue grew slowly until a large manufacturer offered to supply her with equipment. The investment paid off: the business became profitable in its third year. Her incentive for staff was unusual — everyone shared a fixed share of profits, and compensation was published openly. Today she advises young entrepreneurs to watch one number above all: how often a consumer makes a second purchase.",
+   "recall": "梅创业时咖啡只是 commodity；她从农户直接买豆、自己烘焙、线上卖；revenue 增长缓慢，直到一家 manufacturer 提供设备；investment 见效，第三年 profitable；她给员工的 incentive 是利润分成，compensation 公开；她建议年轻 entrepreneur 只盯一个数：consumer 第二次 purchase 的比例。"
+  },
+  {
+   "id": 7,
+   "title": "一份不好读的报告",
+   "theme": "社会与政策",
+   "words": [
+    "inequality",
+    "underprivileged",
+    "discrimination",
+    "advocacy",
+    "consensus",
+    "intervention",
+    "initiative",
+    "privilege",
+    "recommendation",
+    "inclusive"
+   ],
+   "intro": "关于不平等的一份报告，最后变成了政策。",
+   "story": "The report on inequality made uncomfortable reading. Children in underprivileged districts had fewer books, worse heating and less qualified teachers. Discrimination in hiring was harder to prove, but the data was clear. After years of advocacy, a cross-party consensus emerged: early intervention was cheaper than later repair. The government's initiative included free tutoring and a transport subsidy. Critics called the scheme a privilege for a few, but the committee's recommendation was broader — an inclusive system that judged schools by how well they taught the weakest students, not the strongest.",
+   "recall": "报告讲 inequality：underprivileged 区孩子书少、取暖差、老师弱；招聘中的 discrimination 难证明但数据清楚；多年 advocacy 后形成 cross-party consensus：早期 intervention 比事后补救便宜；政府 initiative 包括免费辅导和交通补贴；有人说这是少数人的 privilege，但委员会 recommendation 更宽：建 inclusive 的体系。"
+  },
+  {
+   "id": 8,
+   "title": "一条头条的代价",
+   "theme": "媒体与信息",
+   "words": [
+    "headline",
+    "allegation",
+    "evidence",
+    "scrutiny",
+    "bias",
+    "transparent",
+    "manipulation",
+    "appeal",
+    "signal",
+    "exposure"
+   ],
+   "intro": "转发一百万次的指控，证据可能只有一张截图。",
+   "story": "The story ran under a dramatic headline, and within hours the allegation had been shared a million times. There was little evidence. Under scrutiny, the screenshots turned out to be edited. The editor admitted a bias towards speed over accuracy, and promised a more transparent process: every claim checked, every correction printed in full. Media teachers now use the case to explain manipulation — how a striking image or an emotional appeal can signal authority while hiding the absence of facts. Exposure to many sources, they argue, protects readers only if they keep asking who benefits.",
+   "recall": "一条 dramatic headline 让 allegation 几小时内被转发百万次，但 evidence 很少；在 scrutiny 下截图被证明改过；编辑承认 bias：重速度轻准确，承诺更 transparent 的流程；媒体老师用这个案例讲 manipulation：醒目的图片或情绪化的 appeal 会 signal 权威，却掩盖没有事实；exposure 多源只有配上一句“谁获益”才有保护作用。"
+  },
+  {
+   "id": 9,
+   "title": "一个杯子的价格",
+   "theme": "消费与环境行为",
+   "words": [
+    "consumption",
+    "urge",
+    "restriction",
+    "disposable",
+    "prohibit",
+    "penalty",
+    "decline",
+    "sacrifice",
+    "excessive",
+    "curb"
+   ],
+   "intro": "改变行为最快的，往往不是呼吁。",
+   "story": "Every summer the city's consumption of bottled water doubles. Campaigners urge residents to carry a flask, but convenience wins. The council tried a restriction that would prohibit disposable cups in public buildings, then a small penalty for shops that ignored it. Some businesses welcomed the rule; others said the charge was excessive and would hurt sales. What finally curbed the habit was not the penalty but the price: a visible charge on every cup. Water use per household began to decline. Few people would call it a sacrifice — most said they simply stopped noticing what they had given up.",
+   "recall": "夏天瓶装水 consumption 翻倍；环保人士 urge 居民自带水杯，但方便赢了；市议会先对公共建筑里的 disposable 杯子设 restriction，再对无视的商家 small penalty；最后 curb 习惯的不是罚款而是价格——每杯都有可见收费；家庭用水开始 decline；没人觉得这是 sacrifice，只是没注意到自己放弃了什么。"
+  },
+  {
+   "id": 10,
+   "title": "关于作业的争论",
+   "theme": "争论与观点",
+   "words": [
+    "debate",
+    "assert",
+    "dispute",
+    "analogy",
+    "contradict",
+    "implication",
+    "perspective",
+    "conviction",
+    "justification",
+    "deem"
+   ],
+   "intro": "双方都说证据支持自己。",
+   "story": "In the debate over homework, both sides assert that the evidence supports them. The data, however, is in dispute: some studies find gains, others find none. One researcher uses an analogy — homework is like medicine, useful in the right dose and harmful in excess. Another contradicts her, arguing that the comparison ignores how unequal homes are. The implications are political, not just academic. From a parent's perspective, the real question is who the extra hour belongs to. What the panel deemed most useful was not a verdict but a clearer account of the justification each side would accept as proof. Her conviction, in the end, was simple: the argument should be about children's time.",
+   "recall": "作业 debate 中双方都 assert 证据支持自己，但数据本身在 dispute；一位研究者用 analogy：作业像药，剂量合适有用、过量有害；另一位 contradict 她，说这个类比忽视了家庭条件差异；implication 是政治性的；从家长 perspective 看，真正的问题是那一小时属于谁；委员会 deem 最有用的不是结论，而是说清各自接受什么作为证据；她的 conviction 很简单：争论应围绕孩子的时间。"
+  },
+  {
+   "id": 11,
+   "title": "办公室去哪了",
+   "theme": "变化与趋势",
+   "words": [
+    "inevitable",
+    "transform",
+    "evolve",
+    "emerging",
+    "revolutionary",
+    "tendency",
+    "variation",
+    "polarization",
+    "expansion",
+    "accelerate"
+   ],
+   "intro": "远程办公从一个临时方案，变成了长期趋势。",
+   "story": "The shift to remote work was once treated as temporary. Now it looks inevitable. Digital tools have transformed how teams meet, and the office itself is evolving into a place for conversation rather than desks. Emerging industries — battery repair, data care, urban farming — are growing fast. Not every change is revolutionary; most are small variations on old habits. But two tendencies worry researchers: the polarization of jobs into very skilled and very routine, and the accelerated expansion of cities that cannot house the workers they attract.",
+   "recall": "远程办公曾是临时方案，现在看是 inevitable；数字工具 transform 了开会方式，办公室正 evolve 成谈话的地方；emerging 行业在快速长大；不是每个变化都 revolutionary，多数只是旧习惯的 variation；两个 tendency 令人担心：工作向高技能和纯routine 两极的 polarization，以及城市加速 expansion 却住不下吸引来的工人。"
+  },
+  {
+   "id": 12,
+   "title": "她改掉的那一点",
+   "theme": "性格与行为",
+   "words": [
+    "trait",
+    "diligent",
+    "complacent",
+    "willpower",
+    "reckless",
+    "committed",
+    "eager",
+    "keen",
+    "resentment",
+    "gratitude"
+   ],
+   "intro": "一个人从“凡事自己扛”到“公开检查假设”。",
+   "story": "Her most useful trait, colleagues say, is that she is diligent without being complacent. She keeps a list, reviews it every evening, and refuses to rely on willpower alone. After a reckless decision in her twenties cost the firm money, she became committed to checking assumptions in writing. She is eager to learn and keen on criticism, though early on her directness caused resentment. What changed was small: she began to end meetings with gratitude — naming one thing each person had done well. People stopped defending themselves and started listening.",
+   "recall": "同事说她最有用的 trait 是 diligent 而不 complacent；她列清单、每晚复盘，不靠 willpower；二十多岁一次 reckless 决定让公司亏钱后，她 committed 于把假设写下来检查；她 eager 学习、keen 于批评，但早年直率引起 resentment；改变很小：会议结束先说 gratitude，点名每个人做好的一件事。"
+  }
+ ],
+ "mnemonics": [
+  {
+   "id": 9,
+   "t": "词根",
+   "s": "con-（共同）+ duc（引导）+ -ive：把人和目标“引到一处”→ 有助于…的。固定搭配 be conducive to。"
+  },
+  {
+   "id": 10,
+   "t": "词根",
+   "s": "de-（向下）+ trim（磨损）：越磨越少 → 有害的、不利的。搭配 be detrimental to。"
+  },
+  {
+   "id": 29,
+   "t": "词根",
+   "s": "ad-（去）+ levis（轻）：把重量变轻 → 减轻、缓和。同源词 lever（杠杆）。"
+  },
+  {
+   "id": 2,
+   "t": "词根",
+   "s": "in-（不）+ evit（避开）+ -able：躲不开的 → 不可避免的。"
+  },
+  {
+   "id": 13,
+   "t": "词根",
+   "s": "prae-（在前）+ val（强）：力量占上风 → 盛行的、普遍的。"
+  },
+  {
+   "id": 15,
+   "t": "词根",
+   "s": "vulnus（伤口）：带着伤口暴露在外 → 脆弱的、易受伤的。搭配 be vulnerable to。"
+  },
+  {
+   "id": 24,
+   "t": "词根",
+   "s": "in-（向内）+ canere（定调、唱）：给你定个调子推着走 → 激励、诱因。"
+  },
+  {
+   "id": 25,
+   "t": "词根",
+   "s": "com-（一起）+ pens（称重）：把损失和回报放天平上称平 → 补偿、赔偿。"
+  },
+  {
+   "id": 27,
+   "t": "词根",
+   "s": "counter-（相对）+ part（部分）：对面那一半 → 对应的人或物。"
+  },
+  {
+   "id": 30,
+   "t": "词根",
+   "s": "cata-（向下）+ strophe（转）：剧情急转直下 → 灾难性的。"
+  },
+  {
+   "id": 34,
+   "t": "词根",
+   "s": "labor（劳动）+ -ious：全是活儿的 → 费力的、繁琐的。"
+  },
+  {
+   "id": 39,
+   "t": "词根",
+   "s": "idea（观念）+ -logy（体系）：一整套观念 → 意识形态。"
+  },
+  {
+   "id": 95,
+   "t": "词根",
+   "s": "sus-（在下）+ cept（拿）：站在下面容易被拿走 → 易受影响的、易感的。"
+  },
+  {
+   "id": 112,
+   "t": "词根",
+   "s": "con-（共同）+ sens（感觉）：大家感觉一致 → 共识。"
+  },
+  {
+   "id": 93,
+   "t": "词根",
+   "s": "con-（一起）+ string（拉紧）：被绳子拉紧 → 约束、限制。"
+  },
+  {
+   "id": 99,
+   "t": "词根",
+   "s": "de-（向下）+ grad（等级）：等级往下走 → 退化、降级。"
+  },
+  {
+   "id": 103,
+   "t": "词根",
+   "s": "aemulus（竞争者）：盯着对手学 → 效仿、努力赶上。"
+  },
+  {
+   "id": 244,
+   "t": "词根",
+   "s": "notus（已知）：出了名，多半是坏名声 → 臭名昭著地。"
+  },
+  {
+   "id": 205,
+   "t": "词根",
+   "s": "scrutari（翻检杂物）：一件件翻着看 → 仔细审查、细查。"
+  },
+  {
+   "id": 208,
+   "t": "词根",
+   "s": "trans-（穿过）+ par（显现）：光能穿过去 → 透明的；引申“显然的”。"
+  },
+  {
+   "id": 261,
+   "t": "词根",
+   "s": "soph（智慧）：经过复杂加工而显得老练 → 精密的、复杂的、世故的。"
+  },
+  {
+   "id": 273,
+   "t": "词根",
+   "s": "entreprendre（着手去做）：敢接手的人 → 企业家、创业者。"
+  },
+  {
+   "id": 278,
+   "t": "词根",
+   "s": "ens（存在）：独立存在的东西 → 实体。"
+  },
+  {
+   "id": 137,
+   "t": "词根",
+   "s": "en-（在…上）+ dors（背）：在文件背面签字 → 背书、公开支持。"
+  },
+  {
+   "id": 160,
+   "t": "词根",
+   "s": "en-（使）+ devoir（义务）：把事当义务去做 → 努力、尽力。"
+  },
+  {
+   "id": 308,
+   "t": "词根",
+   "s": "con-（完全）+ vict（征服）：被说服到底 → 坚定信念；法律义“定罪”。"
+  },
+  {
+   "id": 322,
+   "t": "词根",
+   "s": "e-（出）+ rod（啃）：一点点啃掉 → 侵蚀。"
+  },
+  {
+   "id": 372,
+   "t": "词根",
+   "s": "vit（生命）：与生命相关 → 至关重要的、生命的。"
+  },
+  {
+   "id": 196,
+   "t": "词根",
+   "s": "metro（母城）+ polis（城）：母城带着周边 → 大都市的。"
+  },
+  {
+   "id": 163,
+   "t": "词根",
+   "s": "priv（个人）+ leg（法律）：法律给个人的特殊待遇 → 特权。"
+  },
+  {
+   "id": 114,
+   "t": "画面",
+   "s": "想象刀“唰”地一下砍过去，价格、预算应声落地 → 大幅削减。搭配 slash prices / the budget。"
+  },
+  {
+   "id": 51,
+   "t": "谐音",
+   "s": "“渴”→ 渴望。搭配 crave attention（渴望关注）。"
+  },
+  {
+   "id": 338,
+   "t": "联想",
+   "s": "和 option（选项）同源：在选项里挑一个 → 选择、决定。搭配 opt for。"
+  },
+  {
+   "id": 352,
+   "t": "联想",
+   "s": "想象一根针“尖”地扎下去 → 尖锐的痛 → 严重的、急性的（acute pain / acute shortage）。"
+  },
+  {
+   "id": 292,
+   "t": "谐音",
+   "s": "“旱破”：旱灾把地晒破，人寸步难行 → 妨碍、阻碍。"
+  }
+ ]
+}

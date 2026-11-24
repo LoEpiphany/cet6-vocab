@@ -1,0 +1,158 @@
+# -*- coding: utf-8 -*-
+"""给高频难词补谐音/拆词助记，幂等追加到 vocab.json"""
+import json, os
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+VOCAB = os.path.join(BASE, '..', 'outputs', 'vocab.json')
+
+# word: (类型, 助记)
+ADD = {
+    'absurd': ('谐音', '“阿伯色的”：阿伯硬把黑说成白——太荒谬。'),
+    'adapt': ('谐音', '“阿达普特”：阿达丢到哪儿都能适应。'),
+    'advent': ('谐音', '“阿德文特”：阿德一到，新时代就来了——到来、出现。'),
+    'adverse': ('谐音', '“阿德verse（转）”：风向一转，全是不利。'),
+    'adherence': ('拆词', 'adhere（粘住）+-ence：粘住规则不放——遵守、坚持。'),
+    'aggressive': ('谐音', '“阿哥雷西夫”：阿哥一吼就咄咄逼人。'),
+    'analogy': ('谐音', '“安娜乐吉”：安娜拿两个例子比来比去——类比。'),
+    'anxiety': ('谐音', '“安赛提”：心里安不住，赛鼓提心——焦虑。'),
+    'appreciate': ('谐音', '“阿婆瑞西”：阿婆收到瑞雪，又感激又欣赏。'),
+    'associate': ('谐音', '“阿搜西特”：一搜就搜出关联。'),
+    'association': ('谐音', '“阿搜西艾申”：搜出一串关系——联想、协会。'),
+    'assumption': ('谐音', '“阿桑普申”：阿桑拍胸脯：先假设。'),
+    'awareness': ('谐音', '“阿韦尔尼斯”：阿韦一醒来，有了意识。'),
+    'bilingual': ('谐音', '“拜林瓜”：拜两位语言老师——双语。'),
+    'candidate': ('谐音', '“看弟来特”：看弟来面试——候选人。'),
+    'capacity': ('谐音', '“卡车帕西提”：卡车能装多少——容量、能力。'),
+    'cognition': ('谐音', '“考格尼申”：考前先有认知。'),
+    'compel': ('谐音', '“抗佩尔”：扛着赔也要逼你——强迫。'),
+    'conceive': ('谐音', '“看西服”：看西服想款式——构想。'),
+    'conception': ('谐音', '“康塞普申”：脑子里先有的那一版——观念、构想。'),
+    'confine': ('谐音', '“康饭”：画个框把饭圈住——限制。'),
+    'context': ('谐音', '“看泰克斯特”：看懂上下文。'),
+    'cope': ('谐音', '“扣普”：扣住问题，慢慢应对。'),
+    'creature': ('谐音', '“克瑞彻”：可瑞养的小生物。'),
+    'crucial': ('谐音', '“克鲁舍”：路口选哪边——至关重要。'),
+    'deem': ('谐音', '“弟嗯”：弟嗯一声，表示“我认为”。'),
+    'deliver': ('谐音', '“递里窝”：递到你手里——交付、讲出。'),
+    'deprive': ('谐音', '“底扒夫”：底都扒了——剥夺。'),
+    'devastating': ('谐音', '“大水特停”：大水一来全停摆——毁灭性的。'),
+    'deviation': ('谐音', '“地歪申”：地都歪了——偏离。'),
+    'diminish': ('谐音', '“地迷你”：地越变越小——减弱、减少。'),
+    'discourse': ('谐音', '“迪斯科斯”：迪斯科里也在讨论——话语。'),
+    'discrepancy': ('谐音', '“的士卡车”：两边的数对不上——差异。'),
+    'distribution': ('谐音', '“地上一布”：地上铺开——分配、分布。'),
+    'domestic': ('谐音', '“都麦斯蒂克”：都在家里——国内的、家庭的。'),
+    'eliminate': ('谐音', '“一厘米内特”：一厘米内清干净——消除。'),
+    'embrace': ('谐音', '“因不来抱”：因为不来，先抱一下——拥抱、接受。'),
+    'emerging': ('谐音', '“一冒金”：一冒头就是新金——新兴的。'),
+    'emission': ('谐音', '“一米申”：一米外都在排——排放。'),
+    'emphasise': ('谐音', '“爱法赛兹”：爱法，就反复强调。'),
+    'evolve': ('谐音', '“一窝变”：一窝慢慢变——进化。'),
+    'executive': ('谐音', '“一个贼丘”：一个高管管一丘——主管。'),
+    'expertise': ('拆词', 'expert（专家）+-ise：专家身上的专门知识。'),
+    'expose': ('谐音', '“一泼就露”：一泼水就暴露。'),
+    'forge': ('谐音', '“佛前打铁”：锻造；假货也能伪造。'),
+    'foster': ('谐音', '“佛系养”：佛系培养。'),
+    'fuel': ('谐音', '“废油”：废油当燃料——推动。'),
+    'grant': ('谐音', '“格兰”：格兰批了一笔款——拨款。'),
+    'grid': ('谐音', '“格子”：一格一格——网格、电网。'),
+    'hardship': ('谐音', '“哈腰拾破”：哈着腰拾破烂——困苦。'),
+    'identify': ('谐音', '“ID提法”：刷 ID 就识别。'),
+    'identity': ('谐音', '“ID实体”：ID 就是身份。'),
+    'imply': ('谐音', '“一瞥”：一瞥就懂——暗示。'),
+    'incidence': ('谐音', '“一星半点”：一星半点也算发生率。'),
+    'indicator': ('拆词', 'indicate（指示）+-or：用来指的东西——指标。'),
+    'infant': ('谐音', '“婴凡特”：婴儿。'),
+    'infringe': ('谐音', '“一脚踩线”：踩线就是侵犯。'),
+    'isolate': ('谐音', '“爱搜late”：爱搜到很晚，被隔离。'),
+    'leverage': ('拆词', 'lever（杠杆）+-age：借杠杆发力——影响力、手段。'),
+    'manipulate': ('谐音', '“马尼（money）被捏”：被钱捏在手里——操纵。'),
+    'manipulation': ('谐音', '“马尼（money）被捏”：被钱捏在手里——操纵。'),
+    'metaphor': ('谐音', '“麦子像佛”：麦子像佛——比喻。'),
+    'moody': ('谐音', '“木迪”：木着脸，喜怒无常。'),
+    'motivation': ('谐音', '“摩托维申”：摩托给你动力。'),
+    'norm': ('谐音', '“诺姆”：诺就是规矩——规范。'),
+    'nurture': ('谐音', '“奶茶”：奶茶养大——养育、培养。'),
+    'ordeal': ('谐音', '“熬得尔”：熬过去——磨难。'),
+    'peer': ('谐音', '“匹尔”：匹配合得来的人——同龄人。'),
+    'potential': ('谐音', '“破土而出”：还埋着，但有潜力。'),
+    'preference': ('拆词', 'prefer（更喜欢）+-ence：偏好。'),
+    'presumably': ('拆词', 'presume（假定）+-ably：大概是。'),
+    'priority': ('谐音', '“先来”：先来的先办——优先。'),
+    'prioritise': ('谐音', '“先来”：先来的先办——优先考虑。'),
+    'prioritize': ('谐音', '“先来”：先来的先办——优先考虑。'),
+    'prospect': ('拆词', 'pro（向前）+spect（看）：往前看——前景。'),
+    'radical': ('谐音', '“根底的”：从根上改——激进的、彻底的。'),
+    'readily': ('拆词', 'ready（准备好）+-ly：准备好了——欣然、轻易。'),
+    'reckless': ('谐音', '“reck不记”：不记后果——鲁莽。'),
+    'recruit': ('谐音', '“新兵入队”：招进来——招募。'),
+    'reflect': ('拆词', 're（回）+flect（弯）：光折回来——反照、反思。'),
+    'refrain': ('谐音', '“忍住不唱副歌”：refrain 是副歌，也是克制。'),
+    'regulation': ('谐音', '“规则来申”：规则申明——规章、监管。'),
+    'relentless': ('拆词', 'relent（松懈）+-less：不松劲——无情的、坚持不懈的。'),
+    'render': ('谐音', '“认的”：让你变成这样——使成为。'),
+    'retrieve': ('拆词', 're（再）+trieve（找）：再找回来——找回。'),
+    'revenue': ('谐音', '“review账单”：翻账单看收入。'),
+    'sceptical': ('谐音', '“四凯提”：四凯一提就质疑——怀疑的。'),
+    'scrutinise': ('谐音', '“screen+tiny”：贴着屏幕看小字——细查。'),
+    'spectrum': ('拆词', 'spect（看）+-rum：看出去的一条带——光谱、范围。'),
+    'strive': ('谐音', '“死拽”：死拽着目标不放——努力。'),
+    'surveillance': ('拆词', 'sur（在上）+veil（看）：在上面盯着——监视。'),
+    'synchronize': ('拆词', 'syn（同）+chron（时间）：同一时间——同步。'),
+    'trigger': ('谐音', '“扳机”：一扣就响——触发。'),
+    'turmoil': ('拆词', 'turn（转）+moil（翻搅）：翻来搅去——动荡。'),
+    'virtue': ('谐音', '“佛求善”：佛求善——美德。'),
+    'explicitly': ('拆词', 'explicit（清楚的）+-ly：把话说到明处——明确地。'),
+    'dictate': ('谐音', '“迪克泰特”：迪克一开口就是命令——口述、听写。'),
+    'irritating': ('谐音', '“一惹它就烦”：一惹就恼——恼人的。'),
+    'bullying': ('谐音', '“不理”：越不理越欺负人——霸凌。'),
+    'extracurricular': ('拆词', 'extra（以外）+curricular（课程的）：课外的。'),
+    'fundamentally': ('拆词', 'fundament（基础）+-ally：从根上——根本上。'),
+    'inherently': ('拆词', 'in（内）+here（这里）：就在这里——内在地。'),
+    'infrastructure': ('拆词', 'infra（下）+structure（结构）：底下那层——基础设施。'),
+    'intellectual': ('拆词', 'intellect（智力）+-ual：智力的。'),
+    'interaction': ('拆词', 'inter（相互）+action（作用）：互动。'),
+    'intermediary': ('拆词', 'inter（之间）+medi（中）：夹在中间的人——中间人。'),
+    'irrational': ('拆词', 'ir（不）+rational（理性的）：不理性的。'),
+    'manufacturer': ('拆词', 'manufacture（制造）+-er：制造商。'),
+    'misconception': ('拆词', 'mis（错）+conception（观念）：错误观念。'),
+    'noticeable': ('拆词', 'notice（注意）+-able：值得注意的——明显的。'),
+    'outperform': ('拆词', 'out（超过）+perform（表现）：胜过。'),
+    'outright': ('拆词', 'out（到底）+-right：到底了——完全的、直截了当的。'),
+    'outstanding': ('拆词', 'out（出）+standing（站）：站出来——突出的。'),
+    'policymaker': ('拆词', 'policy（政策）+maker（制定者）：决策者。'),
+    'problematic': ('拆词', 'problem（问题）+-atic：有问题的。'),
+    'reshape': ('拆词', 're（再）+shape（形状）：重塑。'),
+    'revolutionary': ('拆词', 'revolution（革命）+-ary：革命性的。'),
+    'robotic': ('拆词', 'robot（机器人）+-ic：机器人的。'),
+    'self-worth': ('拆词', 'self（自我）+worth（价值）：自我价值感。'),
+    'socioeconomic': ('拆词', 'socio（社会）+economic（经济的）：社会经济的。'),
+    'thoughtful': ('拆词', 'thought（思考）+-ful：想得多的——深思熟虑的、体贴的。'),
+    'transformation': ('拆词', 'trans（转变）+form（形状）+-ation：转变。'),
+    'underestimate': ('拆词', 'under（下面）+estimate（估计）：估低了——低估。'),
+    'underlying': ('拆词', 'under（下面）+lying（躺着）：躺在下面——潜在的。'),
+    'underprivileged': ('拆词', 'under（下）+privileged（有特权的）：底层的、贫困的。'),
+    'unprecedented': ('拆词', 'un（无）+precedent（先例）+-ed：没有先例——空前的。'),
+    'upgrade': ('拆词', 'up（向上）+grade（等级）：升级。'),
+    'well-being': ('拆词', 'well（好）+being（存在）：身心安好——福祉。'),
+}
+
+def main():
+    d = json.load(open(VOCAB, encoding='utf-8'))
+    byw = {}
+    for w in d['words']:
+        byw.setdefault(w['w'].lower(), w)
+    have = {m['id'] for m in d['stories']['mnemonics']}
+    added, missing = 0, []
+    for word, (typ, text) in ADD.items():
+        w = byw.get(word)
+        if not w: missing.append(word); continue
+        if w['id'] in have: continue
+        d['stories']['mnemonics'].append({'id': w['id'], 't': typ, 's': text})
+        have.add(w['id']); added += 1
+    json.dump(d, open(VOCAB, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    print('added', added, 'total', len(d['stories']['mnemonics']), 'missing', missing)
+    if missing: raise SystemExit(1)
+
+if __name__ == '__main__':
+    main()
